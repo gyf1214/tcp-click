@@ -1,6 +1,7 @@
 // simple push element
 #ifndef __TEST_HH
 #define __TEST_HH
+#include <click/config.h>
 #include <click/element.hh>
 CLICK_DECLS
 

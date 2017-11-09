@@ -5,7 +5,7 @@ CLICK_DECLS
 
 enum AnnoType {
     FromInterface = 0,
-    ToInterface = 4
+    ToInterface = 2
 };
 
 CLICK_ENDDECLS

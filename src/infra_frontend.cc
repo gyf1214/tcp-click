@@ -3,7 +3,7 @@
 CLICK_DECLS
 
 void InfraFrontend::push(int port, Packet *p) {
-    p->set_anno_s32(FromInterface, port);
+    p->set_anno_s16(FromInterface, port);
     output(0).push(p);
 }
 

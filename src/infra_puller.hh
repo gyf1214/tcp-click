@@ -1,6 +1,7 @@
 // Puller listen on multiple output and pull from one input
 #ifndef __CLICK_INFRA_PULLER
 #define __CLICK_INFRA_PULLER
+#include <click/config.h>
 #include <click/element.hh>
 CLICK_DECLS
 

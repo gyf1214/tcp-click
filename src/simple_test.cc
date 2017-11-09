@@ -1,5 +1,4 @@
 // implement simple push element
-#include <click/config.h>
 #include "simple_test.hh"
 CLICK_DECLS
 

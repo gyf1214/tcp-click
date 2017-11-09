@@ -1,5 +1,4 @@
 #include "infra_puller.hh"
-#include <click/config.h>
 CLICK_DECLS
 
 Packet *InfraPuller::pull(int) {

@@ -7,7 +7,6 @@ CLICK_DECLS
 
 class InfraPusher : public Element {
 public:
-public:
     const char *class_name() const { return "InfraPusher"; }
     const char *port_count() const { return "-/1"; }
     const char *processing() const { return PUSH; }

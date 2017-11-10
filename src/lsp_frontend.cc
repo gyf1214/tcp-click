@@ -20,9 +20,10 @@ int LspFrontend::configure(Vector<String> &args, ErrorHandler *errh) {
     if (!IPAddressArg().parse(ip_str, (struct in_addr &)self, this)) {
         return errh->error("IP should be ip address");
     }
+    return 0;
 }
 
-int LspFrontend::initialize(ErrorHandler *errh) {
+int LspFrontend::initialize(ErrorHandler *) {
     timer.initialize(this);
     timer.reschedule_after(interval);
     Log("initialized");
@@ -74,7 +75,7 @@ void LspFrontend::push(int, Packet *p) {
     if (lsp->type == LspAck && state == WaitAck) {
         // receive ack when discovering neighbour
         Log("ack");
-        if (port >= portInfo.size()) portInfo.resize(port + 1);
+        if (port >= (int)portInfo.size()) portInfo.resize(port + 1);
         portInfo[port] = ip->src;
         // discard
         p->kill();

@@ -64,7 +64,7 @@ void LspFrontend::push(int, Packet *p) {
     const IpHeader *ip = (const IpHeader *)p->data();
     const LspHeader *lsp = (const LspHeader *)ip->data;
     int port = p->anno_s16(FromInterface);
-    Warn("packet from %x@%d", ip->src, port);
+    Log("packet from %x@%d", ip->src, port);
 
     // discard if magic not match
     if (lsp->magic != LspMagic) {

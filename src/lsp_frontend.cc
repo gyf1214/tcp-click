@@ -150,7 +150,7 @@ void LspFrontend::push(int, Packet *p) {
             output(0).push(q);
 
             // strip header and forward to backend
-            p -> pull(IpSize + LspSize);
+            p -> pull(IpSize + LspSizeShort);
             output(1).push(p);
         } else {
             Log("older sequence");

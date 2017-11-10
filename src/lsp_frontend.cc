@@ -74,7 +74,7 @@ WritablePacket *LspFrontend::build_sequence() {
             ++k;
         }
     }
-    size_t size = IpSize + LspSize + k * sizeof(uint8_t);
+    size_t size = IpSize + LspSize + k * sizeof(uint32_t);
     WritablePacket *q = Packet::make(size);
     IpHeader *ip_q = (IpHeader *)q->data();
     LspHeader *lsp_q = (LspHeader *)ip_q->data;

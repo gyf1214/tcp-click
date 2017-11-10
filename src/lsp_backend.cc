@@ -7,7 +7,8 @@
 using namespace std;
 CLICK_DECLS
 
-const int infi = 100000000;
+// infi distance == default ttl;
+const int infi = IpTTL;
 
 int LspBackend::configure(Vector<String> &args, ErrorHandler *errh) {
     String ip_str;
@@ -28,6 +29,7 @@ void LspBackend::do_work(int, Packet *p) {
     const LspHeader *lsp = (const LspHeader *)ip->data;
     const LspSequenceData *seq = lsp->data;
 
+    // update connection table
     int n = conn.size();
     bool tf = false;
     for (int i = 0; i < n; ++i) {
@@ -37,12 +39,15 @@ void LspBackend::do_work(int, Packet *p) {
             break;
         }
     }
+
+    // insert if unknown ip
     if (!tf) {
         conn.push_back(make_pair(ip->src,
         vector<uint32_t>(seq->entry, seq->entry + seq->count)));
     }
 
     p->kill();
+    // dijkstra
     dijkstra();
 }
 
@@ -61,15 +66,18 @@ void LspBackend::dijkstra() {
     dis.assign(n, make_pair(infi, -1));
     vis.assign(n, false);
 
+    // find self id
     int k = find_ip(self);
     if (k < 0) {
         Warn("self not found in conn table");
         return;
     }
 
+    // init self dis, first hop == -1
     dis[k] = make_pair(0, -1);
     vis[k] = true;
 
+    // find direct neighbour k, first hop == port of k
     int m = conn[k].second.size();
     for (int i = 0; i < m; ++i) {
         int v = find_ip(conn[k].second[i]);
@@ -79,6 +87,7 @@ void LspBackend::dijkstra() {
     }
 
     for (int t = 1; t < n; ++t) {
+        // find new node
         int best = infi;
         int u = -1;
         for (int i = 0; i < n; ++i) {
@@ -87,9 +96,12 @@ void LspBackend::dijkstra() {
                 u = i;
             }
         }
+        // end on no new nodes connected
         if (u < 0) {
             break;
         }
+
+        // relax & update first hop
         vis[u] = true;
         m = conn[u].second.size();
         for (int i = 0; i < m; ++i) {
@@ -108,6 +120,7 @@ void LspBackend::dijkstra() {
 }
 
 Packet *LspBackend::pull(int) {
+    // construct routing packet based on first hop
     int n = dis.size();
     WritablePacket *p = Packet::make(LspSizeRouting + n * LspSizeRoutingEntry);
     LspRouting *table = (LspRouting *)p->data();

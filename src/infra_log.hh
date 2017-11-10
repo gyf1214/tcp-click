@@ -3,8 +3,8 @@
 #include <click/config.h>
 CLICK_DECLS
 
-#define Log(fmt, ...) click_chatter("%s@%x\t[Info] " fmt, this->class_name(), this->self, ##__VA_ARGS__)
-#define Warn(fmt, ...) click_chatter("%s@%x\t[Warn] " fmt, this->class_name(), this->self, ##__VA_ARGS__)
+#define Log(fmt, ...) click_chatter("%s@%08x\t[Info] " fmt, this->class_name(), this->self, ##__VA_ARGS__)
+#define Warn(fmt, ...) click_chatter("%s@%08x\t[Warn] " fmt, this->class_name(), this->self, ##__VA_ARGS__)
 
 CLICK_ENDDECLS
 #endif

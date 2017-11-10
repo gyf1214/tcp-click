@@ -13,9 +13,10 @@ class InfraAsync : public Element {
 protected:
     virtual void do_work(int, Packet *) = 0;
 public:
+    InfraAsync();
+    int initialize(ErrorHandler *);
     void push(int, Packet *);
     bool run_task(Task *);
-    virtual Packet *pull(int port) = 0;
 };
 
 CLICK_ENDDECLS

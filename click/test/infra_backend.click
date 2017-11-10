@@ -1,7 +1,7 @@
 backend :: InfraBackend
 
 RatedSource(DATA "hello1", RATE 1)
-    -> Paint(0, 2) -> Paint(0, 3)
+    -> Paint(255, 2) -> Paint(255, 3)
     -> [0] backend
 
 RatedSource(DATA "hello2", RATE 1)

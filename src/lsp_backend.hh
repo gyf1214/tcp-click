@@ -21,6 +21,7 @@ public:
     const char *class_name() const { return "LspBackend"; }
     const char *port_count() const { return "1/1"; }
     const char *processing() const { return PUSH_TO_PULL; }
+    int configure(Vector<String> &, ErrorHandler *);
     Packet *pull(int);
 };
 

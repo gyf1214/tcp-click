@@ -2,10 +2,26 @@
 #include "lsp_packet.hh"
 #include "ip_packet.hh"
 #include "infra_log.hh"
+#include <click/args.hh>
+#include <click/error.hh>
 using namespace std;
 CLICK_DECLS
 
 const int infi = 100000000;
+
+int LspBackend::configure(Vector<String> &args, ErrorHandler *errh) {
+    String ip_str;
+    if (Args(args, this, errh)
+    .read_mp("IP", ip_str)
+    .complete() < 0) {
+        return -1;
+    }
+
+    if (!IPAddressArg().parse(ip_str, (struct in_addr &)self, this) {
+        return errh->error("IP should be ip address");
+    }
+    return 0;
+}
 
 void LspBackend::do_work(int, Packet *p) {
     const IpHeader *ip = (const IpHeader *)p->data();
@@ -100,8 +116,10 @@ Packet *LspBackend::pull(int) {
         table->entry[i].ip = conn[i].first;
         table->entry[i].port = dis[i].second;
     }
-    
+
     return p;
 }
 
 CLICK_ENDDECLS
+ELEMENT_REQUIRES(InfraAsync)
+EXPORT_ELEMENT(LspBackend)

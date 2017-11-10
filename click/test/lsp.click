@@ -11,7 +11,7 @@ elementclass Router1 { IP $ip |
     backend -> output
 
     frontend -> lspfront -> backend
-    lspfront [1] -> backend -> Print(routing) -> TimedSink(1)
+    lspfront [1] -> lspback -> Print(routing) -> TimedSink(1)
 }
 
 veth1 -> Router1(IP 192.168.17.1) -> veth1

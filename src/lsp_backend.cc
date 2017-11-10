@@ -91,4 +91,17 @@ void LspBackend::dijkstra() {
     }
 }
 
+Packet *LspBackend::pull(int) {
+    int n = dis.size();
+    WritablePacket *p = Packet::make(LspSizeRouting + n * LspSizeRoutingEntry);
+    LspRouting *table = (LspRouting *)p->data();
+    table->count = n;
+    for (int i = 0; i < n; ++i) {
+        table->entry[i].ip = conn[i].first;
+        table->entry[i].port = dis[i].second;
+    }
+    
+    return p;
+}
+
 CLICK_ENDDECLS

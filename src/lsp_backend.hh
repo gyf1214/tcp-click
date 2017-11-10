@@ -1,3 +1,6 @@
+// Link State Protocol Backend
+// input(0) : incoming sequence from frontend
+// output(0) : pulling port to query
 #ifndef __CLICK_LSP_BACKEND
 #define __CLICK_LSP_BACKEND
 #include <click/config.h>
@@ -18,6 +21,7 @@ public:
     const char *class_name() const { return "LspBackend"; }
     const char *port_count() const { return "1/1"; }
     const char *processing() const { return PUSH_TO_PULL; }
+    Packet *pull(int);
 };
 
 CLICK_ENDDECLS

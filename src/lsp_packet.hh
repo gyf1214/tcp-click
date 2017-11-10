@@ -34,5 +34,18 @@ inline void LspHeader::Init(LspType t) {
     type = t;
 }
 
+struct LspRoutingEntry {
+    uint32_t ip;
+    int32_t port;
+};
+
+struct LspRouting {
+    uint32_t count;
+    LspRoutingEntry entry[0];
+};
+
+const size_t LspSizeRouting = sizeof(LspRouting);
+const size_t LspSizeRoutingEntry = sizeof(LspSizeRoutingEntry);
+
 CLICK_ENDDECLS
 #endif

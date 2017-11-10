@@ -1,7 +1,13 @@
 #include "infra_async.hh"
 using namespace std;
-
 CLICK_DECLS
+
+InfraAsync::InfraAsync() : task(this) {}
+
+int InfraAsync::initialize(ErrorHandler *) {
+    task.initialize(this, false);
+    return 0;
+}
 
 void InfraAsync::push(int port, Packet *p) {
     if (!task.scheduled()) {

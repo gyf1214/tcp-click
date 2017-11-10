@@ -9,7 +9,7 @@ elementclass Router1 { IP $ip |
     backend -> output
 
     frontend -> lspfront -> backend
-    lspfront [1] -> Discard
+    lspfront [1] -> Print(seq) -> Discard
 }
 
 veth1 -> Router1(IP 192.168.17.1) -> veth1

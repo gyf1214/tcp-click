@@ -7,7 +7,7 @@ CLICK_DIR=$HOME/click
 GIT_WORK_TREE=$HOME/deploy
 
 cd $GIT_WORK_TREE
-branch=$(git rev-parse --symbolic --abbrev-ref $1)
+branch=$(git --git-dir=$GIT_DIR rev-parse --symbolic --abbrev-ref $1)
 echo update pushed to $branch
 git --git-dir=$GIT_DIR --work-tree=$GIT_WORK_TREE checkout -f $branch
 

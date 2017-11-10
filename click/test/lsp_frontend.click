@@ -12,5 +12,5 @@ elementclass Router1 { IP $ip |
     lspfront [1] -> Discard
 }
 
-vnet1 -> Router1(IP 192.168.17.1) -> vnet1
-vnet2 -> Router1(IP 192.168.17.2) -> vnet2
+veth1 -> Router1(IP 192.168.17.1) -> veth1
+veth2 -> Router1(IP 192.168.17.2) -> veth2

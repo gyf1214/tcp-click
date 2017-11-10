@@ -62,7 +62,8 @@ WritablePacket *LspFrontend::build_packet(LspType type, uint32_t dst, int port) 
 }
 
 bool LspFrontend::check_sequence(uint32_t ip, uint32_t seq) {
-    for (int i = 0; i < sequenceInfo.size(); ++i) {
+    int n = sequenceInfo.size();
+    for (int i = 0; i < n; ++i) {
         if (sequenceInfo[i].first == ip) {
             if (sequenceInfo[i].second >= seq) {
                 return false;

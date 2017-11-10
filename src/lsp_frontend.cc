@@ -4,6 +4,7 @@
 #include "infra_log.hh"
 #include <click/args.hh>
 #include <click/error.hh>
+using namespace std;
 CLICK_DECLS
 
 LspFrontend::LspFrontend() : state(Sleep), timer(this) {}
@@ -60,6 +61,21 @@ WritablePacket *LspFrontend::build_packet(LspType type, uint32_t dst, int port) 
     return q;
 }
 
+bool LspFrontend::check_sequence(uint32_t ip, uint32_t seq) {
+    for (int i = 0; i < sequenceInfo.size(); ++i) {
+        if (sequenceInfo[i].first == ip) {
+            if (sequenceInfo[i].second >= seq) {
+                return false;
+            } else {
+                sequenceInfo[i].second = seq;
+                return true;
+            }
+        }
+    }
+    sequenceInfo.push_back(make_pair(ip, seq));
+    return true;
+}
+
 void LspFrontend::push(int, Packet *p) {
     const IpHeader *ip = (const IpHeader *)p->data();
     const LspHeader *lsp = (const LspHeader *)ip->data;
@@ -88,9 +104,16 @@ void LspFrontend::push(int, Packet *p) {
         output(0).push(q);
     } else if (lsp->type == LspSequence) {
         // forward sequence packet to backend
+        const LspSequenceData *seq = lsp->data;
+
         Log("sequence");
-        output(1).push(p);
-        // TODO: forward to any other port
+        if (ip->src != self && check_sequence(ip->src, seq->sequence)) {
+            Log("update sequence: %d", seq->sequence);
+            // forward
+        } else {
+            Log("older sequence");
+            p->kill();
+        }
     } else {
         Warn("type unknown or excessive ack");
         // discard on unknown type

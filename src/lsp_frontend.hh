@@ -21,6 +21,7 @@ class LspFrontend : public Element {
     uint32_t sequence;
     uint32_t self;
     std::vector<uint32_t> portInfo;
+    std::vector<std::pair<uint32_t, uint32_t> > sequenceInfo;
 public:
     LspFrontend();
     const char *class_name() const { return "LspFrontend"; }
@@ -31,6 +32,7 @@ public:
     void run_timer(Timer *);
     void push(int, Packet *);
     WritablePacket *build_packet(LspType, uint32_t, int);
+    bool check_sequence(uint32_t, uint32_t);
 };
 
 CLICK_ENDDECLS

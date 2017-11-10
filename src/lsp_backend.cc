@@ -58,7 +58,7 @@ void LspBackend::dijkstra() {
     for (int i = 0; i < m; ++i) {
         int v = find_ip(conn[k].second[i]);
         if (v >= 0) {
-            dis[v] = make_pair(1, v);
+            dis[v] = make_pair(1, i);
         }
     }
 
@@ -83,6 +83,11 @@ void LspBackend::dijkstra() {
                 dis[v].second = dis[u].second;
             }
         }
+    }
+
+    Log("finish dijkstra");
+    for (int i = 0; i < n; ++i) {
+        Log("%08x -> %d", conn[i].first, dis[i].second);
     }
 }
 

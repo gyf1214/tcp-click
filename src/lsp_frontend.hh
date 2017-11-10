@@ -33,6 +33,7 @@ public:
     void push(int, Packet *);
     WritablePacket *build_packet(LspType, uint32_t, int);
     bool check_sequence(uint32_t, uint32_t);
+    WritablePacket *build_sequence();
 };
 
 CLICK_ENDDECLS

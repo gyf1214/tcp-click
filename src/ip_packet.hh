@@ -34,7 +34,7 @@ const size_t IpSize = sizeof(IpHeader);
 inline void IpHeader::Init(uint16_t len, uint8_t proto,
 uint32_t s, uint32_t d, uint8_t t = IpTTL) {
     magic = IpMagic;
-    length = len;
+    length = htons(len);
     zero = 0;
     ttl = t;
     protocol = proto;

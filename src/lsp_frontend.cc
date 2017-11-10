@@ -7,7 +7,7 @@
 using namespace std;
 CLICK_DECLS
 
-LspFrontend::LspFrontend() : state(Sleep), timer(this) {}
+LspFrontend::LspFrontend() : state(Sleep), timer(this), sequence(0) {}
 
 int LspFrontend::configure(Vector<String> &args, ErrorHandler *errh) {
     String ip_str;
@@ -36,6 +36,8 @@ void LspFrontend::run_timer(Timer *) {
         Log("discover neighbour");
         state = WaitAck;
 
+        // clear previous neighbour table
+        portInfo.clear();
         // broadcast hello
         output(0).push(build_packet(LspHello, IpAny, -1));
 
@@ -43,7 +45,9 @@ void LspFrontend::run_timer(Timer *) {
     } else {
         Log("broadcast sequence");
         state = Sleep;
-        // TODO: broadcast sequence
+
+
+
         timer.reschedule_after(interval);
     }
 }
@@ -59,6 +63,21 @@ WritablePacket *LspFrontend::build_packet(LspType type, uint32_t dst, int port) 
     q->set_anno_s16(ToInterface, port);
 
     return q;
+}
+
+WritablePacket *LspFrontend::build_sequence() {
+    // count neighbours
+    int n = portInfo.size();
+    int k = 0;
+    for (int i = 0; i < n; ++i) {
+        if (portInfo[i]) {
+            ++k;
+        }
+    }
+    size_t size = IpSize + LspSize + k * sizeof(uint8_t);
+    WritablePacket *q = Packet::make(size);
+    IpHeader *ip_q = (IpHeader *)q->data();
+    LspHeader *lsp_q = (LspHeader *)ip_q->data;
 }
 
 bool LspFrontend::check_sequence(uint32_t ip, uint32_t seq) {
@@ -92,7 +111,7 @@ void LspFrontend::push(int, Packet *p) {
     if (lsp->type == LspAck && state == WaitAck) {
         // receive ack when discovering neighbour
         Log("ack");
-        if (port >= (int)portInfo.size()) portInfo.resize(port + 1);
+        if (port >= (int)portInfo.size()) portInfo.resize(port + 1, 0);
         portInfo[port] = ip->src;
         // discard
         p->kill();
@@ -110,9 +129,15 @@ void LspFrontend::push(int, Packet *p) {
         Log("sequence");
         if (ip->src != self && check_sequence(ip->src, seq->sequence)) {
             Log("update sequence: %d", seq->sequence);
-            // forward
+            // first forward to backend
+            output(1).push(p);
+            // forward to all ports
+            Packet *q = p->clone();
+            q->set_anno_s16(ToInterface, -1);
+            output(0).push(q);
         } else {
             Log("older sequence");
+            // discard
             p->kill();
         }
     } else {

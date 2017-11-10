@@ -5,7 +5,7 @@ elementclass RouterCore { IP $ip |
     lspback  :: LspBackend(IP $ip)
 
     input -> lspfront -> output
-    lspfront [1] -> lspback -> Print(routing) -> TimedSink(1)
+    lspfront [1] -> lspback -> Print(routing, -1) -> TimedSink(1)
 }
 
 elementclass Router1 { IP $ip |

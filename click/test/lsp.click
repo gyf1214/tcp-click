@@ -22,12 +22,12 @@ elementclass Router2 { IP $ip |
     frontend :: InfraFrontend
     backend  :: InfraBackend
 
-    input[0,1] => frontend
-    backend => [0,1]output
+    input[0-1] => frontend
+    backend => [0-1]output
 
     frontend -> RouterCore(IP $ip) -> backend
 }
 
 veth1 => Router1(IP 192.168.17.1) => veth1
-veth2, veth3 => Router1(IP 192.168.17.2) => veth2, veth3
+veth2, veth3 => Router2(IP 192.168.17.2) => veth2, veth3
 veth4 => Router1(IP 192.168.17.3) => veth4

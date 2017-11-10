@@ -17,7 +17,7 @@ int LspBackend::configure(Vector<String> &args, ErrorHandler *errh) {
         return -1;
     }
 
-    if (!IPAddressArg().parse(ip_str, (struct in_addr &)self, this) {
+    if (!IPAddressArg().parse(ip_str, (struct in_addr &)self, this)) {
         return errh->error("IP should be ip address");
     }
     return 0;

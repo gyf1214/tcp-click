@@ -1,4 +1,4 @@
-require(../network/net1.click)
+require(library ../network/net1.click)
 
 elementclass Router1 { IP $ip |
     frontend :: InfraFrontend

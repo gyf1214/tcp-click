@@ -49,7 +49,9 @@ void LspFrontend::run_timer(Timer *) {
 
         // push to broadcast and also to backend
         Packet *p = build_sequence();
-        output(0).push(p->clone());
+        Packet *q = p->clone();
+        q->set_anno_s16(ToInterface, AnnoAnyPort);
+        output(0).push(q);
         output(1).push(p);
 
         timer.reschedule_after(interval);
@@ -140,7 +142,7 @@ void LspFrontend::push(int, Packet *p) {
 
             // forward to all ports
             Packet *q = p->clone();
-            q->set_anno_s16(ToInterface, -1);
+            q->set_anno_s16(ToInterface, AnnoAnyPort);
             output(0).push(q);
 
             // strip header and forward to backend

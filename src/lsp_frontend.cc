@@ -46,7 +46,10 @@ void LspFrontend::run_timer(Timer *) {
         Log("broadcast sequence");
         state = Sleep;
 
-        output(0).push(build_sequence());
+        // push to broadcast and also to backend
+        Packet *p = build_sequence();
+        output(0).push(p->clone());
+        output(1).push(p);
 
         timer.reschedule_after(interval);
     }

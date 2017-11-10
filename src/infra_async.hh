@@ -1,10 +1,10 @@
 // InfraAsync is a async processor
 #ifndef __CLICK_INFRA_ASYNC
 #define __CLICK_INFRA_ASYNC
-#include <queue>
 #include <click/config.h>
 #include <click/element.hh>
 #include <click/task.hh>
+#include <queue>
 CLICK_DECLS
 
 class InfraAsync : public Element {

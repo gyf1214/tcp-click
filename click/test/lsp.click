@@ -1,6 +1,6 @@
 require(library ../network/net2.click)
 
-elementclass RouterCore { IP $IP |
+elementclass RouterCore { IP $ip |
     lspfront :: LspFrontend(IP $ip, INTERVAL 10, TIMEOUT 1)
     lspback  :: LspBackend(IP $ip)
 

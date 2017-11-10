@@ -22,8 +22,10 @@ elementclass Router2 { IP $ip |
     frontend :: InfraFrontend
     backend  :: InfraBackend
 
-    input[0-1] => frontend
-    backend => [0-1]output
+    input [0] -> [0] frontend
+    input [1] -> [1] frontend
+    backend [0] -> [0]output
+    backend [1] -> [1]output
 
     frontend -> RouterCore(IP $ip) -> backend
 }

@@ -46,7 +46,7 @@ void LspFrontend::run_timer(Timer *) {
         Log("broadcast sequence");
         state = Sleep;
 
-
+        output(0).push(build_sequence());
 
         timer.reschedule_after(interval);
     }
@@ -143,12 +143,15 @@ void LspFrontend::push(int, Packet *p) {
         Log("sequence");
         if (ip->src != self && check_sequence(ip->src, seq->sequence)) {
             Log("update sequence: %d", seq->sequence);
-            // first forward to backend
-            output(1).push(p);
+
             // forward to all ports
             Packet *q = p->clone();
             q->set_anno_s16(ToInterface, -1);
             output(0).push(q);
+
+            // strip header and forward to backend
+            p -> pull(IpSize + LspSize);
+            output(1).push(p);
         } else {
             Log("older sequence");
             // discard

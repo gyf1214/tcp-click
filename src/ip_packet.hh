@@ -29,6 +29,8 @@ const uint8_t IpTTL = 64;
 // broadcast address
 const uint32_t IpAny = -1;
 
+const uint8_t IpProtoLsp = 61;
+
 const size_t IpSize = sizeof(IpHeader);
 
 inline void IpHeader::Init(uint16_t len, uint8_t proto,

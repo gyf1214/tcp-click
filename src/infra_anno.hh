@@ -8,5 +8,7 @@ enum AnnoType {
     ToInterface = 2
 };
 
+const int AnnoAnyPort = -1;
+
 CLICK_ENDDECLS
 #endif

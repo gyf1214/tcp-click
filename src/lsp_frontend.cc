@@ -39,7 +39,7 @@ void LspFrontend::run_timer(Timer *) {
         // clear previous neighbour table
         portInfo.clear();
         // broadcast hello
-        output(0).push(build_packet(LspHello, IpAny, -1));
+        output(0).push(build_packet(LspHello, IpAny, AnnoAnyPort));
 
         timer.reschedule_after(timeout);
     } else {
@@ -58,7 +58,7 @@ WritablePacket *LspFrontend::build_packet(LspType type, uint32_t dst, int port) 
     IpHeader *ip_q = (IpHeader *)q->data();
     LspHeader *lsp_q = (LspHeader *)ip_q->data;
 
-    ip_q->Init(size, LspProto, self, dst);
+    ip_q->Init(size, IpProtoLsp, self, dst);
     lsp_q->Init(type);
     q->set_anno_s16(ToInterface, port);
 
@@ -78,6 +78,20 @@ WritablePacket *LspFrontend::build_sequence() {
     WritablePacket *q = Packet::make(size);
     IpHeader *ip_q = (IpHeader *)q->data();
     LspHeader *lsp_q = (LspHeader *)ip_q->data;
+    LspSequenceData *sec_q = lsp_q->data;
+
+    ip_q->Init(size, IpProtoLsp, self, IpAny);
+    lsp_q->Init(LspSequence);
+    sec_q->sequence = ++sequence;
+    sec_q->count = k;
+    k = 0;
+    for (int i = 0; i < n; ++i) {
+        if (portInfo[i]) {
+            sec_q->entry[k++] = portInfo[i];
+        }
+    }
+
+    return q;
 }
 
 bool LspFrontend::check_sequence(uint32_t ip, uint32_t seq) {

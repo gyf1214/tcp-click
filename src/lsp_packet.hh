@@ -11,7 +11,6 @@ enum LspType {
 };
 
 const uint16_t LspMagic = 0x35fc;
-const uint8_t LspProto = 61;
 
 struct LspSequenceData {
     uint32_t sequence;

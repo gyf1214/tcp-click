@@ -4,6 +4,7 @@
 #include "infra_log.hh"
 #include <click/args.hh>
 #include <click/error.hh>
+#include <algorithm>
 using namespace std;
 CLICK_DECLS
 
@@ -71,28 +72,18 @@ WritablePacket *LspFrontend::build_packet(LspType type, uint32_t dst, int port) 
 WritablePacket *LspFrontend::build_sequence() {
     // count neighbours
     int n = portInfo.size();
-    int k = 0;
-    for (int i = 0; i < n; ++i) {
-        if (portInfo[i]) {
-            ++k;
-        }
-    }
-    size_t size = IpSize + LspSize + k * sizeof(uint32_t);
+
+    size_t size = IpSize + LspSize + n * sizeof(uint32_t);
     WritablePacket *q = Packet::make(size);
     IpHeader *ip_q = (IpHeader *)q->data();
     LspHeader *lsp_q = (LspHeader *)ip_q->data;
-    LspSequenceData *sec_q = lsp_q->data;
+    LspSequenceData *seq_q = lsp_q->data;
 
     ip_q->Init(size, IpProtoLsp, self, IpAny);
     lsp_q->Init(LspSequence);
-    sec_q->sequence = ++sequence;
-    sec_q->count = k;
-    k = 0;
-    for (int i = 0; i < n; ++i) {
-        if (portInfo[i]) {
-            sec_q->entry[k++] = portInfo[i];
-        }
-    }
+    seq_q->sequence = ++sequence;
+    seq_q->count = n;
+    copy(portInfo.begin(), portInfo.end(), seq_q->entry);
 
     return q;
 }

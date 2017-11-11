@@ -1,8 +1,8 @@
 #include "ip_frontend.hh"
-#include "ip_packet.hh"
 #include "lsp_packet.hh"
 #include "infra_log.hh"
 #include "infra_anno.hh"
+#include "ip_packet.hh"
 #include <click/args.hh>
 #include <click/error.hh>
 CLICK_DECLS
@@ -20,7 +20,20 @@ int IpFrontend::configure(Vector<String> &args, ErrorHandler *errh) {
     return 0;
 }
 
-void IpFrontend::push(int, Packet *p) {
+void IpFrontend::send(Packet *p) {
+    // send packet from self
+    WritablePacket *q = p->push(IpSize);
+    IpHeader *ip_q = (IpHeader *)q->data();
+    ip_q->Init(q->length(), q->anno_u8(SendProto), self, q->anno_u32(SendIp));
+    route(q, ip_q->dst);
+}
+
+void IpFrontend::push(int port, Packet *p) {
+    if (port == 2) {
+        send(p);
+        return;
+    }
+
     WritablePacket *q = p->uniqueify();
     IpHeader *ip_q = (IpHeader *)q->data();
     uint16_t checksum = click_in_cksum((unsigned char *)ip_q, IpSize);
@@ -49,22 +62,26 @@ void IpFrontend::push(int, Packet *p) {
     } else {
         // routing
         Log("routing");
-        Packet *r = input(1).pull();
-        const LspRouting *lsp_r = (const LspRouting *)r->data();
-        int n = lsp_r->count;
-        for (int i = 0; i < n; ++i) {
-            uint32_t ip = lsp_r->entry[i].ip;
-            int port = lsp_r->entry[i].port;
-            if (ip == ip_q->dst && port >= 0) {
-                Log("forward to %d", port);
-                q->set_anno_s16(ToInterface, port);
-                output(0).push(q);
-                return;
-            }
-        }
-        Warn("unknown route to %08x", ip_q->dst);
-        q->kill();
+        route(q, ip_q->dst);
     }
+}
+
+void IpFrontend::route(Packet *q, uint32_t dst) {
+    Packet *r = input(1).pull();
+    const LspRouting *lsp_r = (const LspRouting *)r->data();
+    int n = lsp_r->count;
+    for (int i = 0; i < n; ++i) {
+        uint32_t ip = lsp_r->entry[i].ip;
+        int port = lsp_r->entry[i].port;
+        if (ip == dst && port >= 0) {
+            Log("forward to %d", port);
+            q->set_anno_s16(ToInterface, port);
+            output(0).push(q);
+            return;
+        }
+    }
+    Warn("unknown route to %08x", dst);
+    q->kill();
 }
 
 CLICK_ENDDECLS

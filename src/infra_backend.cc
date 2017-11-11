@@ -7,9 +7,8 @@ void InfraBackend::push(int, Packet *p) {
     if (port < 0) {
         int n = noutputs();
         for (int i = 0; i < n - 1; ++i) {
-            if (Packet *q = p->clone()) {
-                output(i).push(q);
-            }
+            Packet *q = p->clone();
+            output(i).push(q);
         }
         output(n - 1).push(p);
     } else {

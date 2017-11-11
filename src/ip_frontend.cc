@@ -51,7 +51,8 @@ void IpFrontend::push(int, Packet *p) {
         Log("routing");
         Packet *r = input(1).pull();
         const LspRouting *lsp_r = (const LspRouting *)r->data();
-        for (int i = 0; i < lsp_r->count; ++i) {
+        int n = lsp_r->count;
+        for (int i = 0; i < n; ++i) {
             uint32_t ip = lsp_r->entry[i].ip;
             int port = lsp_r->entry[i].port;
             if (ip == ip_q->dst && port > 0) {

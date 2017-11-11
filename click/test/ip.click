@@ -36,5 +36,5 @@ veth4        => front3 -> router3 -> back3 => veth4
 
 // sender topo with router
 sender1 -> [1] router1
-idle    -> [1] router2
+Idle    -> [1] router2
 sender2 -> [1] router3

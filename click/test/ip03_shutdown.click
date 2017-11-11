@@ -10,4 +10,5 @@ Script(TYPE ACTIVE,
 	// poweron router4
     write front4.power 1,
     write back4.power 1,
+	print "poweron router4"
 )

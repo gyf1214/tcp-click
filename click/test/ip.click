@@ -12,7 +12,7 @@ elementclass RouterCore { IP $ip |
 }
 
 sender :: {
-    RatedSource(DATA "hello", 1) -> IPEncap(6, 192.168.17.1, 192.168.17.3, TTL 64) -> output
+    RatedSource(DATA "hello", RATE 1) -> IPEncap(6, 192.168.17.1, 192.168.17.3, TTL 64) -> output
 }
 
 veth1, sender => InfraFrontend() -> RouterCore(IP 192.168.17.1) -> InfraBackend() => veth1

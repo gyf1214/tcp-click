@@ -46,6 +46,7 @@ uint32_t s, uint32_t d, uint8_t t = IpTTL) {
 }
 
 inline void IpHeader::Checksum() {
+    checksum = 0;
     checksum = click_in_cksum((unsigned char *)this, IpSize);
 }
 

@@ -24,6 +24,7 @@ void IpFrontend::push(int, Packet *p) {
     WritablePacket *q = p->uniqueify();
     IpHeader *ip_q = (IpHeader *)q->data();
     uint16_t checksum = click_in_cksum((unsigned char *)ip_q, IpSize);
+    Log("%08x", checksum);
     if (ip_q->magic != IpMagic || checksum != ip_q->checksum) {
         Warn("ip header error");
         // discard on header error

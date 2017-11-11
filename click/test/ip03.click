@@ -59,3 +59,8 @@ sender3 -> router2
 sender4 -> router3
 sender5 -> router4
 sender6 -> router6
+
+Script(TYPE ACTIVE,
+    write front4.power 0,
+    write back4.power 0
+)

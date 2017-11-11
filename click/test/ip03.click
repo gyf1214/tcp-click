@@ -65,6 +65,6 @@ Script(TYPE ACTIVE,
     // shutdown router4
     write front4.power 0,
     write back4.power 0,
-    print "shutdown router4",
-    // 
+    print "shutdown router4"
+    //
 )

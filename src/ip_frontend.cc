@@ -67,3 +67,4 @@ void IpFrontend::push(int, Packet *p) {
 }
 
 CLICK_ENDDECLS
+EXPORT_ELEMENT(IpFrontend)

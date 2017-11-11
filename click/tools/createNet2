@@ -1,0 +1,13 @@
+#!/bin/bash
+
+prefix=aa:bb:cc:dd:ee
+
+function setether() {
+    sudo ifconfig $1 hw ether $prefix:$2
+}
+
+sudo /home/comnetsii/tools/createNet2
+setether veth1  01
+setether veth2  02
+setether veth3  03
+setether veth4  04

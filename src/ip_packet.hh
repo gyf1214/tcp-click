@@ -42,6 +42,7 @@ uint32_t s, uint32_t d, uint8_t t = IpTTL) {
     protocol = proto;
     src = s;
     dst = d;
+    checksum = 0;
     Checksum();
 }
 

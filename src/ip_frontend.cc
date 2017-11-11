@@ -14,7 +14,7 @@ int IpFrontend::configure(Vector<String> &args, ErrorHandler *errh) {
     .complete() < 0) {
         return -1;
     }
-    if (IPAddressArg().parse(ip_str, (struct in_addr &)self, this)) {
+    if (!IPAddressArg().parse(ip_str, (struct in_addr &)self, this)) {
         return errh->error("IP should be ip address");
     }
     return 0;

@@ -61,6 +61,10 @@ sender5 -> router4
 sender6 -> router6
 
 Script(TYPE ACTIVE,
+    wait 1,
+    // shutdown router4
     write front4.power 0,
-    write back4.power 0
+    write back4.power 0,
+    print "shutdown router4",
+    // 
 )

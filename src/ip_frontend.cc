@@ -55,7 +55,7 @@ void IpFrontend::push(int, Packet *p) {
         for (int i = 0; i < n; ++i) {
             uint32_t ip = lsp_r->entry[i].ip;
             int port = lsp_r->entry[i].port;
-            if (ip == ip_q->dst && port > 0) {
+            if (ip == ip_q->dst && port >= 0) {
                 Log("forward to %d", port);
                 q->set_anno_s16(ToInterface, port);
                 output(0).push(q);

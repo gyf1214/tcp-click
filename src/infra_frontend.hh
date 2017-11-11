@@ -5,11 +5,14 @@
 CLICK_DECLS
 
 class InfraFrontend : public Element {
+    uint8_t power;
 public:
+    InfraFrontend();
     const char *class_name() const { return "InfraFrontend"; }
     const char *port_count() const { return "-/1"; }
     const char *processing() const { return PUSH; }
     void push(int, Packet *);
+    void add_handlers();
 };
 
 CLICK_ENDDECLS

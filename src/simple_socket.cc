@@ -30,7 +30,7 @@ int SimpleSocket::initialize(ErrorHandler *errh) {
 }
 
 void SimpleSocket::exec(Packet *p, uint8_t method) {
-    p->set_anno_u8(SocketMethod, New);
+    p->set_anno_u8(SocketMethod, method);
     p->set_anno_u32(SocketSequence, ++sequence);
     output(0).push(p);
 }

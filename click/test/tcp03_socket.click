@@ -3,9 +3,8 @@ require(library tcp03.click)
 socket1 :: {
     sock :: SimpleSocket(IP 192.168.17.1)
 
-    Idle() -> sock -> Print(sockout, -1, PRINTANNO true) -> output
+    input -> sock -> Print(sockout, -1, PRINTANNO true) -> output
     sock [1] -> Socket(TCP, 0.0.0.0, 8888) -> [1] sock
-    input -> Print(sockin, -1, PRINTANNO true) -> Discard()
 }
 
 socket1 -> [1] router1 [1] -> socket1

@@ -6,6 +6,7 @@
 #include <click/error.hh>
 #include <click/standard/scheduleinfo.hh>
 #include <click/confparse.hh>
+#include <click/straccum.hh>
 #include <cstring>
 CLICK_DECLS
 
@@ -43,7 +44,33 @@ void SimpleSocket::send_info(const char *str) {
     output(1).push(p);
 }
 
+void SimpleSocket::send_info(const String &str) {
+    int n = str.length();
+    WritablePacket *p = Packet::make(n);
+    memcpy(p->data(), str.data(), n);
+    output(1).push(p);
+}
+
+void SimpleSocket::push_return(Packet *p) {
+    StringAccum sa;
+    sa << p->anno_u32(SocketSequence) << " ";
+    switch (p->anno_u8(SocketMethod)) {
+    case Error:
+        sa << "error\n";
+        break;
+    case New:
+        sa << "socket " << p->anno_u8(SocketId) << "\n";
+        break;
+    }
+    p->kill();
+    send_info(sa.take_string());
+}
+
 void SimpleSocket::push(int port, Packet *p) {
+    if (!port) {
+        push_return(p);
+        return;
+    }
     String str(p->data(), p->length());
     String cmd = cp_shift_spacevec(str);
     if (cmd == "socket") {

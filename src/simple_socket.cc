@@ -53,7 +53,7 @@ void SimpleSocket::send_info(const String &str) {
 
 void SimpleSocket::push_return(Packet *p) {
     StringAccum sa;
-    sa << p->anno_u32(SocketSequence) << " ";
+    sa << p->anno_u32(SocketSequence) << " | ";
     switch (p->anno_u8(SocketMethod)) {
     case Error:
         sa << "error\n";

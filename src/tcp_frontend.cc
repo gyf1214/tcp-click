@@ -382,7 +382,7 @@ void TcpFrontend::push_tcp(Packet *p) {
         p->kill();
     } else if (flag & Ack) {
         // ACK
-        uint8_t id0;
+        int id0;
         switch (sock.state) {
         case Established:
             Log("data ack");

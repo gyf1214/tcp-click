@@ -78,10 +78,10 @@ void SimpleSocket::push_return(Packet *p) {
         sa << "error";
         break;
     case New:
-        sa << "socket " << (int)p->anno_u8(SocketId) << "";
+        sa << (int)p->anno_u8(SocketId);
         break;
     default:
-        sa << "returns";
+        sa << "void";
     }
     p->kill();
     send_info(sa.take_string());
@@ -123,6 +123,8 @@ void SimpleSocket::push(int port, Packet *p) {
                 return;
             }
             connect(sock, ip, port);
+        } else if (cmd == "close") {
+            exec(Packet::make(0), sock, Close);
         }
     }
     p->kill();

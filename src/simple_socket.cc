@@ -132,6 +132,20 @@ void SimpleSocket::push(int port, Packet *p) {
             exec(Packet::make(0), sock, Accept);
         } else if (cmd == "free") {
             exec(Packet::make(0), sock, Free);
+        } else if (cmd == "send") {
+            int i = 0;
+            for (; i < str.length() && str[i] != '\n'; ++i);
+            WritablePacket *p = Packet::make(i);
+            memcpy(p->data(), str.data(), i);
+            exec(p, sock, Send);
+        } else if (cmd == "recv") {
+            int n;
+            if (!cp_integer(cp_shift_spacevec(str), &n)) {
+                send_info("max length error");
+                p->kill();
+                return;
+            }
+            exec(Packet::make(n), sock, Recv);
         } else {
             send_info("unknown command");
         }

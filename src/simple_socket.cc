@@ -50,7 +50,7 @@ void SimpleSocket::connect(uint8_t id, uint32_t ip, uint16_t port) {
     Packet *p = Packet::make(0);
     p->set_anno_u8(SocketId, id);
     p->set_anno_u32(SendIp, ip);
-    p->set_anno_u16(SrcPort, port);
+    p->set_anno_u16(DstPort, port);
     exec(p, Connect);
 }
 

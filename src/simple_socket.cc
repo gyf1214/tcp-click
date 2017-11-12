@@ -125,6 +125,10 @@ void SimpleSocket::push(int port, Packet *p) {
             connect(sock, ip, port);
         } else if (cmd == "close") {
             exec(Packet::make(0), sock, Close);
+        } else if (cmd == "listen") {
+            exec(Packet::make(0), sock, Listen);
+        } else {
+            send_info("unknown command");
         }
     }
     p->kill();

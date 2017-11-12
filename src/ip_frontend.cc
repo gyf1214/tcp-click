@@ -59,7 +59,7 @@ void IpFrontend::push(int port, Packet *p) {
         // forward to self
         Log("packet for self");
         q->set_anno_u8(RecvProto, ip_q->protocol);
-        q->set_anno_u8(RecvIp, ip_q->src);
+        q->set_anno_u32(RecvIp, ip_q->src);
         q->pull(IpSize);
         output(2).push(q);
     } else {

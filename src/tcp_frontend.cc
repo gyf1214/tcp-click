@@ -448,7 +448,7 @@ void TcpFrontend::push(int port, Packet *p) {
 void TcpFrontend::print_sockets() {
     int n = sockets.size();
     for (int i = 0; i < n; ++i) {
-        Log("socket %d | %08x:%d -> %d | %d", i, sockets[i].dst_ip,
+        Log("socket %d | %08x:%d -> %d | :%d", i, sockets[i].dst_ip,
         sockets[i].dst_port, sockets[i].src_port, sockets[i].state);
     }
 }

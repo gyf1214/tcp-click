@@ -48,11 +48,9 @@ int TcpFrontend::find_empty_socket() {
             return i;
         }
     }
-    TcpSocket s;
-    s.connectWait = NULL;
-    s.closeWait = NULL;
-    s.state = Nil;
-    sockets.push_back(s);
+    sockets.resize(n + 1);
+    sockets[n].closeWait = NULL;
+    sockets[n].connectWait = NULL;
     return n;
 }
 

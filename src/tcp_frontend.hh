@@ -18,8 +18,9 @@ class TcpFrontend : public Element {
     uint32_t self;
 public:
     const char *class_name() const { return "TcpFrontend"; }
-    const char *port_count() const { return "2/2"; }
+    const char *port_count() const { return "2/3"; }
     const char *processing() const { return PUSH; }
+    int configure(Vector<String> &, ErrorHandler *);
     // find socket based on dst_ip, src_port, dst_port
     int find_socket(uint32_t, uint16_t, uint16_t);
     // find listening socket based on port

@@ -81,8 +81,8 @@ WritablePacket *LspFrontend::build_sequence() {
     LspHeader *lsp_q = (LspHeader *)ip_q->data;
     LspSequenceData *seq_q = lsp_q->data;
 
-    ip_q->Init(size, IpProtoLsp, self, IpAny);
-    lsp_q->Init(LspSequence);
+    ip_q->init(size, IpProtoLsp, self, IpAny);
+    lsp_q->init(LspSequence);
     seq_q->sequence = ++sequence;
     seq_q->count = n;
     copy(portInfo.begin(), portInfo.end(), seq_q->entry);

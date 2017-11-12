@@ -13,8 +13,9 @@ protected:
     void send_info(const char *);
     void send_info(const String &);
     void exec(Packet *, uint8_t);
+    void exec(Packet *, uint8_t, uint8_t);
     void socket(uint16_t);
-    void connect(uint32_t, uint16_t);
+    void connect(uint8_t, uint32_t, uint16_t);
 public:
     SimpleSocket();
     const char *class_name() const { return "SimpleSocket"; }

@@ -35,14 +35,20 @@ void SimpleSocket::exec(Packet *p, uint8_t method) {
     output(0).push(p);
 }
 
+void SimpleSocket::exec(Packet *p, uint8_t sock, uint8_t method) {
+    p->set_anno_u8(SocketId, sock);
+    exec(p, method);
+}
+
 void SimpleSocket::socket(uint16_t port) {
     Packet *p = Packet::make(0);
     p->set_anno_u16(SrcPort, port);
     exec(p, New);
 }
 
-void SimpleSocket::connect(uint32_t ip, uint16_t port) {
+void SimpleSocket::connect(uint8_t id, uint32_t ip, uint16_t port) {
     Packet *p = Packet::make(0);
+    p->set_anno_u8(SocketId, id);
     p->set_anno_u32(SendIp, ip);
     p->set_anno_u16(SrcPort, port);
     exec(p, Connect);
@@ -90,10 +96,34 @@ void SimpleSocket::push(int port, Packet *p) {
         int port;
         if (!cp_integer(cp_shift_spacevec(str), &port)) {
             send_info("port number error");
-        } else {
-            socket(port);
+            p->kill();
+            return;
+        }
+        socket(port);
+    } else {
+        int sock;
+        if (!cp_integer(cp_shift_spacevec(str), &sock)) {
+            send_info("sock id error");
+            p->kill();
+            return;
+        }
+        if (cmd == "connect") {
+            uint32_t ip;
+            int port;
+            if (!cp_ip_address(cp_shift_spacevec(str), (unsigned char*)&ip)) {
+                send_info("ip error");
+                p->kill();
+                return;
+            }
+            if (!cp_integer(cp_shift_spacevec(str), &port)) {
+                send_info("port error");
+                p->kill();
+                return;
+            }
+            connect(sock, ip, port);
         }
     }
+    p->kill();
 }
 
 CLICK_ENDDECLS

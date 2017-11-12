@@ -1,5 +1,6 @@
 #include "simple_socket.hh"
 #include "infra_anno.hh"
+#include "infra_log.hh"
 #include "tcp_socket.hh"
 #include <click/args.hh>
 #include <click/error.hh>
@@ -50,6 +51,7 @@ bool SimpleSocket::run_task(Task *) {
 
     String str(p->data(), p->length());
     String cmd = cp_shift_spacevec(str);
+    Log("%s", cmd.data());
     if (cmd == "socket") {
         int port;
         if (!cp_integer(cp_shift_spacevec(str), &port)) {

@@ -26,16 +26,16 @@ public:
     int find_bind_socket(uint16_t, bool = true);
     int find_empty_socket();
     // create conn socket based on listen socket
-    void create_accept(TcpSocket &, uint32_t, uint16_t);
+    void create_accept(int, uint32_t, uint16_t);
     // queue accept request
-    void queue_accept(TcpSocket &, Packet *);
+    void queue_accept(int, Packet *);
     // queue accept socket
     void queue_listen(uint8_t, uint8_t);
     // free wait queue
-    void free_wait(TcpSocket &);
+    void free_wait(int);
     // send tcp short packet
     void send_short(uint32_t, uint16_t, uint16_t, uint16_t);
-    void send_short(TcpSocket &, uint16_t);
+    void send_short(int, uint16_t);
     // send back socket response
     void send_return(Packet *p, bool);
     // handle socket request

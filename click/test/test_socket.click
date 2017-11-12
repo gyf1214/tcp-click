@@ -1,1 +1,4 @@
-Socket(TCP, 0.0.0.0, 8888) -> Print(test, -1) -> Discard()
+sock :: SimpleSocket(IP 192.168.17.1)
+
+Idle() -> sock -> Print(self, -1) -> Discard()
+sock [1] -> Socket(TCP, 0.0.0.0, 8888) -> Queue() -> [1] sock

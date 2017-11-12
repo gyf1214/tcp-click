@@ -99,7 +99,7 @@ void TcpFrontend::queue_accept(int i, Packet *p) {
 
 void TcpFrontend::queue_listen(uint8_t id0, uint8_t i) {
     Packet *q = Packet::make(0);
-    q->set_anno_u8(SocketMethod, Return);
+    q->set_anno_u8(SocketMethod, Accept);
     q->set_anno_u8(SocketId, i);
     q->set_anno_u8(SocketParentId, id0);
 
@@ -306,7 +306,6 @@ void TcpFrontend::push_tcp(Packet *p) {
     }
 
     Log("received socket %d", i);
-    Log("%d", sockets[i].src_port);
 
     if (sockets[i].state == Closed) {
         Warn("received on closed");
@@ -348,9 +347,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             break;
         case Listening:
             Log("syn to accept");
-            Log("%d", sockets[i].src_port);
             create_accept(i, ip, dport);
-            Log("%d", sockets[i].src_port);
             send_short(ip, sockets[i].src_port, dport, Syn | Ack);
             p->kill();
             break;

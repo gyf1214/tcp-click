@@ -158,7 +158,8 @@ void TcpFrontend::push_socket(Packet *p) {
     }
 
     int id = p->anno_u8(SocketId);
-    if (id >= sockets.size() || sockets[id].state == Nil) {
+    int n = sockets.size();
+    if (id >= n || sockets[id].state == Nil) {
         p->set_anno_u8(SocketMethod, Error);
         Warn("operate on invalid socket %d", id);
         output(1).push(p);

@@ -35,7 +35,7 @@ void SimpleSocket::socket(uint16_t port) {
 }
 
 bool SimpleSocket::run_task(Task *) {
-
+    return true;
 }
 
 void SimpleSocket::push(int, Packet *p) {

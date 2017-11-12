@@ -327,6 +327,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             back_establish(i);
             // respond previous connect call with success
             send_return(sockets[i].connectWait, false);
+            sockets[i].connectWait = NULL;
             // send back ack
             send_short(i, Ack);
             p->kill();

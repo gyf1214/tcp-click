@@ -32,7 +32,7 @@ void SimpleSocket::socket(uint16_t port) {
     Packet *p = Packet::make(0);
     p->set_anno_u8(SocketMethod, New);
     p->set_anno_u16(SrcPort, port);
-    p->set_anno_u32(SocketSequence, sequence);
+    p->set_anno_u32(SocketSequence, ++sequence);
     output(0).push(p);
 }
 
@@ -43,7 +43,7 @@ void SimpleSocket::send_info(const char *str) {
     output(1).push(p);
 }
 
-void SimpleSocket::push(int, Packet *p) {
+void SimpleSocket::push(int port, Packet *p) {
     String str(p->data(), p->length());
     String cmd = cp_shift_spacevec(str);
     Log("%s", cmd.data());

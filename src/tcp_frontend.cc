@@ -456,7 +456,7 @@ void TcpFrontend::back_close(uint8_t id) {
     Packet *q = Packet::make(0);
     q->set_anno_u8(SocketMethod, Close);
     q->set_anno_u8(SocketId, id);
-    output(1).push(q);
+    output(2).push(q);
 }
 
 void TcpFrontend::back_establish(uint8_t id) {
@@ -467,7 +467,7 @@ void TcpFrontend::back_establish(uint8_t id) {
     q->set_anno_u32(RecvIp, sock.dst_ip);
     q->set_anno_u16(SrcPort, sock.src_port);
     q->set_anno_u16(DstPort, sock.dst_port);
-    output(1).push(q);
+    output(2).push(q);
 }
 
 CLICK_ENDDECLS

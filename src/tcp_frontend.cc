@@ -299,8 +299,10 @@ void TcpFrontend::push_tcp(Packet *p) {
         i = find_bind_socket(sport);
     }
     if (i < 0) {
-        Warn("no socket found");
-        send_short(ip, sport, dport, Rst);
+        if (!(flag & Rst)) {
+            Warn("no socket found");
+            send_short(ip, sport, dport, Rst);
+        }
         p->kill();
         return;
     }
@@ -308,8 +310,10 @@ void TcpFrontend::push_tcp(Packet *p) {
     Log("received socket %d", i);
 
     if (sockets[i].state == Closed) {
-        Warn("received on closed");
-        send_short(i, Rst);
+        if (!(flag & Rst)) {
+            Warn("received on closed");
+            send_short(i, Rst);
+        }
         p->kill();
         return;
     }
@@ -419,8 +423,9 @@ void TcpFrontend::push_tcp(Packet *p) {
             p->kill();
             break;
         case Closing:
+        case Last_Ack:
             sockets[i].state = Closed;
-            Log("ACK on closing");
+            Log("ACK on complete close");
             send_return(sockets[i].closeWait, false);
             sockets[i].closeWait = NULL;
             p->kill();

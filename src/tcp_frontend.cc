@@ -51,6 +51,7 @@ int TcpFrontend::find_empty_socket() {
     sockets.resize(n + 1);
     sockets[n].closeWait = NULL;
     sockets[n].connectWait = NULL;
+    sockets[n].state = Nil;
     return n;
 }
 
@@ -92,10 +93,10 @@ void TcpFrontend::create_accept(TcpSocket &sock, uint32_t ip, uint16_t port) {
 
 void TcpFrontend::queue_accept(TcpSocket &sock, Packet *p) {
     if (sock.listenWait.empty()) {
-        sock.acceptWait.push(p);
+        sock.acceptWait.push_back(p);
     } else {
         Packet *q = sock.listenWait.front();
-        sock.listenWait.pop();
+        sock.listenWait.pop_front();
         q->set_anno_u32(SocketSequence, p->anno_u32(SocketSequence));
         output(1).push(q);
         p->kill();
@@ -110,10 +111,10 @@ void TcpFrontend::queue_listen(uint8_t id0, uint8_t id) {
     TcpSocket &sock = sockets[id0];
 
     if (sock.acceptWait.empty()) {
-        sock.listenWait.push(q);
+        sock.listenWait.push_back(q);
     } else {
         Packet *p = sock.acceptWait.front();
-        sock.acceptWait.pop();
+        sock.acceptWait.pop_front();
         q->set_anno_u32(SocketSequence, p->anno_u32(SocketSequence));
         output(1).push(q);
         p->kill();
@@ -133,7 +134,7 @@ void TcpFrontend::free_wait(TcpSocket &sock) {
         // free waiting accept requests
         // respond error
         send_return(sock.acceptWait.front(), true);
-        sock.acceptWait.pop();
+        sock.acceptWait.pop_front();
     }
     while (!sock.listenWait.empty()) {
         // free sockets for accept
@@ -142,7 +143,7 @@ void TcpFrontend::free_wait(TcpSocket &sock) {
         TcpSocket &sock2 = sockets[id];
         sock2.state = Nil;
         p->kill();
-        sock.listenWait.pop();
+        sock.listenWait.pop_front();
     }
 }
 

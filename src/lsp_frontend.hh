@@ -10,7 +10,8 @@
 #include <click/config.h>
 #include <click/element.hh>
 #include <click/timer.hh>
-#include <vector>
+#include <click/vector.hh>
+#include <click/pair.hh>
 #include "lsp_packet.hh"
 CLICK_DECLS
 
@@ -26,9 +27,9 @@ class LspFrontend : public Element {
     // self ip
     uint32_t self;
     // portInfo[port] == other end ip
-    std::vector<uint32_t> portInfo;
+    Vector<uint32_t> portInfo;
     // stores all neighbour info, sends as sequence packet
-    std::vector<std::pair<uint32_t, uint32_t> > sequenceInfo;
+    Vector<Pair<uint32_t, uint32_t> > sequenceInfo;
 public:
     LspFrontend();
     const char *class_name() const { return "LspFrontend"; }

@@ -5,19 +5,20 @@
 #ifndef __CLICK_LSP_BACKEND
 #define __CLICK_LSP_BACKEND
 #include <click/config.h>
+#include <click/vector.hh>
+#include <click/pair.hh>
 #include "infra_async.hh"
-#include <vector>
 CLICK_DECLS
 
 class LspBackend : public InfraAsync {
     // connection table
     // id -> <src_ip, [dst_ip1, dst_ip2, ...]>
-    std::vector<std::pair<uint32_t, std::vector<uint32_t> > > conn;
+    Vector<Pair<uint32_t, Vector<uint32_t> > > conn;
     // distance in dijkstra
     // id -> <distance, first hop>
-    std::vector<std::pair<int, int> > dis;
+    Vector<Pair<int, int> > dis;
     // visit array in dijkstra
-    std::vector<bool> vis;
+    Vector<bool> vis;
     // self ip
     uint32_t self;
 protected:

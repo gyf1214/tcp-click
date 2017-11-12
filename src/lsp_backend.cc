@@ -4,7 +4,7 @@
 #include "infra_log.hh"
 #include <click/args.hh>
 #include <click/error.hh>
-using namespace std;
+#include <click/algorithm.hh>
 CLICK_DECLS
 
 // infi distance == default ttl;
@@ -34,7 +34,10 @@ void LspBackend::do_work(int, Packet *p) {
     bool tf = false;
     for (int i = 0; i < n; ++i) {
         if (conn[i].first == ip->src) {
-            conn[i].second.assign(seq->entry, seq->entry + seq->count);
+            conn[i].second.resize(seq->count);
+            for (int j = 0; j < seq->count; ++j) {
+                conn[i].second[j] = seq->entry[j];
+            }
             tf = true;
             break;
         }
@@ -42,8 +45,11 @@ void LspBackend::do_work(int, Packet *p) {
 
     // insert if unknown ip
     if (!tf) {
-        conn.push_back(make_pair(ip->src,
-        vector<uint32_t>(seq->entry, seq->entry + seq->count)));
+        conn.push_back(make_pair(ip->src, Vector<uint32_t>()));
+        conn[n].second.resize(seq->count);
+        for (int j = 0; j < seq->count; ++j) {
+            conn[n].second[j] = seq->entry[j];
+        }
     }
 
     p->kill();

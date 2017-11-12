@@ -8,13 +8,12 @@
 #define __CLICK_TCP_FRONTEND
 #include <click/config.h>
 #include <click/element.hh>
-#include <vector>
-#include <queue>
+#include <click/vector.hh>
 #include "tcp_socket.hh"
 CLICK_DECLS
 
 class TcpFrontend : public Element {
-    std::vector<TcpSocket> sockets;
+    Vector<TcpSocket> sockets;
     uint32_t self;
 public:
     const char *class_name() const { return "TcpFrontend"; }

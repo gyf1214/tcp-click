@@ -5,7 +5,6 @@
 #include <click/args.hh>
 #include <click/error.hh>
 #include <algorithm>
-using namespace std;
 CLICK_DECLS
 
 LspFrontend::LspFrontend() : state(Sleep), timer(this), sequence(0) {}
@@ -85,7 +84,9 @@ WritablePacket *LspFrontend::build_sequence() {
     lsp_q->init(LspSequence);
     seq_q->sequence = ++sequence;
     seq_q->count = n;
-    copy(portInfo.begin(), portInfo.end(), seq_q->entry);
+    for (int i = 0; i < n; ++i) {
+        seq_q->entry[i] = portInfo[i];
+    }
 
     return q;
 }

@@ -3,7 +3,7 @@
 #include <click/config.h>
 #include <click/packet.hh>
 #include <click/task.hh>
-#include <queue>
+#include <click/deque.hh>
 CLICK_DECLS
 
 enum TcpSocketMethod {
@@ -25,8 +25,8 @@ struct TcpSocket {
     uint16_t src_port;
     uint16_t dst_port;
     TcpState state;
-    std::queue<Packet *> listenWait;
-    std::queue<Packet *> acceptWait;
+    Deque<Packet *> listenWait;
+    Deque<Packet *> acceptWait;
     Packet *connectWait;
     Packet *closeWait;
 };

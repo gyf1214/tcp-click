@@ -4,11 +4,12 @@
 #include <click/config.h>
 #include <click/element.hh>
 #include <click/task.hh>
-#include <queue>
+#include <click/deque.hh>
+#include <click/pair.hh>
 CLICK_DECLS
 
 class InfraAsync : public Element {
-    std::queue<std::pair<int, Packet *> > que;
+    Deque<Pair<int, Packet *> > que;
     Task task;
 protected:
     virtual void do_work(int, Packet *) = 0;

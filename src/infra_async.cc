@@ -1,6 +1,5 @@
 #include "infra_async.hh"
 #include <click/standard/scheduleinfo.hh>
-using namespace std;
 CLICK_DECLS
 
 InfraAsync::InfraAsync() : task(this) {}
@@ -14,13 +13,13 @@ void InfraAsync::push(int port, Packet *p) {
     if (!task.scheduled()) {
         task.reschedule();
     }
-    que.push(make_pair(port, p));
+    que.push_back(make_pair(port, p));
 }
 
 bool InfraAsync::run_task(Task *) {
     if (que.empty()) return false;
-    pair<int, Packet *> p = que.front();
-    que.pop();
+    Pair<int, Packet *> p = que.front();
+    que.pop_front();
     do_work(p.first, p.second);
     if (!que.empty()) task.fast_reschedule();
     return true;

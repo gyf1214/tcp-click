@@ -127,6 +127,8 @@ void SimpleSocket::push(int port, Packet *p) {
             exec(Packet::make(0), sock, Close);
         } else if (cmd == "listen") {
             exec(Packet::make(0), sock, Listen);
+        } else if (cmd == "accept") {
+            exec(Packet::make(0), sock, Accept);
         } else {
             send_info("unknown command");
         }

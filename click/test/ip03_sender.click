@@ -26,3 +26,4 @@ sender3 -> [1] router2
 sender4 -> [1] router3
 sender5 -> [1] router4
 sender6 -> [1] router6
+Idle()  -> [1] router5

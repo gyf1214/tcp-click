@@ -10,6 +10,12 @@ enum AnnoType {
     RecvIp = 8,
     SendProto = 12,
     RecvProto = 13,
+    SocketMethod = 14,
+    SocketId = 15,
+    SocketSequence = 16,
+    SrcPort = 20,
+    DstPort = 22,
+    SocketParentId = 24,
 };
 
 const int AnnoAnyPort = -1;

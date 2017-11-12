@@ -295,7 +295,7 @@ void TcpFrontend::push_tcp(Packet *p) {
     Log("tcp %08x:%d -> :%d, flag %04x", ip, dport, sport, flag);
 
     int i = find_socket(ip, sport, dport);
-    if (i < 0) {
+    if (i < 0 || sockets[i].state == Closed) {
         i = find_bind_socket(sport);
     }
     if (i < 0) {

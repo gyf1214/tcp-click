@@ -12,8 +12,9 @@ protected:
     uint32_t sequence;
     void send_info(const char *);
     void send_info(const String &);
-    void socket(uint16_t port);
-    void connect(uint32_t ip, uint32_t port);
+    void exec(Packet *, uint8_t);
+    void socket(uint16_t);
+    void connect(uint32_t, uint16_t);
 public:
     SimpleSocket();
     const char *class_name() const { return "SimpleSocket"; }

@@ -29,12 +29,23 @@ int SimpleSocket::initialize(ErrorHandler *errh) {
     return 0;
 }
 
-void SimpleSocket::socket(uint16_t port) {
-    Packet *p = Packet::make(0);
+void SimpleSocket::exec(Packet *p, uint8_t method) {
     p->set_anno_u8(SocketMethod, New);
-    p->set_anno_u16(SrcPort, port);
     p->set_anno_u32(SocketSequence, ++sequence);
     output(0).push(p);
+}
+
+void SimpleSocket::socket(uint16_t port) {
+    Packet *p = Packet::make(0);
+    p->set_anno_u16(SrcPort, port);
+    exec(p, New);
+}
+
+void SimpleSocket::connect(uint32_t ip, uint16_t port) {
+    Packet *p = Packet::make(0);
+    p->set_anno_u32(SendIp, ip);
+    p->set_anno_u16(SrcPort, port);
+    exec(p, Connect);
 }
 
 void SimpleSocket::send_info(const char *str) {
@@ -61,6 +72,8 @@ void SimpleSocket::push_return(Packet *p) {
     case New:
         sa << "socket " << (int)p->anno_u8(SocketId) << "\n";
         break;
+    default:
+        sa << "returns\n";
     }
     p->kill();
     send_info(sa.take_string());

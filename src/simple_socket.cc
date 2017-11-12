@@ -46,7 +46,6 @@ void SimpleSocket::send_info(const char *str) {
 void SimpleSocket::push(int port, Packet *p) {
     String str(p->data(), p->length());
     String cmd = cp_shift_spacevec(str);
-    Log("%s", cmd.data());
     if (cmd == "socket") {
         int port;
         if (!cp_integer(cp_shift_spacevec(str), &port)) {

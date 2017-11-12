@@ -56,15 +56,17 @@ void SimpleSocket::connect(uint8_t id, uint32_t ip, uint16_t port) {
 
 void SimpleSocket::send_info(const char *str) {
     int n = strlen(str);
-    WritablePacket *p = Packet::make(n);
+    WritablePacket *p = Packet::make(n + 1);
     memcpy(p->data(), str, n);
+    p->data()[n] = '\n';
     output(1).push(p);
 }
 
 void SimpleSocket::send_info(const String &str) {
     int n = str.length();
-    WritablePacket *p = Packet::make(n);
+    WritablePacket *p = Packet::make(n + 1);
     memcpy(p->data(), str.data(), n);
+    p->data()[n] = '\n';
     output(1).push(p);
 }
 
@@ -73,13 +75,13 @@ void SimpleSocket::push_return(Packet *p) {
     sa << p->anno_u32(SocketSequence) << " | ";
     switch (p->anno_u8(SocketMethod)) {
     case Error:
-        sa << "error\n";
+        sa << "error";
         break;
     case New:
-        sa << "socket " << (int)p->anno_u8(SocketId) << "\n";
+        sa << "socket " << (int)p->anno_u8(SocketId) << "";
         break;
     default:
-        sa << "returns\n";
+        sa << "returns";
     }
     p->kill();
     send_info(sa.take_string());

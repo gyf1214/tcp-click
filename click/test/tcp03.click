@@ -12,6 +12,7 @@ elementclass RouterCore { IP $ip |
     ipfront [1] -> lspfront -> output
     lspfront [1] -> lspback -> [1] ipfront
     ipfront [2] -> tcpfront -> [2] ipfront
+    tcpfront [2] -> Print(backend, -1) -> Discard()
 }
 
 front1, front2, front3, front4, front5, front6  :: InfraFrontend()

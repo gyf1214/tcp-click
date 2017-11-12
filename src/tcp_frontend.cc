@@ -80,6 +80,7 @@ void TcpFrontend::send_short(TcpSocket &sock, uint16_t flags) {
 
 void TcpFrontend::create_accept(TcpSocket &sock, uint32_t ip, uint16_t port) {
     int id = find_empty_socket();
+    Log("%d", id);
     TcpSocket &sock2 = sockets[id];
     sock2.dst_ip = ip;
     sock2.dst_port = port;

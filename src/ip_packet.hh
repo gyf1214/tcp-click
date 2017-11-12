@@ -10,7 +10,7 @@ struct IpHeader {
     uint16_t magic;
     uint16_t length;
     // fragment is not implemented, set all to zero
-    uint16_t zero;
+    uint32_t zero;
     uint8_t ttl;
     uint8_t protocol;
     uint16_t checksum;

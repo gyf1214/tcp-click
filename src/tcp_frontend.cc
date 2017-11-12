@@ -31,10 +31,10 @@ int TcpFrontend::find_socket(uint32_t ip, uint16_t src_port, uint16_t dst_port) 
     return -1;
 }
 
-int TcpFrontend::find_bind_socket(uint16_t ip, bool listen) {
+int TcpFrontend::find_bind_socket(uint16_t port, bool listen) {
     int n = sockets.size();
     for (int i = 0; i < n; ++i) {
-        if (sockets[i].dst_ip == ip && (!listen || sockets[i].state == Listening)) {
+        if (sockets[i].src_port == port && (!listen || sockets[i].state == Listening)) {
             return i;
         }
     }

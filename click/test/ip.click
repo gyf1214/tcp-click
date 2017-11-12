@@ -15,11 +15,11 @@ elementclass RouterCore { IP $ip |
 
 // sender sends ip packets
 sender1 :: {
-    RatedSource(DATA "hello1", RATE 1) -> IpSender(PROTO 6, IP 192.168.17.3) -> output
+    RatedSource(DATA "hello1", RATE 1) -> IpSender(PROTO 6, DST 192.168.17.3) -> output
 }
 
 sender2 :: {
-    RatedSource(DATA "hello2", RATE 1) -> IpSender(PROTO 6, IP 192.168.17.1) -> output
+    RatedSource(DATA "hello2", RATE 1) -> IpSender(PROTO 6, DST 192.168.17.1) -> output
 }
 
 // 3 routers

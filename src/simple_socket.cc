@@ -4,6 +4,8 @@
 #include <click/args.hh>
 #include <click/error.hh>
 #include <click/standard/scheduleinfo.hh>
+#include <click/confparse.hh>
+#include <cstring>
 CLICK_DECLS
 
 SimpleSocket::SimpleSocket() : task(this), sequence(0) {}
@@ -23,6 +25,7 @@ int SimpleSocket::configure(Vector<String> &conf, ErrorHandler *errh) {
 
 int SimpleSocket::initialize(ErrorHandler *errh) {
     ScheduleInfo::initialize_task(this, &task, true, errh);
+    signal = Notifier::upstream_empty_signal(this, 1, &task);
     return 0;
 }
 
@@ -34,13 +37,32 @@ void SimpleSocket::socket(uint16_t port) {
     output(0).push(p);
 }
 
+void SimpleSocket::send_info(const char *str) {
+    int n = strlen(str);
+    WritablePacket *p = Packet::make(n);
+    memcpy(p->data(), str, n);
+    output(1).push(p);
+}
+
 bool SimpleSocket::run_task(Task *) {
+    Packet *p = input(1).pull();
+    if (!p) return false;
+
+    String str(p->data(), p->length());
+    String cmd = cp_shift_spacevec(str);
+    if (cmd == "socket") {
+        int port;
+        if (!cp_integer(cp_shift_spacevec(str), &port)) {
+            send_info("port number error");
+        } else {
+            socket(port);
+        }
+    }
+
     return true;
 }
 
 void SimpleSocket::push(int, Packet *p) {
-    ++sequence;
-    last_ret = p;
     task.reschedule();
 }
 

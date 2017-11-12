@@ -8,8 +8,6 @@ CLICK_DECLS
 
 class SimpleSocket : public Element {
 protected:
-    NotifierSignal signal;
-    Task task;
     uint32_t self;
     uint32_t sequence;
     void send_info(const char *);
@@ -19,7 +17,7 @@ public:
     SimpleSocket();
     const char *class_name() const { return "SimpleSocket"; }
     const char *port_count() const { return "2/2"; }
-    const char *processing() const { return "hl/h"; }
+    const char *processing() const { return PUSH; }
     int configure(Vector<String> &, ErrorHandler *);
     int initialize(ErrorHandler *);
     bool run_task(Task *);

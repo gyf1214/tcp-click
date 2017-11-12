@@ -9,7 +9,7 @@
 #include <cstring>
 CLICK_DECLS
 
-SimpleSocket::SimpleSocket() : task(this), sequence(0) {}
+SimpleSocket::SimpleSocket() : sequence(0) {}
 
 int SimpleSocket::configure(Vector<String> &conf, ErrorHandler *errh) {
     String ip_str;
@@ -25,8 +25,6 @@ int SimpleSocket::configure(Vector<String> &conf, ErrorHandler *errh) {
 }
 
 int SimpleSocket::initialize(ErrorHandler *errh) {
-    ScheduleInfo::initialize_task(this, &task, true, errh);
-    signal = Notifier::upstream_empty_signal(this, 1, &task);
     return 0;
 }
 
@@ -45,10 +43,7 @@ void SimpleSocket::send_info(const char *str) {
     output(1).push(p);
 }
 
-bool SimpleSocket::run_task(Task *) {
-    Packet *p = input(1).pull();
-    if (!p) return false;
-
+void SimpleSocket::push(int, Packet *p) {
     String str(p->data(), p->length());
     String cmd = cp_shift_spacevec(str);
     Log("%s", cmd.data());
@@ -60,12 +55,6 @@ bool SimpleSocket::run_task(Task *) {
             socket(port);
         }
     }
-
-    return true;
-}
-
-void SimpleSocket::push(int, Packet *p) {
-    task.reschedule();
 }
 
 CLICK_ENDDECLS

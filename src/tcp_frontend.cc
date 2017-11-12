@@ -78,16 +78,11 @@ void TcpFrontend::send_short(int i, uint16_t flags) {
 }
 
 void TcpFrontend::create_accept(int i, uint32_t ip, uint16_t port) {
-    Log("%d", sockets[i].src_port);
-    int id = find_empty_socket();
-    Log("%d", sockets[i].src_port);
-    sockets[id].dst_ip = ip;
-    sockets[id].dst_port = port;
-    Log("%d", sockets[id].src_port);
-    sockets[id].src_port = sockets[id].src_port;
-    Log("%d", sockets[id].src_port);
-    sockets[id].state = Syn_Rcvd;
-    Log("%d", sockets[id].src_port);
+    int i0 = find_empty_socket();
+    sockets[i0].dst_ip = ip;
+    sockets[i0].dst_port = port;
+    sockets[i0].src_port = sockets[i].src_port;
+    sockets[i0].state = Syn_Rcvd;
 }
 
 void TcpFrontend::queue_accept(int i, Packet *p) {
@@ -102,10 +97,10 @@ void TcpFrontend::queue_accept(int i, Packet *p) {
     }
 }
 
-void TcpFrontend::queue_listen(uint8_t id0, uint8_t id) {
+void TcpFrontend::queue_listen(uint8_t id0, uint8_t i) {
     Packet *q = Packet::make(0);
     q->set_anno_u8(SocketMethod, Return);
-    q->set_anno_u8(SocketId, id);
+    q->set_anno_u8(SocketId, i);
     q->set_anno_u8(SocketParentId, id0);
 
     if (sockets[id0].acceptWait.empty()) {
@@ -137,8 +132,8 @@ void TcpFrontend::free_wait(int i) {
     while (!sockets[i].listenWait.empty()) {
         // free sockets for accept
         Packet *p = sockets[i].listenWait.front();
-        int id = p->anno_u8(SocketId);
-        sockets[id].state = Nil;
+        int i0 = p->anno_u8(SocketId);
+        sockets[i0].state = Nil;
         p->kill();
         sockets[i].listenWait.pop_front();
     }

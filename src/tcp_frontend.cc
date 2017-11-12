@@ -185,7 +185,7 @@ void TcpFrontend::push_socket(Packet *p) {
     TcpSocket &sock = sockets[id];
     // FSM switch
     switch (method) {
-    case Listening:
+    case Listen:
         if (sock.state != Closed) {
             Warn("listen called on open socket");
             send_return(p, true);

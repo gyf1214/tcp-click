@@ -6,8 +6,8 @@ CLICK_DECLS
 enum AnnoType {
     FromInterface = 0,
     ToInterface = 2,
-    SendIp = 4,
-    SendProto = 8,
+    SendProto = 4,
+    SendIp = 5,
 };
 
 const int AnnoAnyPort = -1;

@@ -8,8 +8,8 @@ enum AnnoType {
     ToInterface = 2,
     SendIp = 4,
     RecvIp = 8,
-    SendProto = 9,
-    RecvProto = 10,
+    SendProto = 12,
+    RecvProto = 13,
 };
 
 const int AnnoAnyPort = -1;

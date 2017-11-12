@@ -58,7 +58,7 @@ int TcpFrontend::find_empty_socket() {
 
 void TcpFrontend::send_return(Packet *p, bool err) {
     WritablePacket *q = Packet::make(0);
-    q->set_anno_u8(SocketMethod, err ? Error : Return);
+    q->set_anno_u8(SocketMethod, err ? Error : p->anno_u8(SocketMethod));
     q->set_anno_u8(SocketId, p->anno_u8(SocketId));
     q->set_anno_u32(SocketSequence, p->anno_u32(SocketSequence));
     p->kill();

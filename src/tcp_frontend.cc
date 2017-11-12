@@ -135,6 +135,7 @@ void TcpFrontend::free_wait(int i) {
         // free sockets for accept
         Packet *p = sockets[i].listenWait.front();
         int i0 = p->anno_u8(SocketId);
+        reset_socket(i0);
         sockets[i0].state = Nil;
         p->kill();
         sockets[i].listenWait.pop_front();

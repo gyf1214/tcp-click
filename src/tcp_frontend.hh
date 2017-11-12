@@ -49,6 +49,8 @@ public:
     void back_establish(uint8_t);
     // reset socket
     void reset_socket(uint8_t, bool = true);
+    // debug
+    void print_sockets();
 };
 
 CLICK_ENDDECLS

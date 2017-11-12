@@ -24,7 +24,8 @@ int TcpFrontend::find_socket(uint32_t ip, uint16_t src_port, uint16_t dst_port) 
     int n = sockets.size();
     for (int i = 0; i < n; ++i) {
         if (sockets[i].dst_ip == ip && sockets[i].src_port == src_port
-        && sockets[i].dst_port == dst_port && sockets[i].state != Nil) {
+        && sockets[i].dst_port == dst_port && sockets[i].state != Nil
+        && sockets[i].state != Closed) {
             return i;
         }
     }
@@ -295,7 +296,7 @@ void TcpFrontend::push_tcp(Packet *p) {
     Log("tcp %08x:%d -> :%d, flag %04x", ip, dport, sport, flag);
 
     int i = find_socket(ip, sport, dport);
-    if (i < 0 || sockets[i].state == Closed) {
+    if (i < 0) {
         i = find_bind_socket(sport);
     }
     if (i < 0) {
@@ -308,15 +309,6 @@ void TcpFrontend::push_tcp(Packet *p) {
     }
 
     Log("received socket %d", i);
-
-    if (sockets[i].state == Closed) {
-        if (!(flag & Rst)) {
-            Warn("received on closed");
-            send_short(i, Rst);
-        }
-        p->kill();
-        return;
-    }
 
     // FSM
     if (flag & Rst) {
@@ -448,6 +440,15 @@ void TcpFrontend::push(int port, Packet *p) {
         }
     } else {
         push_socket(p);
+    }
+    print_sockets();
+}
+
+void TcpFrontend::print_sockets() {
+    int n = sockets.size();
+    for (int i = 0; i < n; ++i) {
+        Log("socket %d | %08x:%d -> %d | %d", i, sockets[i].dst_ip,
+        sockets[i].dst_port, sockets[i].src_port, sockets[i].state);
     }
 }
 

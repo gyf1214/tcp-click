@@ -27,7 +27,6 @@ sender6 :: {
 sender1          -> [1] router1
 sender3          -> [1] router2
 sender2, sender4 -> [1] router3
-
 sender5          -> [1] router4
 Idle()           -> [1] router5
 sender6          -> [1] router6

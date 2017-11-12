@@ -10,7 +10,7 @@ elementclass RouterCore { IP $ip |
     input [1] -> [2] ipfront
     ipfront [1] -> lspfront -> output
     lspfront [1] -> lspback -> [1] ipfront
-    ipfront [2] -> Print(self, -1) -> Discard()
+    ipfront [2] -> Print(self, -1, PRINTANNO true) -> Discard()
 }
 
 // sender sends ip packets

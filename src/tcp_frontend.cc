@@ -185,7 +185,7 @@ void TcpFrontend::push_socket(Packet *p) {
     TcpSocket &sock = sockets[id];
     // FSM switch
     switch (method) {
-    case Listen:
+    case Listening:
         if (sock.state != Closed) {
             Warn("listen called on open socket");
             send_return(p, true);
@@ -352,7 +352,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             Log("data");
             output(2).push(p);
             break;
-        case Listen:
+        case Listening:
             Log("syn to accept");
             create_accept(sock, ip, dport);
             p->kill();

@@ -29,6 +29,7 @@ const uint8_t IpTTL = 64;
 // broadcast address
 const uint32_t IpAny = -1;
 
+const uint8_t IpProtoTcp = 6;
 const uint8_t IpProtoLsp = 61;
 
 const size_t IpSize = sizeof(IpHeader);

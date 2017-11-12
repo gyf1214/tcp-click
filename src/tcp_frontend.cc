@@ -2,6 +2,7 @@
 #include "infra_anno.hh"
 #include "infra_log.hh"
 #include "tcp_packet.hh"
+#include "ip_packet.hh"
 CLICK_DECLS
 
 int TcpFrontend::find_socket(uint32_t ip, uint16_t src_port, uint16_t dst_port) {
@@ -54,6 +55,7 @@ void TcpFrontend::send_short(uint32_t ip, uint16_t sport, uint16_t dport, uint16
     TcpHeader *tcp_q = (TcpHeader *)q->data();
     tcp_q->init(sport, dport, flags);
     q->set_anno_u32(SendIp, ip);
+    q->set_anno_u8(SendProto, IpProtoTcp);
     output(0).push(q);
 }
 
@@ -137,7 +139,8 @@ void TcpFrontend::reset_socket(uint8_t id, bool rst) {
     back_close(id);
 }
 
-void TcpFrontend::push_socket(uint8_t method, Packet *p) {
+void TcpFrontend::push_socket(Packet *p) {
+    uint8_t method = p->anno_u8(SocketMethod);
     if (method == New) {
         uint16_t port = p->anno_u16(SrcPort);
         if (find_bind_socket(port, false) >= 0) {
@@ -418,6 +421,37 @@ void TcpFrontend::push_tcp(Packet *p) {
             p->kill();
         }
     }
+}
+
+void TcpFrontend::push(int port, Packet *p) {
+    if (!port) {
+        if (p->anno_u8(RecvProto) != IpProtoTcp) {
+            Warn("unknown packet");
+            p->kill();
+        } else {
+            push_tcp(p);
+        }
+    } else {
+        push_socket(p);
+    }
+}
+
+void TcpFrontend::back_close(uint8_t id) {
+    Packet *q = Packet::make(0);
+    q->set_anno_u8(SocketMethod, Close);
+    q->set_anno_u8(SocketId, id);
+    output(1).push(q);
+}
+
+void TcpFrontend::back_establish(uint8_t id) {
+    TcpSocket &sock = sockets[id];
+    Packet *q = Packet::make(0);
+    q->set_anno_u8(SocketMethod, Connect);
+    q->set_anno_u8(SocketId, id);
+    q->set_anno_u32(RecvIp, sock.dst_ip);
+    q->set_anno_u16(SrcPort, sock.src_port);
+    q->set_anno_u16(DstPort, sock.dst_port);
+    output(1).push(q);
 }
 
 CLICK_ENDDECLS

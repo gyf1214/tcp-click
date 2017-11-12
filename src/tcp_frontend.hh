@@ -39,7 +39,7 @@ public:
     // send back socket response
     void send_return(Packet *p, bool);
     // handle socket request
-    void push_socket(uint8_t, Packet *);
+    void push_socket(Packet *);
     // handle tcp packet
     void push_tcp(Packet *);
     void push(int, Packet *);

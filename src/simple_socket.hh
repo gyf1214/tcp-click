@@ -20,7 +20,6 @@ public:
     const char *processing() const { return PUSH; }
     int configure(Vector<String> &, ErrorHandler *);
     int initialize(ErrorHandler *);
-    bool run_task(Task *);
     void push(int, Packet *);
 };
 

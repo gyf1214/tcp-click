@@ -18,8 +18,8 @@ struct IpHeader {
     uint32_t dst;
     char data[0];
 
-    void Init(uint16_t, uint8_t, uint32_t, uint32_t, uint8_t);
-    void Checksum();
+    void init(uint16_t, uint8_t, uint32_t, uint32_t, uint8_t);
+    void calc_checksum();
 };
 
 // version 4, ihl 5, tos 0
@@ -33,7 +33,7 @@ const uint8_t IpProtoLsp = 61;
 
 const size_t IpSize = sizeof(IpHeader);
 
-inline void IpHeader::Init(uint16_t len, uint8_t proto,
+inline void IpHeader::init(uint16_t len, uint8_t proto,
 uint32_t s, uint32_t d, uint8_t t = IpTTL) {
     magic = IpMagic;
     length = htons(len);
@@ -42,10 +42,10 @@ uint32_t s, uint32_t d, uint8_t t = IpTTL) {
     protocol = proto;
     src = s;
     dst = d;
-    Checksum();
+    calc_checksum();
 }
 
-inline void IpHeader::Checksum() {
+inline void IpHeader::calc_checksum() {
     checksum = 0;
     checksum = click_in_cksum((unsigned char *)this, IpSize);
 }

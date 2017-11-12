@@ -1,6 +1,7 @@
 #include "tcp_frontend.hh"
 #include "infra_anno.hh"
 #include "infra_log.hh"
+#include "tcp_packet.hh"
 CLICK_DECLS
 
 int TcpFrontend::find_socket(uint32_t ip, uint16_t src_port, uint16_t dst_port) {
@@ -8,6 +9,16 @@ int TcpFrontend::find_socket(uint32_t ip, uint16_t src_port, uint16_t dst_port) 
     for (int i = 0; i < n; ++i) {
         if (sockets[i].dst_ip == ip && sockets[i].src_port == src_port
         && sockets[i].dst_port == dst_port && sockets[i].state != Nil) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int TcpFrontend::find_bind_socket(uint16_t ip, bool listen) {
+    int n = sockets.size();
+    for (int i = 0; i < n; ++i) {
+        if (sockets[i].dst_ip == ip && (!listen || sockets[i].state == Listening)) {
             return i;
         }
     }
@@ -22,19 +33,124 @@ int TcpFrontend::find_empty_socket() {
         }
     }
     TcpSocket s;
+    s.connectWait = NULL;
+    s.closeWait = NULL;
     s.state = Nil;
     sockets.push_back(s);
     return n;
 }
 
+void TcpFrontend::send_return(Packet *p, bool err) {
+    WritablePacket *q = Packet::make(0);
+    q->set_anno_u8(SocketMethod, err ? Error : Return);
+    q->set_anno_u8(SocketId, p->anno_u8(SocketId));
+    q->set_anno_u32(SocketSequence, p->anno_u32(SocketSequence));
+    p->kill();
+    output(1).push(q);
+}
+
+void TcpFrontend::send_short(uint32_t ip, uint16_t sport, uint16_t dport, uint16_t flags) {
+    WritablePacket *q = Packet::make(TcpSize);
+    TcpHeader *tcp_q = (TcpHeader *)q->data();
+    tcp_q->init(sport, dport, flags);
+    q->set_anno_u32(SendIp, ip);
+    output(0).push(q);
+}
+
+void TcpFrontend::send_short(TcpSocket &sock, uint16_t flags) {
+    send_short(sock.dst_ip, sock.src_port, sock.dst_port, flags);
+}
+
+void TcpFrontend::create_accept(TcpSocket &sock, uint32_t ip, uint16_t port) {
+    int id = find_empty_socket();
+    TcpSocket &sock2 = sockets[id];
+    sock2.dst_ip = ip;
+    sock2.dst_port = port;
+    sock2.src_port = sock.src_port;
+    sock2.state = Syn_Rcvd;
+}
+
+void TcpFrontend::queue_accept(TcpSocket &sock, Packet *p) {
+    if (sock.listenWait.empty()) {
+        sock.acceptWait.push(p);
+    } else {
+        Packet *q = sock.listenWait.front();
+        sock.listenWait.pop();
+        q->set_anno_u32(SocketSequence, p->anno_u32(SocketSequence));
+        output(1).push(q);
+        p->kill();
+    }
+}
+
+void TcpFrontend::queue_listen(uint8_t id0, uint8_t id) {
+    Packet *q = Packet::make(0);
+    q->set_anno_u8(SocketMethod, Return);
+    q->set_anno_u8(SocketId, id);
+    q->set_anno_u8(SocketParentId, id0);
+    TcpSocket &sock = sockets[id0];
+
+    if (sock.acceptWait.empty()) {
+        sock.listenWait.push(q);
+    } else {
+        Packet *p = sock.acceptWait.front();
+        sock.acceptWait.pop();
+        q->set_anno_u32(SocketSequence, p->anno_u32(SocketSequence));
+        output(1).push(q);
+        p->kill();
+    }
+}
+
+void TcpFrontend::free_wait(TcpSocket &sock) {
+    if (sock.connectWait) {
+        send_return(sock.connectWait, true);
+        sock.connectWait = NULL;
+    }
+    if (sock.closeWait) {
+        send_return(sock.closeWait, true);
+        sock.closeWait = NULL;
+    }
+    while (!sock.acceptWait.empty()) {
+        // free waiting accept requests
+        // respond error
+        send_return(sock.acceptWait.front(), true);
+        sock.acceptWait.pop();
+    }
+    while (!sock.listenWait.empty()) {
+        // free sockets for accept
+        Packet *p = sock.listenWait.front();
+        int id = p->anno_u8(SocketId);
+        TcpSocket &sock2 = sockets[id];
+        sock2.state = Nil;
+        p->kill();
+        sock.listenWait.pop();
+    }
+}
+
+void TcpFrontend::reset_socket(uint8_t id, bool rst) {
+    TcpSocket &sock = sockets[id];
+    if (rst) {
+        send_short(sock, Rst);
+    }
+    if (sock.state == Listening || sock.state == Closed) return;
+    sock.state = Closed;
+    free_wait(sock);
+    back_close(id);
+}
+
 void TcpFrontend::push_socket(uint8_t method, Packet *p) {
     if (method == New) {
-        int id = find_empty_socket();
-        sockets[id].state = Closed;
-        p->set_anno_u8(SocketId, id);
-        p->set_anno_u8(SocketMethod, Return);
-        Log("new socket %d", id);
-        output(1).push(p);
+        uint16_t port = p->anno_u16(SrcPort);
+        if (find_bind_socket(port, false) >= 0) {
+            Warn(":%d in use", port);
+            send_return(p, true);
+        } else {
+            int id = find_empty_socket();
+            sockets[id].state = Closed;
+            sockets[id].src_port = port;
+            p->set_anno_u8(SocketId, id);
+            Log("new socket %d:%d", id, port);
+            send_return(p, false);
+        }
         return;
     }
 
@@ -46,33 +162,263 @@ void TcpFrontend::push_socket(uint8_t method, Packet *p) {
         return;
     }
 
-    Log("socket %d", id);
-    switch ((TcpSocketMethod)method) {
-    case Bind:
-        if (sockets[id].state != Closed) {
-            p->set_anno_u8(SocketMethod, Error);
-            Warn("bind called on open socket");
-            output(1).push(p);
-        } else {
-            sockets[id].src_port = p->anno_u16(SocketPort);
-            p->set_anno_u8(SocketMethod, Return);
-            Log("bind to %d", sockets[id].src_port);
-            output(1).push(p);
-        }
-        break;
+    Log("operate socket %d", id);
+    TcpSocket &sock = sockets[id];
+    // FSM switch
+    switch (method) {
     case Listen:
-        sockets[id].state = Listening;
-        p->set_anno_u8(SocketMethod, Return);
-        Log("listen");
-        output(1).push(p);
+        if (sock.state != Closed) {
+            Warn("listen called on open socket");
+            send_return(p, true);
+        } else {
+            sock.state = Listening;
+            Log("listen");
+            send_return(p, false);
+        }
         break;
     case Accept:
-        if (!sockets[id].listenWait.empty()) {
-
+        if (sock.state != Listening) {
+            Warn("accept called on non-listening socket");
+            send_return(p, true);
+        } else {
+            Log("accept");
+            queue_accept(sock, p);
         }
         break;
+    case Connect:
+        if (sock.state != Closed) {
+            Warn("listen called on open socket");
+            send_return(p, true);
+        } else {
+            sock.state = Syn_Sent;
+            sock.dst_ip = p->anno_u32(SendIp);
+            sock.dst_port = p->anno_u16(DstPort);
+            sock.connectWait = p;
+            Log("connect");
+            send_short(sock, Syn);
+        }
+        break;
+    case Send:
+        if (sock.state != Established) {
+            Warn("send called on non-open socket");
+            send_return(p, true);
+        } else {
+            Log("send %d", p->length());
+            output(2).push(p);
+        }
+        break;
+    case Recv:
+        if (sock.state != Established) {
+            Warn("send called on non-open socket");
+            send_return(p, true);
+        } else {
+            Log("recv %d", p->length());
+            output(2).push(p);
+        }
+        break;
+    case Close:
+        switch (sock.state) {
+        case Syn_Sent:
+        case Listening:
+            free_wait(sock);
+            sock.state = Closed;
+            Log("close");
+            send_return(p, false);
+            break;
+        case Established:
+            sock.state = Fin_Wait1;
+            sock.closeWait = p;
+            Log("close fin");
+            back_close(id);
+            send_short(sock, Fin);
+            break;
+        case Close_Wait:
+            sock.state = Last_Ack;
+            sock.closeWait = p;
+            Log("close wait");
+            back_close(id);
+            send_short(sock, Fin);
+            break;
+        case Closed:
+            Warn("duplicate close");
+            send_return(p, false);
+            break;
+        default:
+            Warn("close called on invalid state, reset");
+            reset_socket(id);
+            send_return(p, true);
+        }
+        break;
+    case Free:
+        if (sock.state != Closed) {
+            Warn("free called on open socket");
+            send_return(p, true);
+        } else {
+            sock.state = Nil;
+            Log("free");
+            send_return(p, false);
+        }
+        break;
+    default:
+        Warn("invalid method");
+        send_return(p, true);
+    }
+}
+
+void TcpFrontend::push_tcp(Packet *p) {
+    const TcpHeader *tcp_p = (const TcpHeader *)p->data();
+
+    if (!(tcp_p->flags & TcpMagic)) {
+        Warn("invalid tcp packet");
+        p->kill();
+        return;
+    }
+
+    // our's sport is their's dport, our's dport is their's sport
+    uint32_t ip = p->anno_u32(RecvIp);
+    uint16_t sport = ntohs(tcp_p->dst_port);
+    uint16_t dport = ntohs(tcp_p->src_port);
+    uint16_t flag = tcp_p->flags;
+    Log("tcp %08x:%d -> :%d, flag %04x", ip, dport, sport, flag);
+
+    int id = find_socket(ip, sport, dport);
+    if (id < 0) {
+        id = find_bind_socket(sport);
+    }
+    if (id < 0) {
+        Warn("no socket found");
+        send_short(ip, sport, dport, Rst);
+        p->kill();
+        return;
+    }
+
+    Log("received socket %d", id);
+    TcpSocket &sock = sockets[id];
+
+    if (sock.state == Closed) {
+        Warn("received on closed");
+        send_short(sock, Rst);
+        p->kill();
+        return;
+    }
+
+    // FSM
+    if (flag & Rst) {
+        // RST
+        Log("reset");
+        reset_socket(id, false);
+        p->kill();
+    } else if ((flag & Syn) && (flag & Ack)) {
+        // SYN ACK
+        if (sock.state == Syn_Sent) {
+            sock.state = Established;
+            Log("establish");
+            // inform backend
+            back_establish(id);
+            // respond previous connect call with success
+            send_return(sock.connectWait, false);
+            // send back ack
+            send_short(sock, Ack);
+            p->kill();
+        } else {
+            Warn("SYN ACK on invalid state");
+            reset_socket(id);
+            p->kill();
+        }
+    } else if (flag & Syn) {
+        // SYN
+        switch (sock.state) {
+        case Established:
+            // data packet
+            Log("data");
+            output(2).push(p);
+            break;
+        case Listen:
+            Log("syn to accept");
+            create_accept(sock, ip, dport);
+            p->kill();
+            break;
+        default:
+            Warn("SYN on invalid state");
+            reset_socket(id);
+            p->kill();
+        }
+    } else if ((flag & Fin) && (flag & Ack)) {
+        // FIN ACK
+        if (sock.state == Fin_Wait1) {
+            sock.state = Closed;
+            Log("FIN ACK on fin_wait1");
+            send_return(sock.closeWait, false);
+            sock.closeWait = NULL;
+        } else {
+            Warn("FIN ACK on invalid state");
+            reset_socket(id);
+        }
+        p->kill();
+    } else if (flag & Fin) {
+        // FIN
+        switch (sock.state) {
+        case Established:
+            sock.state = Close_Wait;
+            Log("fin close");
+            send_short(sock, Ack);
+            break;
+        case Fin_Wait1:
+            sock.state = Closing;
+            Log("FIN on fin_wait1");
+            send_short(sock, Ack);
+            break;
+        case Fin_Wait2:
+            sock.state = Closed;
+            Log("FIN on fin_wait2");
+            send_return(sock.closeWait, false);
+            sock.closeWait = NULL;
+            send_short(sock, Ack);
+            break;
+        default:
+            Warn("FIN on invalid state");
+            reset_socket(id);
+        }
+        p->kill();
+    } else if (flag & Ack) {
+        // ACK
+        uint8_t id0;
+        switch (sock.state) {
+        case Established:
+            Log("data ack");
+            output(2).push(p);
+            break;
+        case Syn_Rcvd:
+            id0 = find_bind_socket(sock.src_port);
+            if (id0 < 0) {
+                Warn("ACK to closed listen socket");
+                reset_socket(id);
+            } else {
+                sock.state = Established;
+                Log("establish");
+                queue_listen(id0, id);
+            }
+            p->kill();
+            break;
+        case Fin_Wait1:
+            sock.state = Fin_Wait2;
+            Log("ACK on fin_wait1");
+            p->kill();
+            break;
+        case Closing:
+            sock.state = Closed;
+            Log("ACK on closing");
+            send_return(sock.closeWait, false);
+            sock.closeWait = NULL;
+            p->kill();
+            break;
+        default:
+            Warn("Ack on invalid state");
+            reset_socket(id);
+            p->kill();
+        }
     }
 }
 
 CLICK_ENDDECLS
-// EXPORT_ELEMENT(TcpFrontend)
+EXPORT_ELEMENT(TcpFrontend)

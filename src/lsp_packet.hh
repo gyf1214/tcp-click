@@ -23,13 +23,13 @@ struct LspHeader {
     uint16_t type;
     LspSequenceData data[0];
 
-    void Init(LspType);
+    void init(LspType);
 };
 
 const size_t LspSizeShort = sizeof(LspHeader);
 const size_t LspSize = LspSizeShort + sizeof(LspSequenceData);
 
-inline void LspHeader::Init(LspType t) {
+inline void LspHeader::init(LspType t) {
     magic = LspMagic;
     type = t;
 }

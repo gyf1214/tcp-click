@@ -64,8 +64,8 @@ WritablePacket *LspFrontend::build_packet(LspType type, uint32_t dst, int port) 
     IpHeader *ip_q = (IpHeader *)q->data();
     LspHeader *lsp_q = (LspHeader *)ip_q->data;
 
-    ip_q->Init(size, IpProtoLsp, self, dst);
-    lsp_q->Init(type);
+    ip_q->init(size, IpProtoLsp, self, dst);
+    lsp_q->init(type);
     q->set_anno_s16(ToInterface, port);
 
     return q;

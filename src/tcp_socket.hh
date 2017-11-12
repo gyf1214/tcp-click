@@ -7,7 +7,7 @@
 CLICK_DECLS
 
 enum TcpSocketMethod {
-    Return, Data, New, Bind,
+    Return, Data, New, Free,
     Listen, Accept, Connect,
     Send, Recv, Close, Error,
 };
@@ -17,7 +17,7 @@ enum TcpState {
     Syn_Rcvd, Syn_Sent,
     Established,
     Fin_Wait1, Fin_Wait2, Closing,
-    Close_Wait,
+    Close_Wait, Last_Ack,
 };
 
 struct TcpSocket {
@@ -27,6 +27,8 @@ struct TcpSocket {
     TcpState state;
     std::queue<Packet *> listenWait;
     std::queue<Packet *> acceptWait;
+    Packet *connectWait;
+    Packet *closeWait;
 };
 
 CLICK_ENDDECLS

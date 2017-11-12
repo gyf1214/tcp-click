@@ -24,7 +24,7 @@ void IpFrontend::send(Packet *p) {
     // send packet from self
     WritablePacket *q = p->push(IpSize);
     IpHeader *ip_q = (IpHeader *)q->data();
-    ip_q->Init(q->length(), q->anno_u8(SendProto), self, q->anno_u32(SendIp));
+    ip_q->init(q->length(), q->anno_u8(SendProto), self, q->anno_u32(SendIp));
     route(q, ip_q->dst);
 }
 
@@ -49,7 +49,7 @@ void IpFrontend::push(int port, Packet *p) {
         q->kill();
         return;
     }
-    ip_q->Checksum();
+    ip_q->calc_checksum();
     Log("ip packet %08x -> %08x", ip_q->src, ip_q->dst);
     if (ip_q->protocol == IpProtoLsp) {
         // foward to lsp frontend

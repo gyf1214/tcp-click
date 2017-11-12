@@ -134,7 +134,7 @@ void SimpleSocket::push(int port, Packet *p) {
             exec(Packet::make(0), sock, Free);
         } else if (cmd == "send") {
             int i = 0;
-            for (; i < str.length() && str[i] != '\n'; ++i);
+            for (; i < str.length() && str[i] != '\n' && str[i] != '\r'; ++i);
             WritablePacket *p = Packet::make(i);
             memcpy(p->data(), str.data(), i);
             exec(p, sock, Send);

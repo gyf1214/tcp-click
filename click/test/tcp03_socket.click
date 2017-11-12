@@ -3,8 +3,7 @@ require(library tcp03.click)
 elementclass SClient { PORT $port |
     sock :: SimpleSocket(IP 192.168.17.1)
 
-    input -> Print(sockout, -1, PRINTANNO true) -> sock
-          -> Print(sockint, -1, PRINTANNO true) -> output
+    input -> sock -> output
     sock [1] -> Socket(TCP, 0.0.0.0, $port) -> [1] sock
 }
 

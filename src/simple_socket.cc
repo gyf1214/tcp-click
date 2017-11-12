@@ -78,6 +78,7 @@ void SimpleSocket::push_return(Packet *p) {
         sa << "error";
         break;
     case New:
+    case Accept:
         sa << (int)p->anno_u8(SocketId);
         break;
     default:
@@ -129,6 +130,8 @@ void SimpleSocket::push(int port, Packet *p) {
             exec(Packet::make(0), sock, Listen);
         } else if (cmd == "accept") {
             exec(Packet::make(0), sock, Accept);
+        } else if (cmd == "free") {
+            exec(Packet::make(0), sock, Free);
         } else {
             send_info("unknown command");
         }

@@ -6,7 +6,7 @@ CLICK_DECLS
 InfraAsync::InfraAsync() : task(this) {}
 
 int InfraAsync::initialize(ErrorHandler *errh) {
-    ScheduleInfo::initialize_task(this, &task, false, errh)
+    ScheduleInfo::initialize_task(this, &task, false, errh);
     return 0;
 }
 

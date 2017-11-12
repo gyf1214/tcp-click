@@ -79,6 +79,7 @@ void TcpFrontend::send_short(TcpSocket &sock, uint16_t flags) {
 }
 
 void TcpFrontend::create_accept(TcpSocket &sock, uint32_t ip, uint16_t port) {
+    Log("%d", sock.src_port);
     int id = find_empty_socket();
     Log("%d", sock.src_port);
     TcpSocket &sock2 = sockets[id];

@@ -80,12 +80,15 @@ void TcpFrontend::send_short(TcpSocket &sock, uint16_t flags) {
 
 void TcpFrontend::create_accept(TcpSocket &sock, uint32_t ip, uint16_t port) {
     int id = find_empty_socket();
-    Log("%d", id);
+    Log("%d", sock.src_port);
     TcpSocket &sock2 = sockets[id];
     sock2.dst_ip = ip;
     sock2.dst_port = port;
+    Log("%d", sock.src_port);
     sock2.src_port = sock.src_port;
+    Log("%d", sock.src_port);
     sock2.state = Syn_Rcvd;
+    Log("%d", sock.src_port);
 }
 
 void TcpFrontend::queue_accept(TcpSocket &sock, Packet *p) {

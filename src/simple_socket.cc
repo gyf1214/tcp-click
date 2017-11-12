@@ -59,7 +59,7 @@ void SimpleSocket::push_return(Packet *p) {
         sa << "error\n";
         break;
     case New:
-        sa << "socket " << p->anno_u8(SocketId) << "\n";
+        sa << "socket " << (int)p->anno_u8(SocketId) << "\n";
         break;
     }
     p->kill();

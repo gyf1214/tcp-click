@@ -355,6 +355,7 @@ void TcpFrontend::push_tcp(Packet *p) {
         case Listening:
             Log("syn to accept");
             create_accept(sock, ip, dport);
+            send_short(sock, Syn | Ack);
             p->kill();
             break;
         default:

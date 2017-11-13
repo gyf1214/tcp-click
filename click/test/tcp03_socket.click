@@ -9,7 +9,7 @@ elementclass SSimple {IP $ip, PORT $port |
 
 
 elementclass SServer { IP $ip, PORT $port |
-    sock :: SocketServer($ip, $port, 21, 5)
+    sock :: SocketServer($ip, $port, 210, 5)
     input -> sock -> output
 }
 

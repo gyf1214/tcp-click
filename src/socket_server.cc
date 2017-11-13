@@ -11,8 +11,8 @@ int SocketServer::configure(Vector<String> &args, ErrorHandler *errh) {
     if (cp_va_kparse(args, this, errh,
     "IP", cpkM + cpkP, cpIPAddress, &self,
     "PORT", cpkM + cpkP, cpUnsignedShort, &port,
-    "INTERVAL", cpkM + cpkP, cpTimestamp, &interval,
-    "TIMEOUT", cpkM + cpkP, cpTimestamp, &timeout, cpEnd) < 0) {
+    "LAST", cpkM + cpkP, cpTimestamp, &last_time,
+    "WAIT", cpkM + cpkP, cpTimestamp, &wait_time, cpEnd) < 0) {
         return -1;
     }
     return 0;
@@ -20,7 +20,7 @@ int SocketServer::configure(Vector<String> &args, ErrorHandler *errh) {
 
 int SocketServer::initialize(ErrorHandler *) {
     timer.initialize(this);
-    timer.schedule_now();
+    timer.schedule_after(wait_time);
     return 0;
 }
 
@@ -77,7 +77,7 @@ void SocketServer::push(int, Packet *p) {
         state = Accepted;
         id1 = p->anno_u8(SocketId);
         Log("%d <- accept %d", sequence, id1);
-        timer.reschedule_after(interval);
+        timer.reschedule_after(last_time);
     } else if (state == Accepted && method == Close) {
         state = AcceptClose;
         Log("%d <- close", sequence);

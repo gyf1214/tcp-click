@@ -14,7 +14,7 @@ int SocketSender::configure(Vector<String> &args, ErrorHandler *errh) {
     "SPORT", cpkM + cpkP, cpUnsignedShort, &sport,
     "DPORT", cpkM + cpkP, cpUnsignedShort, &dport,
     "INTERVAL", cpkM + cpkP, cpTimestamp, &interval,
-    "TIMEOUT", cpkM + cpkP, cpTimestamp, &timeout, cpEnd) < 0) {
+    "WAIT", cpkM + cpkP, cpTimestamp, &wait, cpEnd) < 0) {
         return -1;
     }
     return 0;
@@ -22,7 +22,7 @@ int SocketSender::configure(Vector<String> &args, ErrorHandler *errh) {
 
 int SocketSender::initialize(ErrorHandler *) {
     timer.initialize(this);
-    timer.schedule_after(interval);
+    timer.schedule_after(wait);
     return 0;
 }
 

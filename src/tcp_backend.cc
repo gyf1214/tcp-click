@@ -65,6 +65,7 @@ bool TcpBackend::try_grow_send(uint8_t i) {
     swnd.wnd.push_back(grow);
     // send
     output(0).push(q);
+    return true;
 }
 
 bool TcpBackend::try_buffer_send(uint8_t i, Packet *p) {
@@ -81,6 +82,7 @@ bool TcpBackend::try_buffer_send(uint8_t i, Packet *p) {
     // update pointer
     swnd.buf_back += p->length();
     return_send(p);
+    return true;
 }
 
 void TcpBackend::try_resolve_send(uint8_t i) {
@@ -134,7 +136,7 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
     p->kill();
 }
 
-void TcpBackend::push(int port, Packet *p) {
+void TcpBackend::push(int, Packet *p) {
     uint8_t i = p->anno_u8(SocketId);
 
     switch (p->anno_u8(SocketMethod)) {

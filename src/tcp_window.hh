@@ -35,7 +35,7 @@ inline void TcpSendWindow::init(Element *e, TimerCallback f) {
     wnd.clear();
     seq_front = seq_back = buf_back = 0;
     cwnd = TcpFixedCWnd;
-    rwnd = TcpBufferSize;
+    rwnd = TcpFixedCWnd * TcpSegmentSize;
     timer.assign(f, NULL);
     timer.initialize(e);
 }

@@ -69,6 +69,7 @@ void SocketSender::push(int, Packet *p) {
         Warn("old response");
     } else if (method == Error) {
         if (state == Writing) {
+            state = Closing;
             Log("%d <- error (close)", sequence);
             timer.schedule_now();
         } else {

@@ -148,9 +148,11 @@ void TcpBackend::push(int, Packet *p) {
         push_tcp(i, p);
         break;
     case Connect:
+        Log("establish tcb");
         build_link(i, p->anno_u32(RecvIp), p->anno_u16(SrcPort), p->anno_u16(DstPort));
         break;
     case Close:
+        Log("close tcb");
         clean_link(i);
         break;
     case Send:

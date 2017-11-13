@@ -78,6 +78,10 @@ void SocketServer::push(int, Packet *p) {
         id1 = p->anno_u8(SocketId);
         Log("%d <- accept %d", sequence, id1);
         timer.reschedule_after(interval);
+    } else if (state == Accepted && method == Close) {
+        state = AcceptClose;
+        Log("%d <- close", sequence);
+        timer.schedule_now();
     } else if (state == AcceptClose && method == Free) {
         state = Listened;
         Log("%d <- free", sequence);

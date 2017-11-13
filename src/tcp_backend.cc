@@ -154,8 +154,8 @@ void TcpBackend::push(int, Packet *p) {
         break;
     case Close:
         Log("close tcb");
-        p->kill();
         clean_link(i);
+        p->kill();
         break;
     case Send:
         if (!try_buffer_send(i, p)) {

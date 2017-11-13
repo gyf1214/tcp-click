@@ -32,7 +32,7 @@ void SocketSender::run_timer(Timer *) {
     case Nothing:
         q = SocketPacket(New, 0, ++sequence);
         q->set_anno_u16(SrcPort, sport);
-        Log("%d -> new %d", sequence, sport);
+        Log("%d -> new :%d", sequence, sport);
         break;
     case Start:
         q = SocketPacket(Connect, id, ++sequence);

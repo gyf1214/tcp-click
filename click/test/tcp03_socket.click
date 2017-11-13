@@ -8,13 +8,13 @@ elementclass SSimple {IP $ip, PORT $port |
 }
 
 elementclass SServer { IP $ip, PORT $port |
-    sock :: SocketServer(IP $ip, PORT $port, INTERVAL 30, TIMEOUT 5)
+    sock :: SocketServer(IP $ip, PORT $port, INTERVAL 15, TIMEOUT 5)
     input -> sock -> output
 }
 
 elementclass SClient { IP $ip, PORT $port, DST $dst, DPORT $dport |
     sock :: SocketSender(IP $ip, SPORT $port,
-        DST $dst, DPORT $dport, INTERVAL 20, TIMEOUT 5)
+        DST $dst, DPORT $dport, INTERVAL 10, TIMEOUT 5)
     input -> sock -> output
 }
 

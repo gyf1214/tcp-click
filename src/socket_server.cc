@@ -32,15 +32,15 @@ void SocketServer::run_timer(Timer *) {
         q->set_anno_u16(SrcPort, port);
         Log("%d -> new :%d", sequence, port);
         break;
-    case Closed:
+    case Start:
         q = SocketPacket(Listen, id, ++sequence);
         Log("%d -> listen", sequence);
         break;
-    case Listen:
+    case Listened:
         q = SocketPacket(Accept, id, ++sequence);
         Log("%d -> accept %d", sequence, id);
         break;
-    case Accept:
+    case Accepted:
         q = SocketPacket(Close, id1, ++sequence);
         Log("%d -> close %d", sequence, id1);
         break;
@@ -63,23 +63,23 @@ void SocketServer::push(int, Packet *p) {
         Warn("old response");
     } else if (method == Error) {
         Warn("%d <- error", sequence);
-        state = Error;
+        state = Err;
     } else if (state == Nothing && method == New) {
-        state = Closed;
+        state = Start;
         id = p->anno_u8(SocketId);
         Log("%d <- new %d", sequence, id);
         timer.schedule_now();
-    } else if (state == Closed && method == Listen) {
-        state = Listen;
+    } else if (state == Start && method == Listen) {
+        state = Listened;
         Log("%d <- listen", sequence);
         timer.schedule_now();
-    } else if (state == Listen && method == Accept) {
-        state = Accept;
+    } else if (state == Listened && method == Accept) {
+        state = Accepted;
         id1 = p->anno_u8(SocketId);
         Log("%d <- accept %d", sequence, id1);
         timer.reschedule_after(interval);
     } else if (state == AcceptClose && method == Free) {
-        state = Listen;
+        state = Listened;
         Log("%d <- free", sequence);
         timer.schedule_now();
     } else {

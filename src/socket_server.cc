@@ -20,6 +20,7 @@ int SocketServer::configure(Vector<String> &args, ErrorHandler *errh) {
 
 int SocketServer::initialize(ErrorHandler *) {
     timer.initialize(this);
+    timer.schedule_now();
     return 0;
 }
 

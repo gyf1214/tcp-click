@@ -22,7 +22,7 @@ int SocketSender::configure(Vector<String> &args, ErrorHandler *errh) {
 
 int SocketSender::initialize(ErrorHandler *) {
     timer.initialize(this);
-    timer.schedule_after(timeout);
+    timer.schedule_now();
     return 0;
 }
 
@@ -70,8 +70,12 @@ void SocketSender::push(int, Packet *p) {
     } else if (method == Error) {
         if (state == Writing) {
             state = Closing;
-            Log("%d <- error (close)", sequence);
+            Log("%d <- error (send)", sequence);
             timer.schedule_now();
+        } else if (state == Start) {
+            state = Start;
+            Log("%d <- error (conn)", sequence);
+            timer.reschedule_after(interval);
         } else {
             Warn("%d <- error", sequence);
             state = Err;

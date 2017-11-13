@@ -403,6 +403,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             } else {
                 sockets[i].state = Established;
                 Log("establish");
+                back_establish(i);
                 queue_listen(id0, i);
             }
             p->kill();

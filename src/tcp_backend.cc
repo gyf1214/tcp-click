@@ -150,9 +150,11 @@ void TcpBackend::push(int, Packet *p) {
     case Connect:
         Log("establish tcb");
         build_link(i, p->anno_u32(RecvIp), p->anno_u16(SrcPort), p->anno_u16(DstPort));
+        p->kill();
         break;
     case Close:
         Log("close tcb");
+        p->kill();
         clean_link(i);
         break;
     case Send:
@@ -162,9 +164,11 @@ void TcpBackend::push(int, Packet *p) {
         break;
     case Recv:
         // TODO
-        (void) 0;
+        p->kill();
+        break;
     default:
         Warn("unknown request");
+        p->kill();
     }
 }
 

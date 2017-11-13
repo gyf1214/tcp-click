@@ -22,7 +22,7 @@ int SocketSender::configure(Vector<String> &args, ErrorHandler *errh) {
 
 int SocketSender::initialize(ErrorHandler *) {
     timer.initialize(this);
-    timer.schedule_now();
+    timer.schedule_after(timeout);
     return 0;
 }
 
@@ -65,8 +65,8 @@ void SocketSender::push(int, Packet *p) {
     } else if (state == Nothing && method == New) {
         state = Start;
         id = p->anno_u8(SocketId);
-        Log("%d <- new :%d", sequence, id);
-        timer.reschedule_after(interval);
+        Log("%d <- new %d", sequence, id);
+        timer.schedule_now();
     } else if (state == Start && method == Connect) {
         state = Waiting;
         Log("%d <- connect", sequence);

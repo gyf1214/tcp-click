@@ -136,6 +136,10 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
     p->kill();
 }
 
+void TcpBackend::sending_timer(Timer *, void *) {
+    // TODO: implement timeout
+}
+
 void TcpBackend::push(int, Packet *p) {
     uint8_t i = p->anno_u8(SocketId);
 

@@ -21,10 +21,11 @@ elementclass SClient { IP $ip, PORT $port, DST $dst, DPORT $dport |
 socket1 :: SServer(IP 192.168.17.1, PORT 5678)
 socket2 :: SSimple(IP 192.168.17.2, PORT 8882)
 socket3 :: SClient(IP 192.168.17.3, PORT 8899, DST 192.168.17.1, DPORT 5678)
+socket4 :: SSimple(IP 192.168.17.4, PORT 8883)
 
 socket1 -> [1] router1 [1] -> socket1
 socket2 -> [1] router2 [1] -> socket2
 socket3 -> [1] router3 [1] -> socket3
-Idle()  -> [1] router4 [1] -> Idle()
+socket4 -> [1] router4 [1] -> socket4
 Idle()  -> [1] router5 [1] -> Idle()
 Idle()  -> [1] router6 [1] -> Idle()

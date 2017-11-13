@@ -18,10 +18,6 @@ int SimpleSocket::configure(Vector<String> &args, ErrorHandler *errh) {
     return 0;
 }
 
-int SimpleSocket::initialize(ErrorHandler *errh) {
-    return 0;
-}
-
 void SimpleSocket::exec(Packet *p, uint8_t method) {
     p->set_anno_u8(SocketMethod, method);
     p->set_anno_u32(SocketSequence, ++sequence);

@@ -13,7 +13,7 @@ elementclass SServer { IP $ip, PORT $port |
 }
 
 elementclass SClient { IP $ip, PORT $port, DST $dst, DPORT $dport |
-    sock :: SocketSender(IP $ip, PORT $port,
+    sock :: SocketSender(IP $ip, SPORT $port,
         DST $dst, DPORT $dport, INTERVAL 20, TIMEOUT 5)
     input -> sock -> output
 }

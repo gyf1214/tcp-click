@@ -57,7 +57,7 @@ bool TcpBackend::try_grow_send(uint8_t i) {
     TcpHeader *tcp_q = (TcpHeader *)q->data();
     // make packet
     q->set_anno_u8(SendProto, IpProtoTcp);
-    q->set_anno_u32(SendIp, IpProtoTcp);
+    q->set_anno_u32(SendIp, tcb[i].ip);
     tcp_q->syn(tcb[i].sport, tcb[i].dport, swnd.seq_back);
     tcp_from_wnd(tcp_q->data, swnd.buf, TcpBufferSize, swnd.seq_back, swnd.seq_back + grow);
     // update pointer
@@ -148,7 +148,7 @@ void TcpBackend::push(int, Packet *p) {
         push_tcp(i, p);
         break;
     case Connect:
-        Log("establish tcb");
+        Log("establish tcb");s
         build_link(i, p->anno_u32(RecvIp), p->anno_u16(SrcPort), p->anno_u16(DstPort));
         p->kill();
         break;

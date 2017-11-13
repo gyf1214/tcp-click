@@ -33,14 +33,14 @@ void SocketSender::run_timer(Timer *) {
         q->set_anno_u16(SrcPort, sport);
         Log("%d -> new %d", sequence, sport);
         break;
-    case Closed:
+    case Start:
         q = SocketPacket(Connect, id, ++sequence);
         q->set_anno_u32(SendIp, ip);
         q->set_anno_u16(DstPort, dport);
         Log("%d -> connect %08x:%d", sequence, ip, dport);
         // timer.reschedule_after(timeout);
         break;
-    case Wait:
+    case Waiting:
         q = SocketPacket(Close, id, ++sequence);
         Log("%d -> close %d", sequence, id);
         // timer.reschedule_after(timeout);
@@ -62,16 +62,16 @@ void SocketSender::push(int, Packet *p) {
         Warn("%d <- error", sequence);
         state = Error;
     } else if (state == Nothing && method == New) {
-        state = Closed;
+        state = Start;
         id = p->anno_u8(SocketId);
         Log("%d <- new :%d", sequence, id);
         timer.reschedule_after(interval);
-    } else if (state == Closed && method == Connect) {
-        state = Wait;
+    } else if (state == Start && method == Connect) {
+        state = Waiting;
         Log("%d <- connect", sequence);
         timer.reschedule_after(interval);
-    } else if (state == Wait && method == Close) {
-        state = Closed;
+    } else if (state == Waiting && method == Close) {
+        state = Start;
         Log("%d <- close", sequence);
         timer.reschedule_after(interval);
     } else {

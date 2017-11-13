@@ -83,6 +83,7 @@ void SocketSender::push(int, Packet *p) {
     } else if (state == Start && method == Connect) {
         state = Writing;
         Log("%d <- connect", sequence);
+        timer.reschedule_after(interval);
     } else if (state == Writing && method == Send) {
         Log("%d <- send");
         timer.reschedule_after(interval);

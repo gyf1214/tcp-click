@@ -161,6 +161,7 @@ void TcpBackend::push(int, Packet *p) {
         if (!try_buffer_send(i, p)) {
             tcb[i].swnd.wait.push_back(p);
         }
+        while (try_grow_send(i));
         break;
     case Recv:
         // TODO

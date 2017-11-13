@@ -18,7 +18,7 @@ int SocketServer::configure(Vector<String> &args, ErrorHandler *errh) {
     return 0;
 }
 
-int SocketServer::initialize(ErrorHandler *errh) {
+int SocketServer::initialize(ErrorHandler *) {
     timer.initialize(this);
     return 0;
 }

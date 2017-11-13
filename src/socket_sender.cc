@@ -20,7 +20,7 @@ int SocketSender::configure(Vector<String> &args, ErrorHandler *errh) {
     return 0;
 }
 
-int SocketSender::initialize(ErrorHandler *errh) {
+int SocketSender::initialize(ErrorHandler *) {
     timer.initialize(this);
     return 0;
 }

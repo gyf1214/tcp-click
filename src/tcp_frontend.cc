@@ -52,10 +52,9 @@ int TcpFrontend::find_empty_socket() {
 }
 
 void TcpFrontend::send_return(Packet *p, bool err) {
-    WritablePacket *q = Packet::make(0);
-    q->set_anno_u8(SocketMethod, err ? Error : p->anno_u8(SocketMethod));
-    q->set_anno_u8(SocketId, p->anno_u8(SocketId));
-    q->set_anno_u32(SocketSequence, p->anno_u32(SocketSequence));
+    uint8_t method = err ? Error : p->anno_u8(SocketMethod);
+    Packet *q = SocketPacket(method,
+    p->anno_u8(SocketId), p->anno_u32(SocketSequence));
     p->kill();
     output(1).push(q);
 }
@@ -94,9 +93,7 @@ void TcpFrontend::queue_accept(int i, Packet *p) {
 }
 
 void TcpFrontend::queue_listen(uint8_t id0, uint8_t i) {
-    Packet *q = Packet::make(0);
-    q->set_anno_u8(SocketMethod, Accept);
-    q->set_anno_u8(SocketId, i);
+    Packet *q = SocketPacket(Accept, i, 0);
     q->set_anno_u8(SocketParentId, id0);
 
     if (sockets[id0].acceptWait.empty()) {
@@ -336,6 +333,7 @@ void TcpFrontend::push_tcp(Packet *p) {
         case Established:
             // data packet
             Log("data");
+            p->set_anno_u8(SocketMethod, Data);
             output(2).push(p);
             break;
         case Listening:
@@ -392,6 +390,7 @@ void TcpFrontend::push_tcp(Packet *p) {
         switch (sockets[i].state) {
         case Established:
             Log("data ack");
+            p->set_anno_u8(SocketMethod, Data);
             output(2).push(p);
             break;
         case Syn_Rcvd:
@@ -444,22 +443,17 @@ void TcpFrontend::push(int port, Packet *p) {
 void TcpFrontend::print_sockets() {
     int n = sockets.size();
     for (int i = 0; i < n; ++i) {
-        Log("socket %d | %08x:%d -> %d | :%d", i, sockets[i].dst_ip,
+        Log("socket %d | %08x:%d -> :%d | %d", i, sockets[i].dst_ip,
         sockets[i].dst_port, sockets[i].src_port, sockets[i].state);
     }
 }
 
 void TcpFrontend::back_close(uint8_t i) {
-    Packet *q = Packet::make(0);
-    q->set_anno_u8(SocketMethod, Close);
-    q->set_anno_u8(SocketId, i);
-    output(2).push(q);
+    output(2).push(SocketPacket(Close, i, 0));
 }
 
 void TcpFrontend::back_establish(uint8_t i) {
-    Packet *q = Packet::make(0);
-    q->set_anno_u8(SocketMethod, Connect);
-    q->set_anno_u8(SocketId, i);
+    Packet *q = SocketPacket(Connect, i, 0);
     q->set_anno_u32(RecvIp, sockets[i].dst_ip);
     q->set_anno_u16(SrcPort, sockets[i].src_port);
     q->set_anno_u16(DstPort, sockets[i].dst_port);

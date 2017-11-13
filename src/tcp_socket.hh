@@ -1,5 +1,6 @@
 #ifndef __CLICK_TCP_SOCKET
 #define __CLICK_TCP_SOCKET
+#include "infra_anno.hh"
 #include <click/config.h>
 #include <click/packet.hh>
 #include <click/task.hh>
@@ -30,6 +31,14 @@ struct TcpSocket {
     Packet *connectWait;
     Packet *closeWait;
 };
+
+inline WritablePacket *SocketPacket(uint8_t method, uint8_t id, uint32_t sequence, size_t size = 0) {
+    WritablePacket *p = Packet::make(size);
+    p->set_anno_u8(SocketMethod, method);
+    p->set_anno_u8(SocketId, id);
+    p->set_anno_u32(SocketSequence, sequence);
+    return p;
+}
 
 CLICK_ENDDECLS
 #endif

@@ -14,7 +14,7 @@ elementclass SServer { IP $ip, PORT $port |
 }
 
 socket1 :: SServer(IP 192.168.17.1, PORT 5678)
-socket2 :: SSimple(PORT 8882)
+socket2 :: SSimple(IP 192.168.17.2, PORT 8882)
 // socket3 :: SClient(PORT 8883)
 
 socket1 -> [1] router1 [1] -> socket1

@@ -1,4 +1,4 @@
-// Tcp Frontend
+// Tcp State Machine Frontend
 // input(0) : incoming packets
 // input(1) : incoming socket requests
 // output(0) : sending backend

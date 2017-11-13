@@ -135,7 +135,11 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             try_resolve_send(i);
             // try send more packets
             while (try_grow_send(i));
-            swnd.timer.reschedule_after(timeout);
+            if (!swnd.wnd.empty()) {
+                swnd.timer.reschedule_after(timeout);
+            } else {
+                swnd.timer.unschedule();
+            }
         }
     } else if (tcp_p->flags & Syn) {
         // TODO: recv control
@@ -185,6 +189,9 @@ void TcpBackend::push(int, Packet *p) {
             tcb[i].swnd.wait.push_back(p);
         }
         while (try_grow_send(i));
+        if (!tcb[i].swnd.timer.scheduled()) {
+            tcb[i].swnd.timer.reschedule_after(timeout);
+        }
         break;
     case Recv:
         // TODO

@@ -52,7 +52,7 @@ void SocketServer::run_timer(Timer *) {
         Warn("unknown state");
     }
     if (q) {
-        output(1).push(q);
+        output(0).push(q);
     }
 }
 

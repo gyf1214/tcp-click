@@ -22,7 +22,7 @@ int SocketSender::configure(Vector<String> &args, ErrorHandler *errh) {
 
 int SocketSender::initialize(ErrorHandler *) {
     timer.initialize(this);
-    timer.schedule_now();
+    timer.schedule_after(interval);
     return 0;
 }
 

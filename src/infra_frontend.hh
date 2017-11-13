@@ -1,4 +1,5 @@
 #ifndef __CLICK_INFRA_FRONTEND
+
 #define __CLICK_INFRA_FRONTEND
 #include <click/config.h>
 #include <click/element.hh>

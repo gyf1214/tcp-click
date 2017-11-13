@@ -49,12 +49,14 @@ bool TcpBackend::try_grow_send(uint8_t i) {
     q->set_anno_u8(SendProto, IpProtoTcp);
     q->set_anno_u32(SendIp, IpProtoTcp);
     tcp_q->syn(tcb[i].sport, tcb[i].dport, swnd.seq_back);
-    TcpFromWnd(tcp_q->data, swnd.buf, TcpBufferSize, swnd.seq_back, swnd.seq_back + grow);
+    tcp_fromwnd(tcp_q->data, swnd.buf, TcpBufferSize, swnd.seq_back, swnd.seq_back + grow);
     // update pointer
     swnd.seq_back += grow;
     // send
     output(0).push(q);
 }
+
+
 
 CLICK_ENDDECLS
 EXPORT_ELEMENT(TcpBackend);

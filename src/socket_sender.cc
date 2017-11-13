@@ -9,8 +9,8 @@ SocketSender::SocketSender() : timer(this), sequence(0) {}
 
 int SocketSender::configure(Vector<String> &args, ErrorHandler *errh) {
     if (cp_va_kparse(args, this, errh,
-    "IP", cpkM + cpkP, cpUnsigned, &self,
-    "DST", cpkM + cpkP, cpUnsigned, &ip,
+    "IP", cpkM + cpkP, cpIPAddress, &self,
+    "DST", cpkM + cpkP, cpIPAddress, &ip,
     "SPORT", cpkM + cpkP, cpUnsignedShort, &sport,
     "DPORT", cpkM + cpkP, cpUnsignedShort, &dport,
     "INTERVAL", cpkM + cpkP, cpTimestamp, &interval,

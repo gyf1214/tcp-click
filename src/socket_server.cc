@@ -9,7 +9,7 @@ SocketServer::SocketServer() : timer(this), sequence(0) {}
 
 int SocketServer::configure(Vector<String> &args, ErrorHandler *errh) {
     if (cp_va_kparse(args, this, errh,
-    "IP", cpkM + cpkP, cpUnsigned, &self,
+    "IP", cpkM + cpkP, cpIPAddress, &self,
     "PORT", cpkM + cpkP, cpUnsignedShort, &port,
     "INTERVAL", cpkM + cpkP, cpTimestamp, &interval,
     "TIMEOUT", cpkM + cpkP, cpTimestamp, &timeout, cpEnd) < 0) {

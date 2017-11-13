@@ -5,7 +5,7 @@
 #include <click/confparse.hh>
 CLICK_DECLS
 
-SocketServer::SocketServer() : timer(this), sequence(0) {}
+SocketServer::SocketServer() : timer(this), state(Nothing), sequence(0) {}
 
 int SocketServer::configure(Vector<String> &args, ErrorHandler *errh) {
     if (cp_va_kparse(args, this, errh,
@@ -49,8 +49,7 @@ void SocketServer::run_timer(Timer *) {
         Log("%d -> free %d", sequence, id1);
         break;
     default:
-        //nothing
-        (void) 0;
+        Warn("unknown state");
     }
     if (q) {
         output(1).push(q);

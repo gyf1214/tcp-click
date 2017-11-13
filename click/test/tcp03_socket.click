@@ -7,19 +7,24 @@ elementclass SSimple {IP $ip, PORT $port |
     sock [1] -> Socket(TCP, 0.0.0.0, $port) -> [1] sock
 }
 
-
 elementclass SServer { IP $ip, PORT $port |
-    sock :: SocketServer($ip, $port, 30, 5)
+    sock :: SocketServer(IP $ip, PORT $port, INTERVAL 30, TIMEOUT 5)
+    input -> sock -> output
+}
+
+elementclass SClient { IP $ip, PORT $port, DST $dst, DPORT $dport |
+    sock :: SocketSender(IP $ip, PORT $port,
+        DST $dst, DPORT $dport, INTERVAL 20, TIMEOUT 5)
     input -> sock -> output
 }
 
 socket1 :: SServer(IP 192.168.17.1, PORT 5678)
 socket2 :: SSimple(IP 192.168.17.2, PORT 8882)
-// socket3 :: SClient(PORT 8883)
+socket3 :: SClient(IP 192.168.17.3, PORT 8899, DST 192.168.17.1, DPORT 5678)
 
 socket1 -> [1] router1 [1] -> socket1
 socket2 -> [1] router2 [1] -> socket2
-Idle()  -> [1] router3 [1] -> Idle()
+socket3 -> [1] router3 [1] -> socket3
 Idle()  -> [1] router4 [1] -> Idle()
 Idle()  -> [1] router5 [1] -> Idle()
 Idle()  -> [1] router6 [1] -> Idle()

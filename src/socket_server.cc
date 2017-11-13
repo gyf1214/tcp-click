@@ -33,7 +33,7 @@ void SocketServer::run_timer(Timer *) {
         Log("%d -> new :%d", sequence, port);
         break;
     case Closed:
-        q = SocketPacket(Connect, id, ++sequence);
+        q = SocketPacket(Listen, id, ++sequence);
         Log("%d -> listen", sequence);
         break;
     case Listen:

@@ -5,7 +5,7 @@
 #include <click/confparse.hh>
 CLICK_DECLS
 
-SocketSender::SocketSender() : timer(this), sequence(0) {}
+SocketSender::SocketSender() : timer(this), state(Nothing), sequence(0) {}
 
 int SocketSender::configure(Vector<String> &args, ErrorHandler *errh) {
     if (cp_va_kparse(args, this, errh,
@@ -46,11 +46,10 @@ void SocketSender::run_timer(Timer *) {
         // timer.reschedule_after(timeout);
         break;
     default:
-        //nothing
-        (void) 0;
+        Warn("unknown state");
     }
     if (q) {
-        output(1).push(q);
+        output(0).push(q);
     }
 }
 

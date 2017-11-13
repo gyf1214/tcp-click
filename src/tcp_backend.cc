@@ -8,7 +8,8 @@ CLICK_DECLS
 
 int TcpBackend::configure(Vector<String> &args, ErrorHandler *errh) {
     if (cp_va_kparse(args, this, errh,
-    "IP", cpkP + cpkM, cpIPAddress, &self, cpEnd) < 0) {
+    "IP", cpkP + cpkM, cpIPAddress, &self,
+    "TIMEOUT", cpkP + cpkM, cpTimestamp, &timeout, cpEnd) < 0) {
         return -1;
     }
     return 0;
@@ -21,7 +22,7 @@ void TcpBackend::build_link(uint8_t i, uint32_t ip, uint16_t sport, uint16_t dpo
     tcb[i].ip = ip;
     tcb[i].sport = sport;
     tcb[i].dport = dport;
-    tcb[i].swnd.init(this, sending_timer);
+    tcb[i].swnd.init(this, sending_timer, i);
 }
 
 void TcpBackend::clean_link(uint8_t i) {
@@ -44,6 +45,21 @@ void TcpBackend::return_send(Packet *p, bool error) {
     output(1).push(q);
 }
 
+WritablePacket *TcpBackend::packet_from_wnd(uint8_t i, uint32_t seq, uint32_t size) {
+    TcpSendWindow &swnd = tcb[i].swnd;
+
+    Log("send sequence %d len %d", seq, size);
+    WritablePacket *q = Packet::make(TcpSize + size);
+    TcpHeader *tcp_q = (TcpHeader *)q->data();
+    // make packet
+    q->set_anno_u8(SendProto, IpProtoTcp);
+    q->set_anno_u32(SendIp, tcb[i].ip);
+    tcp_q->syn(tcb[i].sport, tcb[i].dport, swnd.seq_back);
+    tcp_from_wnd(tcp_q->data, swnd.buf, TcpBufferSize, seq, seq + size);
+
+    return q;
+}
+
 bool TcpBackend::try_grow_send(uint8_t i) {
     TcpSendWindow &swnd = tcb[i].swnd;
 
@@ -51,15 +67,8 @@ bool TcpBackend::try_grow_send(uint8_t i) {
     if (!grow) {
         return false;
     }
-    Log("send sequence %d len %d", swnd.seq_back, grow);
     // grow window and send
-    WritablePacket *q = Packet::make(TcpSize + grow);
-    TcpHeader *tcp_q = (TcpHeader *)q->data();
-    // make packet
-    q->set_anno_u8(SendProto, IpProtoTcp);
-    q->set_anno_u32(SendIp, tcb[i].ip);
-    tcp_q->syn(tcb[i].sport, tcb[i].dport, swnd.seq_back);
-    tcp_from_wnd(tcp_q->data, swnd.buf, TcpBufferSize, swnd.seq_back, swnd.seq_back + grow);
+    WritablePacket *q = packet_from_wnd(i, swnd.seq_back, grow);
     // update pointer
     swnd.seq_back += grow;
     swnd.wnd.push_back(grow);
@@ -126,6 +135,7 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             try_resolve_send(i);
             // try send more packets
             while (try_grow_send(i));
+            swnd.timer.reschedule_after(timeout);
         }
     } else if (tcp_p->flags & Syn) {
         // TODO: recv control
@@ -136,8 +146,21 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
     p->kill();
 }
 
-void TcpBackend::sending_timer(Timer *, void *) {
-    // TODO: implement timeout
+void TcpBackend::send_timeout(uint8_t i) {
+    TcpSendWindow &swnd = tcb[i].swnd;
+
+    uint32_t len = swnd.wnd.front();
+    Log("resend");
+    Packet *p = packet_from_wnd(i, swnd.seq_front, len);
+    output(0).push(p);
+
+    tcb[i].swnd.timer.reschedule_after(timeout);
+}
+
+void TcpBackend::sending_timer(Timer *t, void *data) {
+    uint8_t i = (intptr_t)data;
+    TcpBackend *e = (TcpBackend *)t->element()->cast("TcpBackend");
+    e->send_timeout(i);
 }
 
 void TcpBackend::push(int, Packet *p) {

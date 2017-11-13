@@ -18,7 +18,7 @@ struct TcpSendWindow {
     uint16_t rwnd;
     uint8_t cwnd, fails;
     Timer timer;
-    void init(Element *, TimerCallback);
+    void init(Element *, TimerCallback, uint8_t);
     uint32_t max_grow();
     uint32_t max_buffer();
 };
@@ -38,13 +38,14 @@ struct TcpBlock {
     TcpSendWindow swnd;
 };
 
-inline void TcpSendWindow::init(Element *e, TimerCallback f) {
+inline void TcpSendWindow::init(Element *e, TimerCallback f, uint8_t i) {
     wait.clear();
     wnd.clear();
     seq_front = seq_back = buf_back = 0;
     cwnd = TcpFixedCWnd;
     rwnd = TcpFixedCWnd * TcpSegmentSize;
-    timer.assign(f, NULL);
+    intptr_t id = i;
+    timer.assign(f, (void *)id);
     timer.initialize(e);
 }
 

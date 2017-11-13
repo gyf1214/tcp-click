@@ -13,12 +13,15 @@ CLICK_DECLS
 class TcpBackend : public Element {
     Vector<TcpBlock> tcb;
     uint32_t self;
+    Timestamp timeout;
 public:
     const char *class_name() const { return "TcpBackend"; }
     const char *port_count() const { return "1/2"; }
     const char *processing() const { return PUSH; }
     int configure(Vector<String> &, ErrorHandler *);
     static void sending_timer(Timer *, void *);
+    WritablePacket *packet_from_wnd(uint8_t, uint32_t, uint32_t);
+    void send_timeout(uint8_t);
     void build_link(uint8_t, uint32_t, uint16_t, uint16_t);
     void clean_link(uint8_t);
     void return_send(Packet *, bool = false);

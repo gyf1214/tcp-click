@@ -65,7 +65,7 @@ void SocketSender::run_timer(Timer *) {
 void SocketSender::push(int, Packet *p) {
     uint8_t method = p->anno_u8(SocketMethod);
 
-    if (p->anno_u8(SocketSequence) != sequence) {
+    if (p->anno_u32(SocketSequence) != sequence) {
         Warn("old response");
     } else if (method == Error) {
         if (state == Writing) {
@@ -73,7 +73,7 @@ void SocketSender::push(int, Packet *p) {
             timer.schedule_now();
         } else {
             Warn("%d <- error", sequence);
-            state = Error;
+            state = Err;
         }
     } else if (state == Nothing && method == New) {
         state = Start;
@@ -85,7 +85,7 @@ void SocketSender::push(int, Packet *p) {
         Log("%d <- connect", sequence);
         timer.reschedule_after(interval);
     } else if (state == Writing && method == Send) {
-        Log("%d <- send");
+        Log("%d <- send", sequence);
         timer.reschedule_after(interval);
     } else if (state == Closing && method == Close) {
         state = Start;

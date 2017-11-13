@@ -7,7 +7,6 @@
 CLICK_DECLS
 
 int IpFrontend::configure(Vector<String> &args, ErrorHandler *errh) {
-    String ip_str;
     if (cp_va_kparse(args, this, errh,
     "IP", cpkP + cpkM, cpIPAddress, &self, cpEnd) < 0) {
         return -1;

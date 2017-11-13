@@ -2,24 +2,16 @@
 #include "lsp_packet.hh"
 #include "ip_packet.hh"
 #include "infra_log.hh"
-#include <click/args.hh>
-#include <click/error.hh>
-#include <click/algorithm.hh>
+#include <click/confparse.hh>
 CLICK_DECLS
 
 // infi distance == default ttl;
 const int infi = IpTTL;
 
 int LspBackend::configure(Vector<String> &args, ErrorHandler *errh) {
-    String ip_str;
-    if (Args(args, this, errh)
-    .read_mp("IP", ip_str)
-    .complete() < 0) {
+    if (cp_va_kparse(args, this, errh,
+    "IP", cpkP + cpkM, cpIPAddress, &self, cpEnd) < 0) {
         return -1;
-    }
-
-    if (!IPAddressArg().parse(ip_str, (struct in_addr &)self, this)) {
-        return errh->error("IP should be ip address");
     }
     return 0;
 }

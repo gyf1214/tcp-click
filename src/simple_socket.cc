@@ -2,8 +2,6 @@
 #include "infra_anno.hh"
 #include "infra_log.hh"
 #include "tcp_socket.hh"
-#include <click/args.hh>
-#include <click/error.hh>
 #include <click/standard/scheduleinfo.hh>
 #include <click/confparse.hh>
 #include <click/straccum.hh>
@@ -12,15 +10,10 @@ CLICK_DECLS
 
 SimpleSocket::SimpleSocket() : sequence(0) {}
 
-int SimpleSocket::configure(Vector<String> &conf, ErrorHandler *errh) {
-    String ip_str;
-    if (Args(conf, this, errh)
-    .read_mp("IP", ip_str)
-    .complete() < 0) {
+int SimpleSocket::configure(Vector<String> &args, ErrorHandler *errh) {
+    if (cp_va_kparse(args, this, errh,
+    "IP", cpkP + cpkM, cpIPAddress, &self, cpEnd) < 0) {
         return -1;
-    }
-    if (!IPAddressArg().parse(ip_str, (struct in_addr &)self, this)) {
-        return errh->error("IP should be ip address");
     }
     return 0;
 }

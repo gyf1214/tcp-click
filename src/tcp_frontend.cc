@@ -3,19 +3,13 @@
 #include "infra_log.hh"
 #include "tcp_packet.hh"
 #include "ip_packet.hh"
-#include <click/args.hh>
-#include <click/error.hh>
+#include <click/confparse.hh>
 CLICK_DECLS
 
-int TcpFrontend::configure(Vector<String> &conf, ErrorHandler *errh) {
-    String ip_str;
-    if (Args(conf, this, errh)
-    .read_mp("IP", ip_str)
-    .complete() < 0) {
+int TcpFrontend::configure(Vector<String> &args, ErrorHandler *errh) {
+    if (cp_va_kparse(args, this, errh,
+    "IP", cpkP + cpkM, cpIPAddress, &self, cpEnd) < 0) {
         return -1;
-    }
-    if (!IPAddressArg().parse(ip_str, (struct in_addr &)self, this)) {
-        return errh->error("IP should be ip address");
     }
     return 0;
 }

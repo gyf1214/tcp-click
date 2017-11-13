@@ -10,17 +10,13 @@ CLICK_DECLS
 LspFrontend::LspFrontend() : state(Sleep), timer(this), sequence(0) {}
 
 int LspFrontend::configure(Vector<String> &args, ErrorHandler *errh) {
-    String ip_str;
-    if (Args(args, this, errh)
-    .read_mp("IP", ip_str)
-    .read_mp("INTERVAL", interval)
-    .read_mp("TIMEOUT", timeout)
-    .complete() < 0) {
+    if (cp_va_kparse(args, this, errh,
+    "IP", cpkP + cpkM, cpIPAddress, &self,
+    "INTERVAL", cpkP + cpkM, cpTimestamp, &interval,
+    "TIMEOUT", cpkP + cpkM, cpTimestamp, &timeout, cpEnd) < 0) {
         return -1;
     }
-    if (!IPAddressArg().parse(ip_str, (struct in_addr &)self, this)) {
-        return errh->error("IP should be ip address");
-    }
+    return 0;
     return 0;
 }
 

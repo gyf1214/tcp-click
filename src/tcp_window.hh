@@ -8,7 +8,7 @@ CLICK_DECLS
 
 const size_t TcpBufferSize = 65536;
 const size_t TcpSegmentSize = 1024;
-const uint32_t TcpFixedCWnd = 20;
+const uint32_t TcpFixedCWnd = 10;
 
 struct TcpSendWindow {
     Deque<Packet *> wait;

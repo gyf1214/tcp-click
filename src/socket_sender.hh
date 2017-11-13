@@ -8,10 +8,10 @@ CLICK_DECLS
 class SocketSender : public Element {
     uint32_t self, ip;
     uint16_t sport, dport;
-    Timestamp interval, timeout;
+    Timestamp interval, wait;
     Timer timer;
     enum {
-        Nothing, Start, Waiting, Error
+        Nothing, Start, Writing, Closing, Err
     } state;
     uint32_t sequence;
     uint8_t id;

@@ -8,7 +8,7 @@ CLICK_DECLS
 class SocketServer : public Element {
     uint32_t self;
     uint16_t port;
-    Timestamp interval, timeout;
+    Timestamp last_time, wait_time;
     Timer timer;
     enum {
         Nothing, Start, Listened, Accepted, AcceptClose, Err

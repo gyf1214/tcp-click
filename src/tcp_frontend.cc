@@ -216,7 +216,7 @@ void TcpFrontend::push_socket(Packet *p) {
         break;
     case Recv:
         if (sockets[i].state != Established) {
-            Warn("send called on non-open socket");
+            Warn("recv called on non-open socket");
             send_return(p, true);
         } else {
             Log("recv %d", p->length());
@@ -334,6 +334,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             // data packet
             Log("data");
             p->set_anno_u8(SocketMethod, Data);
+            p->set_anno_u8(SocketId, i);
             output(2).push(p);
             break;
         case Listening:
@@ -391,6 +392,7 @@ void TcpFrontend::push_tcp(Packet *p) {
         case Established:
             Log("data ack");
             p->set_anno_u8(SocketMethod, Data);
+            p->set_anno_u8(SocketId, i);
             output(2).push(p);
             break;
         case Syn_Rcvd:
@@ -401,6 +403,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             } else {
                 sockets[i].state = Established;
                 Log("establish");
+                back_establish(i);
                 queue_listen(id0, i);
             }
             p->kill();

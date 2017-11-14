@@ -28,7 +28,10 @@ void TcpBackend::build_link(uint8_t i, uint32_t ip, uint16_t sport, uint16_t dpo
 
 void TcpBackend::clean_link(uint8_t i) {
     TcpSendWindow &swnd = tcb[i].swnd;
-    delete swnd.timer;
+    if (swnd.timer) {
+        delete swnd.timer;
+        swnd.timer = NULL;
+    }
     swnd.wnd.clear();
     while (!swnd.wait.empty()) {
         Packet *p = swnd.wait.front();

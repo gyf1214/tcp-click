@@ -8,14 +8,14 @@ elementclass SSimple {IP $ip, PORT $port |
 }
 
 elementclass SServer { IP $ip, PORT $port |
-    sock :: SocketServer(IP $ip, PORT $port, INTERVAL 0.2, WAIT 0, BUFFER 4096)
+    sock :: SocketServer(IP $ip, PORT $port, INTERVAL 10, WAIT 0, BUFFER 4096)
     input -> sock -> output
 }
 
 elementclass SClient { IP $ip, PORT $port, DST $dst, DPORT $dport |
     sock :: SocketSender(IP $ip, SPORT $port,
         DST $dst, DPORT $dport, DATA hello,
-        INTERVAL 0.01, WAIT 5, LIMIT 100000, BUFFER 4096)
+        INTERVAL 0.01, WAIT 5, LIMIT 100000, BUFFER 32768)
     input -> sock -> output
 }
 

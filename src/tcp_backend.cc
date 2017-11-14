@@ -195,7 +195,7 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             // try send more packets
             while (try_grow_send(i));
             // update timer
-            if (!swnd.wnd.empty()) {
+            if (!swnd.wnd.empty() || !swnd.rwnd) {
                 swnd.timer->schedule_after(timeout);
             } else {
                 swnd.timer->unschedule();

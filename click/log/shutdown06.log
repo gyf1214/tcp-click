@@ -1,0 +1,112 @@
+1510425935.793	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425935.793	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425935.993	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425935.993	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425935.993	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425935.993	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425935.993	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425935.993	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425935.993	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425936.194	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425936.194	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425936.194	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425936.194	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425936.194	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425946.793	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425946.793	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425946.793	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425946.793	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425946.793	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425946.993	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425946.993	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425946.993	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425946.993	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425946.993	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425946.993	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425946.993	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425946.993	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425946.993	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425946.993	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425947.194	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425947.194	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425947.194	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425947.194	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425947.194	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425957.795	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425957.795	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425957.795	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425957.795	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425957.795	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425957.996	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425957.996	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425957.996	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425957.996	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425957.996	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425957.996	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425957.996	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425957.996	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425957.996	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425957.996	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425957.996	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425957.996	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425957.996	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425957.996	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425957.996	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425957.996	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425957.996	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425958.196	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425958.196	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425958.196	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425958.196	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425958.196	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425958.196	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425958.196	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425958.196	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425958.196	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425958.196	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425958.196	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425958.196	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425958.196	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425958.196	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425968.805	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425968.805	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425968.805	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425968.805	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425968.805	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425968.805	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425968.805	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425969.005	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425969.005	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425969.005	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425969.005	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425969.005	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425969.005	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425969.005	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425969.005	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425969.005	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425969.005	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425969.005	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425969.005	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425969.005	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425969.005	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425969.005	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425969.005	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425969.005	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425969.005	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425969.005	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425969.005	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425969.005	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425969.206	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425969.206	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425969.206	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425969.206	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425969.206	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425969.206	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425969.206	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425969.206	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425969.206	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425969.206	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425969.206	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425969.206	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425969.206	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425969.206	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1

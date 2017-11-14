@@ -1,0 +1,1771 @@
+1510425934.792	LspFrontend@0111a8c0	[Info] initialized
+1510425934.792	LspFrontend@0211a8c0	[Info] initialized
+1510425934.792	LspFrontend@0311a8c0	[Info] initialized
+1510425934.792	LspFrontend@0411a8c0	[Info] initialized
+1510425934.792	LspFrontend@0511a8c0	[Info] initialized
+1510425934.792	LspFrontend@0611a8c0	[Info] initialized
+1510425934.792	LspFrontend@0111a8c0	[Info] discover neighbour
+1510425934.792	LspFrontend@0211a8c0	[Info] discover neighbour
+1510425934.792	LspFrontend@0311a8c0	[Info] discover neighbour
+1510425934.792	LspFrontend@0411a8c0	[Info] discover neighbour
+1510425934.792	LspFrontend@0511a8c0	[Info] discover neighbour
+1510425934.792	LspFrontend@0611a8c0	[Info] discover neighbour
+1510425934.994	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425934.994	IpFrontend@0611a8c0	[Info] lsp packet
+1510425934.994	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@0
+1510425934.994	LspFrontend@0611a8c0	[Info] hello
+1510425934.994	IpFrontend@0411a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425934.994	IpFrontend@0411a8c0	[Info] lsp packet
+1510425934.994	LspFrontend@0411a8c0	[Info] packet from 0211a8c0@1
+1510425934.994	LspFrontend@0411a8c0	[Info] hello
+1510425934.994	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425934.994	IpFrontend@0511a8c0	[Info] lsp packet
+1510425934.994	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@1
+1510425934.994	LspFrontend@0511a8c0	[Info] hello
+1510425934.994	IpFrontend@0611a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425934.994	IpFrontend@0611a8c0	[Info] lsp packet
+1510425934.994	LspFrontend@0611a8c0	[Info] packet from 0411a8c0@1
+1510425934.994	LspFrontend@0611a8c0	[Info] hello
+1510425934.994	IpFrontend@0211a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425934.994	IpFrontend@0211a8c0	[Info] lsp packet
+1510425934.994	LspFrontend@0211a8c0	[Info] packet from 0411a8c0@0
+1510425934.994	LspFrontend@0211a8c0	[Info] hello
+1510425934.994	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425934.994	IpFrontend@0611a8c0	[Info] lsp packet
+1510425934.994	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@2
+1510425934.994	LspFrontend@0611a8c0	[Info] hello
+1510425934.994	IpFrontend@0111a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425934.994	IpFrontend@0111a8c0	[Info] lsp packet
+1510425934.994	LspFrontend@0111a8c0	[Info] packet from 0611a8c0@0
+1510425934.994	LspFrontend@0111a8c0	[Info] hello
+1510425934.994	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425934.994	IpFrontend@0511a8c0	[Info] lsp packet
+1510425934.994	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@0
+1510425934.994	LspFrontend@0511a8c0	[Info] hello
+1510425934.994	IpFrontend@0411a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425934.994	IpFrontend@0411a8c0	[Info] lsp packet
+1510425934.994	LspFrontend@0411a8c0	[Info] packet from 0611a8c0@0
+1510425934.994	LspFrontend@0411a8c0	[Info] hello
+1510425934.994	IpFrontend@0311a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425934.994	IpFrontend@0311a8c0	[Info] lsp packet
+1510425934.994	LspFrontend@0311a8c0	[Info] packet from 0511a8c0@0
+1510425934.994	LspFrontend@0311a8c0	[Info] hello
+1510425935.194	IpFrontend@0111a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425935.194	IpFrontend@0111a8c0	[Info] lsp packet
+1510425935.194	LspFrontend@0111a8c0	[Info] packet from 0611a8c0@0
+1510425935.194	LspFrontend@0111a8c0	[Info] ack
+1510425935.194	IpFrontend@0211a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425935.194	IpFrontend@0211a8c0	[Info] lsp packet
+1510425935.194	LspFrontend@0211a8c0	[Info] packet from 0411a8c0@0
+1510425935.194	LspFrontend@0211a8c0	[Info] ack
+1510425935.194	IpFrontend@0411a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425935.194	IpFrontend@0411a8c0	[Info] lsp packet
+1510425935.194	LspFrontend@0411a8c0	[Info] packet from 0211a8c0@1
+1510425935.194	LspFrontend@0411a8c0	[Info] ack
+1510425935.194	IpFrontend@0411a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425935.194	IpFrontend@0411a8c0	[Info] lsp packet
+1510425935.194	LspFrontend@0411a8c0	[Info] packet from 0611a8c0@0
+1510425935.194	LspFrontend@0411a8c0	[Info] ack
+1510425935.194	IpFrontend@0311a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425935.194	IpFrontend@0311a8c0	[Info] lsp packet
+1510425935.194	LspFrontend@0311a8c0	[Info] packet from 0511a8c0@0
+1510425935.194	LspFrontend@0311a8c0	[Info] ack
+1510425935.194	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425935.194	IpFrontend@0611a8c0	[Info] lsp packet
+1510425935.194	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@2
+1510425935.194	LspFrontend@0611a8c0	[Info] ack
+1510425935.194	IpFrontend@0611a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425935.194	IpFrontend@0611a8c0	[Info] lsp packet
+1510425935.194	LspFrontend@0611a8c0	[Info] packet from 0411a8c0@1
+1510425935.194	LspFrontend@0611a8c0	[Info] ack
+1510425935.194	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425935.194	IpFrontend@0611a8c0	[Info] lsp packet
+1510425935.194	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@0
+1510425935.194	LspFrontend@0611a8c0	[Info] ack
+1510425935.194	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425935.194	IpFrontend@0511a8c0	[Info] lsp packet
+1510425935.194	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@0
+1510425935.194	LspFrontend@0511a8c0	[Info] ack
+1510425935.194	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425935.194	IpFrontend@0511a8c0	[Info] lsp packet
+1510425935.194	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@1
+1510425935.194	LspFrontend@0511a8c0	[Info] ack
+1510425935.793	LspFrontend@0111a8c0	[Info] broadcast sequence
+1510425935.793	LspFrontend@0211a8c0	[Info] broadcast sequence
+1510425935.793	LspFrontend@0311a8c0	[Info] broadcast sequence
+1510425935.793	LspFrontend@0411a8c0	[Info] broadcast sequence
+1510425935.793	LspFrontend@0511a8c0	[Info] broadcast sequence
+1510425935.793	LspFrontend@0611a8c0	[Info] broadcast sequence
+1510425935.793	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425935.793	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425935.793	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425935.793	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425935.793	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425935.793	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425935.793	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425935.793	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425935.793	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425935.793	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425935.793	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425935.793	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425935.993	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425935.993	IpFrontend@0611a8c0	[Info] lsp packet
+1510425935.993	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@2
+1510425935.993	LspFrontend@0611a8c0	[Info] sequence
+1510425935.993	LspFrontend@0611a8c0	[Info] update sequence: 1
+1510425935.993	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425935.993	IpFrontend@0611a8c0	[Info] lsp packet
+1510425935.993	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@0
+1510425935.993	LspFrontend@0611a8c0	[Info] sequence
+1510425935.993	LspFrontend@0611a8c0	[Info] update sequence: 1
+1510425935.993	IpFrontend@0111a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425935.993	IpFrontend@0111a8c0	[Info] lsp packet
+1510425935.993	LspFrontend@0111a8c0	[Info] packet from 0611a8c0@0
+1510425935.993	LspFrontend@0111a8c0	[Info] sequence
+1510425935.993	LspFrontend@0111a8c0	[Info] update sequence: 1
+1510425935.993	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425935.993	IpFrontend@0511a8c0	[Info] lsp packet
+1510425935.993	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@0
+1510425935.993	LspFrontend@0511a8c0	[Info] sequence
+1510425935.993	LspFrontend@0511a8c0	[Info] update sequence: 1
+1510425935.993	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425935.993	IpFrontend@0511a8c0	[Info] lsp packet
+1510425935.993	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@1
+1510425935.993	LspFrontend@0511a8c0	[Info] sequence
+1510425935.993	LspFrontend@0511a8c0	[Info] update sequence: 1
+1510425935.993	IpFrontend@0311a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425935.993	IpFrontend@0311a8c0	[Info] lsp packet
+1510425935.993	LspFrontend@0311a8c0	[Info] packet from 0511a8c0@0
+1510425935.993	LspFrontend@0311a8c0	[Info] sequence
+1510425935.993	LspFrontend@0311a8c0	[Info] update sequence: 1
+1510425935.993	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425935.993	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425935.993	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425935.993	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425935.993	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425935.993	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425935.993	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425935.993	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425935.993	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425935.993	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425935.993	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425935.993	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425935.993	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425935.993	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425935.993	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425935.993	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425935.993	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425935.993	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425935.993	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425935.993	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425936.193	IpFrontend@0611a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425936.193	IpFrontend@0611a8c0	[Info] lsp packet
+1510425936.193	LspFrontend@0611a8c0	[Info] packet from 0611a8c0@2
+1510425936.193	LspFrontend@0611a8c0	[Info] sequence
+1510425936.193	LspFrontend@0611a8c0	[Info] older sequence
+1510425936.193	IpFrontend@0611a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425936.193	IpFrontend@0611a8c0	[Info] lsp packet
+1510425936.193	LspFrontend@0611a8c0	[Info] packet from 0611a8c0@0
+1510425936.193	LspFrontend@0611a8c0	[Info] sequence
+1510425936.193	LspFrontend@0611a8c0	[Info] older sequence
+1510425936.193	IpFrontend@0111a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425936.193	IpFrontend@0111a8c0	[Info] lsp packet
+1510425936.193	LspFrontend@0111a8c0	[Info] packet from 0511a8c0@0
+1510425936.193	LspFrontend@0111a8c0	[Info] sequence
+1510425936.193	LspFrontend@0111a8c0	[Info] update sequence: 1
+1510425936.193	IpFrontend@0511a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425936.193	IpFrontend@0511a8c0	[Info] lsp packet
+1510425936.193	LspFrontend@0511a8c0	[Info] packet from 0511a8c0@0
+1510425936.193	LspFrontend@0511a8c0	[Info] sequence
+1510425936.193	LspFrontend@0511a8c0	[Info] older sequence
+1510425936.193	IpFrontend@0511a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425936.193	IpFrontend@0511a8c0	[Info] lsp packet
+1510425936.193	LspFrontend@0511a8c0	[Info] packet from 0511a8c0@1
+1510425936.193	LspFrontend@0511a8c0	[Info] sequence
+1510425936.193	LspFrontend@0511a8c0	[Info] older sequence
+1510425936.193	IpFrontend@0311a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425936.193	IpFrontend@0311a8c0	[Info] lsp packet
+1510425936.193	LspFrontend@0311a8c0	[Info] packet from 0611a8c0@0
+1510425936.193	LspFrontend@0311a8c0	[Info] sequence
+1510425936.193	LspFrontend@0311a8c0	[Info] update sequence: 1
+1510425936.193	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425936.193	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425936.193	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425936.193	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425936.193	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425936.193	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425936.193	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425936.193	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425936.193	IpFrontend@0611a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425936.193	IpFrontend@0611a8c0	[Info] lsp packet
+1510425936.193	LspFrontend@0611a8c0	[Info] packet from 0311a8c0@2
+1510425936.193	LspFrontend@0611a8c0	[Info] sequence
+1510425936.193	LspFrontend@0611a8c0	[Info] update sequence: 1
+1510425936.193	IpFrontend@0111a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425936.193	IpFrontend@0111a8c0	[Info] lsp packet
+1510425936.193	LspFrontend@0111a8c0	[Info] packet from 0111a8c0@0
+1510425936.193	LspFrontend@0111a8c0	[Info] sequence
+1510425936.193	LspFrontend@0111a8c0	[Info] older sequence
+1510425936.194	IpFrontend@0511a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425936.194	IpFrontend@0511a8c0	[Info] lsp packet
+1510425936.194	LspFrontend@0511a8c0	[Info] packet from 0111a8c0@0
+1510425936.194	LspFrontend@0511a8c0	[Info] sequence
+1510425936.194	LspFrontend@0511a8c0	[Info] update sequence: 1
+1510425936.194	IpFrontend@0311a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425936.194	IpFrontend@0311a8c0	[Info] lsp packet
+1510425936.194	LspFrontend@0311a8c0	[Info] packet from 0311a8c0@0
+1510425936.194	LspFrontend@0311a8c0	[Info] sequence
+1510425936.194	LspFrontend@0311a8c0	[Info] older sequence
+1510425936.194	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425936.194	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425936.194	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425936.194	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425936.194	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425936.194	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425936.194	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425936.194	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425936.194	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425936.194	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425936.393	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425936.393	IpFrontend@0611a8c0	[Info] lsp packet
+1510425936.393	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@0
+1510425936.393	LspFrontend@0611a8c0	[Info] sequence
+1510425936.393	LspFrontend@0611a8c0	[Info] older sequence
+1510425936.393	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425936.393	IpFrontend@0511a8c0	[Info] lsp packet
+1510425936.393	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@1
+1510425936.393	LspFrontend@0511a8c0	[Info] sequence
+1510425936.393	LspFrontend@0511a8c0	[Info] older sequence
+1510425936.394	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425936.394	IpFrontend@0611a8c0	[Info] lsp packet
+1510425936.394	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@2
+1510425936.394	LspFrontend@0611a8c0	[Info] sequence
+1510425936.394	LspFrontend@0611a8c0	[Info] older sequence
+1510425936.394	IpFrontend@0111a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425936.394	IpFrontend@0111a8c0	[Info] lsp packet
+1510425936.394	LspFrontend@0111a8c0	[Info] packet from 0311a8c0@0
+1510425936.394	LspFrontend@0111a8c0	[Info] sequence
+1510425936.394	LspFrontend@0111a8c0	[Info] update sequence: 1
+1510425936.394	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425936.394	IpFrontend@0511a8c0	[Info] lsp packet
+1510425936.394	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@0
+1510425936.394	LspFrontend@0511a8c0	[Info] sequence
+1510425936.394	LspFrontend@0511a8c0	[Info] older sequence
+1510425936.394	IpFrontend@0311a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425936.394	IpFrontend@0311a8c0	[Info] lsp packet
+1510425936.394	LspFrontend@0311a8c0	[Info] packet from 0111a8c0@0
+1510425936.394	LspFrontend@0311a8c0	[Info] sequence
+1510425936.394	LspFrontend@0311a8c0	[Info] update sequence: 1
+1510425936.394	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425936.394	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425936.394	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425936.394	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425936.394	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425936.394	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425936.394	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425936.394	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425936.394	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425936.394	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425936.594	IpFrontend@0611a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425936.594	IpFrontend@0611a8c0	[Info] lsp packet
+1510425936.594	LspFrontend@0611a8c0	[Info] packet from 0311a8c0@0
+1510425936.594	LspFrontend@0611a8c0	[Info] sequence
+1510425936.594	LspFrontend@0611a8c0	[Info] older sequence
+1510425936.594	IpFrontend@0511a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425936.594	IpFrontend@0511a8c0	[Info] lsp packet
+1510425936.594	LspFrontend@0511a8c0	[Info] packet from 0111a8c0@1
+1510425936.594	LspFrontend@0511a8c0	[Info] sequence
+1510425936.594	LspFrontend@0511a8c0	[Info] older sequence
+1510425945.793	LspFrontend@0111a8c0	[Info] discover neighbour
+1510425945.793	LspFrontend@0211a8c0	[Info] discover neighbour
+1510425945.793	LspFrontend@0311a8c0	[Info] discover neighbour
+1510425945.793	LspFrontend@0411a8c0	[Info] discover neighbour
+1510425945.793	LspFrontend@0511a8c0	[Info] discover neighbour
+1510425945.793	LspFrontend@0611a8c0	[Info] discover neighbour
+1510425945.993	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425945.993	IpFrontend@0511a8c0	[Info] lsp packet
+1510425945.993	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@0
+1510425945.993	LspFrontend@0511a8c0	[Info] hello
+1510425945.993	IpFrontend@0311a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425945.993	IpFrontend@0311a8c0	[Info] lsp packet
+1510425945.993	LspFrontend@0311a8c0	[Info] packet from 0511a8c0@0
+1510425945.993	LspFrontend@0311a8c0	[Info] hello
+1510425945.993	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425945.993	IpFrontend@0511a8c0	[Info] lsp packet
+1510425945.993	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@1
+1510425945.993	LspFrontend@0511a8c0	[Info] hello
+1510425945.993	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425945.993	IpFrontend@0611a8c0	[Info] lsp packet
+1510425945.993	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@2
+1510425945.993	LspFrontend@0611a8c0	[Info] hello
+1510425945.993	IpFrontend@0111a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425945.993	IpFrontend@0111a8c0	[Info] lsp packet
+1510425945.993	LspFrontend@0111a8c0	[Info] packet from 0611a8c0@0
+1510425945.993	LspFrontend@0111a8c0	[Info] hello
+1510425945.993	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425945.993	IpFrontend@0611a8c0	[Info] lsp packet
+1510425945.993	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@0
+1510425945.993	LspFrontend@0611a8c0	[Info] hello
+1510425946.193	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425946.193	IpFrontend@0611a8c0	[Info] lsp packet
+1510425946.193	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@2
+1510425946.193	LspFrontend@0611a8c0	[Info] ack
+1510425946.193	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425946.193	IpFrontend@0511a8c0	[Info] lsp packet
+1510425946.193	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@0
+1510425946.193	LspFrontend@0511a8c0	[Info] ack
+1510425946.193	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425946.193	IpFrontend@0511a8c0	[Info] lsp packet
+1510425946.193	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@1
+1510425946.193	LspFrontend@0511a8c0	[Info] ack
+1510425946.193	IpFrontend@0311a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425946.193	IpFrontend@0311a8c0	[Info] lsp packet
+1510425946.193	LspFrontend@0311a8c0	[Info] packet from 0511a8c0@0
+1510425946.193	LspFrontend@0311a8c0	[Info] ack
+1510425946.193	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425946.193	IpFrontend@0611a8c0	[Info] lsp packet
+1510425946.193	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@0
+1510425946.193	LspFrontend@0611a8c0	[Info] ack
+1510425946.193	IpFrontend@0111a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425946.193	IpFrontend@0111a8c0	[Info] lsp packet
+1510425946.193	LspFrontend@0111a8c0	[Info] packet from 0611a8c0@0
+1510425946.193	LspFrontend@0111a8c0	[Info] ack
+1510425946.793	LspFrontend@0111a8c0	[Info] broadcast sequence
+1510425946.793	LspFrontend@0211a8c0	[Info] broadcast sequence
+1510425946.793	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425946.793	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425946.793	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425946.793	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425946.793	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425946.793	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425946.793	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425946.793	LspFrontend@0311a8c0	[Info] broadcast sequence
+1510425946.793	LspFrontend@0411a8c0	[Info] broadcast sequence
+1510425946.793	LspFrontend@0511a8c0	[Info] broadcast sequence
+1510425946.793	LspFrontend@0611a8c0	[Info] broadcast sequence
+1510425946.793	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425946.793	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425946.793	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425946.793	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425946.793	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425946.793	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425946.793	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425946.793	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425946.793	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425946.793	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425946.793	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425946.793	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425946.793	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425946.793	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425946.793	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425946.793	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425946.793	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425946.993	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425946.993	IpFrontend@0611a8c0	[Info] lsp packet
+1510425946.993	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@0
+1510425946.993	LspFrontend@0611a8c0	[Info] sequence
+1510425946.993	LspFrontend@0611a8c0	[Info] update sequence: 2
+1510425946.993	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425946.993	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425946.993	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425946.993	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425946.993	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425946.993	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425946.993	IpFrontend@0611a8c0	[Info] lsp packet
+1510425946.993	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@2
+1510425946.993	LspFrontend@0611a8c0	[Info] sequence
+1510425946.993	LspFrontend@0611a8c0	[Info] update sequence: 2
+1510425946.993	IpFrontend@0111a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425946.993	IpFrontend@0111a8c0	[Info] lsp packet
+1510425946.993	LspFrontend@0111a8c0	[Info] packet from 0611a8c0@0
+1510425946.993	LspFrontend@0111a8c0	[Info] sequence
+1510425946.993	LspFrontend@0111a8c0	[Info] update sequence: 2
+1510425946.993	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425946.993	IpFrontend@0511a8c0	[Info] lsp packet
+1510425946.993	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@0
+1510425946.993	LspFrontend@0511a8c0	[Info] sequence
+1510425946.993	LspFrontend@0511a8c0	[Info] update sequence: 2
+1510425946.993	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425946.993	IpFrontend@0511a8c0	[Info] lsp packet
+1510425946.993	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@1
+1510425946.993	LspFrontend@0511a8c0	[Info] sequence
+1510425946.993	LspFrontend@0511a8c0	[Info] update sequence: 2
+1510425946.993	IpFrontend@0311a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425946.993	IpFrontend@0311a8c0	[Info] lsp packet
+1510425946.993	LspFrontend@0311a8c0	[Info] packet from 0511a8c0@0
+1510425946.993	LspFrontend@0311a8c0	[Info] sequence
+1510425946.993	LspFrontend@0311a8c0	[Info] update sequence: 2
+1510425946.993	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425946.993	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425946.993	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425946.993	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425946.993	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425946.993	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425946.993	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425946.993	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425946.993	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425946.993	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425946.993	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425946.993	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425946.993	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425946.993	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425946.993	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425946.993	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425946.993	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425946.993	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425946.993	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425946.993	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425946.993	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425946.993	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425946.993	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425946.993	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425946.993	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425947.194	IpFrontend@0611a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425947.194	IpFrontend@0611a8c0	[Info] lsp packet
+1510425947.194	LspFrontend@0611a8c0	[Info] packet from 0611a8c0@2
+1510425947.194	LspFrontend@0611a8c0	[Info] sequence
+1510425947.194	LspFrontend@0611a8c0	[Info] older sequence
+1510425947.194	IpFrontend@0611a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425947.194	IpFrontend@0611a8c0	[Info] lsp packet
+1510425947.194	LspFrontend@0611a8c0	[Info] packet from 0611a8c0@0
+1510425947.194	LspFrontend@0611a8c0	[Info] sequence
+1510425947.194	LspFrontend@0611a8c0	[Info] older sequence
+1510425947.194	IpFrontend@0111a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425947.194	IpFrontend@0111a8c0	[Info] lsp packet
+1510425947.194	LspFrontend@0111a8c0	[Info] packet from 0111a8c0@0
+1510425947.194	LspFrontend@0111a8c0	[Info] sequence
+1510425947.194	LspFrontend@0111a8c0	[Info] older sequence
+1510425947.194	IpFrontend@0511a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425947.194	IpFrontend@0511a8c0	[Info] lsp packet
+1510425947.194	LspFrontend@0511a8c0	[Info] packet from 0111a8c0@0
+1510425947.194	LspFrontend@0511a8c0	[Info] sequence
+1510425947.194	LspFrontend@0511a8c0	[Info] update sequence: 2
+1510425947.194	IpFrontend@0511a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425947.194	IpFrontend@0511a8c0	[Info] lsp packet
+1510425947.194	LspFrontend@0511a8c0	[Info] packet from 0511a8c0@1
+1510425947.194	LspFrontend@0511a8c0	[Info] sequence
+1510425947.194	LspFrontend@0511a8c0	[Info] older sequence
+1510425947.194	IpFrontend@0311a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425947.194	IpFrontend@0311a8c0	[Info] lsp packet
+1510425947.194	LspFrontend@0311a8c0	[Info] packet from 0611a8c0@0
+1510425947.194	LspFrontend@0311a8c0	[Info] sequence
+1510425947.194	LspFrontend@0311a8c0	[Info] update sequence: 2
+1510425947.194	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425947.194	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425947.194	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425947.194	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425947.194	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425947.194	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425947.194	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425947.194	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425947.194	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425947.194	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425947.194	IpFrontend@0611a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425947.194	IpFrontend@0611a8c0	[Info] lsp packet
+1510425947.194	LspFrontend@0611a8c0	[Info] packet from 0311a8c0@2
+1510425947.194	LspFrontend@0611a8c0	[Info] sequence
+1510425947.194	LspFrontend@0611a8c0	[Info] update sequence: 2
+1510425947.194	IpFrontend@0111a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425947.194	IpFrontend@0111a8c0	[Info] lsp packet
+1510425947.194	LspFrontend@0111a8c0	[Info] packet from 0511a8c0@0
+1510425947.194	LspFrontend@0111a8c0	[Info] sequence
+1510425947.194	LspFrontend@0111a8c0	[Info] update sequence: 2
+1510425947.194	IpFrontend@0511a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425947.194	IpFrontend@0511a8c0	[Info] lsp packet
+1510425947.194	LspFrontend@0511a8c0	[Info] packet from 0511a8c0@0
+1510425947.194	LspFrontend@0511a8c0	[Info] sequence
+1510425947.194	LspFrontend@0511a8c0	[Info] older sequence
+1510425947.194	IpFrontend@0311a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425947.194	IpFrontend@0311a8c0	[Info] lsp packet
+1510425947.194	LspFrontend@0311a8c0	[Info] packet from 0311a8c0@0
+1510425947.194	LspFrontend@0311a8c0	[Info] sequence
+1510425947.194	LspFrontend@0311a8c0	[Info] older sequence
+1510425947.194	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425947.194	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425947.194	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425947.194	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425947.194	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425947.194	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425947.194	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425947.194	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425947.194	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425947.194	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425947.394	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425947.394	IpFrontend@0611a8c0	[Info] lsp packet
+1510425947.394	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@2
+1510425947.394	LspFrontend@0611a8c0	[Info] sequence
+1510425947.394	LspFrontend@0611a8c0	[Info] older sequence
+1510425947.394	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425947.394	IpFrontend@0511a8c0	[Info] lsp packet
+1510425947.394	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@1
+1510425947.394	LspFrontend@0511a8c0	[Info] sequence
+1510425947.394	LspFrontend@0511a8c0	[Info] older sequence
+1510425947.394	IpFrontend@0311a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425947.394	IpFrontend@0311a8c0	[Info] lsp packet
+1510425947.394	LspFrontend@0311a8c0	[Info] packet from 0111a8c0@0
+1510425947.394	LspFrontend@0311a8c0	[Info] sequence
+1510425947.394	LspFrontend@0311a8c0	[Info] update sequence: 2
+1510425947.394	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425947.394	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425947.394	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425947.394	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425947.394	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425947.394	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425947.394	IpFrontend@0611a8c0	[Info] lsp packet
+1510425947.394	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@0
+1510425947.394	LspFrontend@0611a8c0	[Info] sequence
+1510425947.394	LspFrontend@0611a8c0	[Info] older sequence
+1510425947.394	IpFrontend@0111a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425947.394	IpFrontend@0111a8c0	[Info] lsp packet
+1510425947.394	LspFrontend@0111a8c0	[Info] packet from 0311a8c0@0
+1510425947.394	LspFrontend@0111a8c0	[Info] sequence
+1510425947.394	LspFrontend@0111a8c0	[Info] update sequence: 2
+1510425947.394	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425947.394	IpFrontend@0511a8c0	[Info] lsp packet
+1510425947.394	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@0
+1510425947.394	LspFrontend@0511a8c0	[Info] sequence
+1510425947.394	LspFrontend@0511a8c0	[Info] older sequence
+1510425947.394	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425947.394	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425947.394	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425947.394	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425947.394	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425947.594	IpFrontend@0511a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425947.594	IpFrontend@0511a8c0	[Info] lsp packet
+1510425947.594	LspFrontend@0511a8c0	[Info] packet from 0111a8c0@1
+1510425947.594	LspFrontend@0511a8c0	[Info] sequence
+1510425947.594	LspFrontend@0511a8c0	[Info] older sequence
+1510425947.594	IpFrontend@0611a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425947.594	IpFrontend@0611a8c0	[Info] lsp packet
+1510425947.594	LspFrontend@0611a8c0	[Info] packet from 0311a8c0@0
+1510425947.594	LspFrontend@0611a8c0	[Info] sequence
+1510425947.594	LspFrontend@0611a8c0	[Info] older sequence
+1510425956.794	LspFrontend@0111a8c0	[Info] discover neighbour
+1510425956.794	LspFrontend@0211a8c0	[Info] discover neighbour
+1510425956.794	LspFrontend@0311a8c0	[Info] discover neighbour
+1510425956.794	LspFrontend@0411a8c0	[Info] discover neighbour
+1510425956.794	LspFrontend@0511a8c0	[Info] discover neighbour
+1510425956.794	LspFrontend@0611a8c0	[Info] discover neighbour
+1510425956.994	IpFrontend@0411a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425956.994	IpFrontend@0411a8c0	[Info] lsp packet
+1510425956.994	LspFrontend@0411a8c0	[Info] packet from 0611a8c0@0
+1510425956.994	LspFrontend@0411a8c0	[Info] hello
+1510425956.994	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425956.994	IpFrontend@0511a8c0	[Info] lsp packet
+1510425956.994	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@0
+1510425956.994	LspFrontend@0511a8c0	[Info] hello
+1510425956.994	IpFrontend@0311a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425956.994	IpFrontend@0311a8c0	[Info] lsp packet
+1510425956.994	LspFrontend@0311a8c0	[Info] packet from 0511a8c0@0
+1510425956.994	LspFrontend@0311a8c0	[Info] hello
+1510425956.994	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425956.994	IpFrontend@0511a8c0	[Info] lsp packet
+1510425956.994	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@1
+1510425956.994	LspFrontend@0511a8c0	[Info] hello
+1510425956.994	IpFrontend@0611a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425956.994	IpFrontend@0611a8c0	[Info] lsp packet
+1510425956.994	LspFrontend@0611a8c0	[Info] packet from 0411a8c0@1
+1510425956.994	LspFrontend@0611a8c0	[Info] hello
+1510425956.994	IpFrontend@0211a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425956.994	IpFrontend@0211a8c0	[Info] lsp packet
+1510425956.994	LspFrontend@0211a8c0	[Info] packet from 0411a8c0@0
+1510425956.994	LspFrontend@0211a8c0	[Info] hello
+1510425956.994	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425956.994	IpFrontend@0611a8c0	[Info] lsp packet
+1510425956.994	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@2
+1510425956.994	LspFrontend@0611a8c0	[Info] hello
+1510425956.995	IpFrontend@0411a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425956.995	IpFrontend@0411a8c0	[Info] lsp packet
+1510425956.995	LspFrontend@0411a8c0	[Info] packet from 0211a8c0@1
+1510425956.995	LspFrontend@0411a8c0	[Info] hello
+1510425956.995	IpFrontend@0111a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425956.995	IpFrontend@0111a8c0	[Info] lsp packet
+1510425956.995	LspFrontend@0111a8c0	[Info] packet from 0611a8c0@0
+1510425956.995	LspFrontend@0111a8c0	[Info] hello
+1510425956.995	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425956.995	IpFrontend@0611a8c0	[Info] lsp packet
+1510425956.995	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@0
+1510425956.995	LspFrontend@0611a8c0	[Info] hello
+1510425957.194	IpFrontend@0611a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425957.194	IpFrontend@0611a8c0	[Info] lsp packet
+1510425957.194	LspFrontend@0611a8c0	[Info] packet from 0411a8c0@1
+1510425957.194	LspFrontend@0611a8c0	[Info] ack
+1510425957.194	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425957.194	IpFrontend@0611a8c0	[Info] lsp packet
+1510425957.194	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@2
+1510425957.194	LspFrontend@0611a8c0	[Info] ack
+1510425957.194	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425957.194	IpFrontend@0511a8c0	[Info] lsp packet
+1510425957.194	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@1
+1510425957.194	LspFrontend@0511a8c0	[Info] ack
+1510425957.194	IpFrontend@0311a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425957.194	IpFrontend@0311a8c0	[Info] lsp packet
+1510425957.194	LspFrontend@0311a8c0	[Info] packet from 0511a8c0@0
+1510425957.194	LspFrontend@0311a8c0	[Info] ack
+1510425957.194	IpFrontend@0411a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425957.194	IpFrontend@0411a8c0	[Info] lsp packet
+1510425957.194	LspFrontend@0411a8c0	[Info] packet from 0211a8c0@1
+1510425957.194	LspFrontend@0411a8c0	[Info] ack
+1510425957.194	IpFrontend@0411a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425957.194	IpFrontend@0411a8c0	[Info] lsp packet
+1510425957.194	LspFrontend@0411a8c0	[Info] packet from 0611a8c0@0
+1510425957.195	LspFrontend@0411a8c0	[Info] ack
+1510425957.195	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425957.195	IpFrontend@0511a8c0	[Info] lsp packet
+1510425957.195	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@0
+1510425957.195	LspFrontend@0511a8c0	[Info] ack
+1510425957.195	IpFrontend@0211a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425957.195	IpFrontend@0211a8c0	[Info] lsp packet
+1510425957.195	LspFrontend@0211a8c0	[Info] packet from 0411a8c0@0
+1510425957.195	LspFrontend@0211a8c0	[Info] ack
+1510425957.195	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425957.195	IpFrontend@0611a8c0	[Info] lsp packet
+1510425957.195	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@0
+1510425957.195	LspFrontend@0611a8c0	[Info] ack
+1510425957.195	IpFrontend@0111a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425957.195	IpFrontend@0111a8c0	[Info] lsp packet
+1510425957.195	LspFrontend@0111a8c0	[Info] packet from 0611a8c0@0
+1510425957.195	LspFrontend@0111a8c0	[Info] ack
+1510425957.795	LspFrontend@0111a8c0	[Info] broadcast sequence
+1510425957.795	LspFrontend@0211a8c0	[Info] broadcast sequence
+1510425957.795	LspFrontend@0311a8c0	[Info] broadcast sequence
+1510425957.795	LspFrontend@0411a8c0	[Info] broadcast sequence
+1510425957.795	LspFrontend@0511a8c0	[Info] broadcast sequence
+1510425957.795	LspFrontend@0611a8c0	[Info] broadcast sequence
+1510425957.795	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425957.795	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425957.795	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425957.795	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425957.795	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425957.795	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425957.795	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425957.795	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425957.795	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425957.795	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425957.795	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425957.795	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425957.795	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425957.795	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425957.795	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425957.795	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425957.795	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425957.795	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425957.795	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425957.795	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425957.795	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425957.795	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425957.795	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425957.795	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425957.995	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425957.995	IpFrontend@0611a8c0	[Info] lsp packet
+1510425957.995	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@2
+1510425957.995	LspFrontend@0611a8c0	[Info] sequence
+1510425957.995	LspFrontend@0611a8c0	[Info] update sequence: 3
+1510425957.995	IpFrontend@0611a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425957.995	IpFrontend@0611a8c0	[Info] lsp packet
+1510425957.995	LspFrontend@0611a8c0	[Info] packet from 0411a8c0@1
+1510425957.995	LspFrontend@0611a8c0	[Info] sequence
+1510425957.995	LspFrontend@0611a8c0	[Info] update sequence: 3
+1510425957.996	IpFrontend@0211a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425957.996	IpFrontend@0211a8c0	[Info] lsp packet
+1510425957.996	LspFrontend@0211a8c0	[Info] packet from 0411a8c0@0
+1510425957.996	LspFrontend@0211a8c0	[Info] sequence
+1510425957.996	LspFrontend@0211a8c0	[Info] update sequence: 3
+1510425957.996	IpFrontend@0411a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425957.996	IpFrontend@0411a8c0	[Info] lsp packet
+1510425957.996	LspFrontend@0411a8c0	[Info] packet from 0211a8c0@1
+1510425957.996	LspFrontend@0411a8c0	[Info] sequence
+1510425957.996	LspFrontend@0411a8c0	[Info] update sequence: 3
+1510425957.996	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425957.996	IpFrontend@0611a8c0	[Info] lsp packet
+1510425957.996	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@0
+1510425957.996	LspFrontend@0611a8c0	[Info] sequence
+1510425957.996	LspFrontend@0611a8c0	[Info] update sequence: 3
+1510425957.996	IpFrontend@0111a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425957.996	IpFrontend@0111a8c0	[Info] lsp packet
+1510425957.996	LspFrontend@0111a8c0	[Info] packet from 0611a8c0@0
+1510425957.996	LspFrontend@0111a8c0	[Info] sequence
+1510425957.996	LspFrontend@0111a8c0	[Info] update sequence: 3
+1510425957.996	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425957.996	IpFrontend@0511a8c0	[Info] lsp packet
+1510425957.996	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@0
+1510425957.996	LspFrontend@0511a8c0	[Info] sequence
+1510425957.996	LspFrontend@0511a8c0	[Info] update sequence: 3
+1510425957.996	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425957.996	IpFrontend@0511a8c0	[Info] lsp packet
+1510425957.996	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@1
+1510425957.996	LspFrontend@0511a8c0	[Info] sequence
+1510425957.996	LspFrontend@0511a8c0	[Info] update sequence: 3
+1510425957.996	IpFrontend@0411a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425957.996	IpFrontend@0411a8c0	[Info] lsp packet
+1510425957.996	LspFrontend@0411a8c0	[Info] packet from 0611a8c0@0
+1510425957.996	LspFrontend@0411a8c0	[Info] sequence
+1510425957.996	LspFrontend@0411a8c0	[Info] update sequence: 3
+1510425957.996	IpFrontend@0311a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425957.996	IpFrontend@0311a8c0	[Info] lsp packet
+1510425957.996	LspFrontend@0311a8c0	[Info] packet from 0511a8c0@0
+1510425957.996	LspFrontend@0311a8c0	[Info] sequence
+1510425957.996	LspFrontend@0311a8c0	[Info] update sequence: 3
+1510425957.996	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425957.996	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425957.996	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425957.996	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425957.996	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425957.996	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425957.996	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425957.996	LspBackend@0211a8c0	[Info] 0411a8c0 -> 0
+1510425957.996	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425957.996	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425957.996	LspBackend@0411a8c0	[Info] 0211a8c0 -> 1
+1510425957.996	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425957.996	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425957.996	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425957.996	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425957.996	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425957.996	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425957.996	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425957.996	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425957.996	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425957.996	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425957.996	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425957.996	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425957.996	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425957.996	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425957.996	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425957.996	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425957.996	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425957.996	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425957.996	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425957.996	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425957.996	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425957.996	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425957.996	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425957.996	LspBackend@0411a8c0	[Info] 0211a8c0 -> 1
+1510425957.996	LspBackend@0411a8c0	[Info] 0611a8c0 -> 0
+1510425957.996	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425957.996	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425957.996	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425957.996	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425957.996	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425957.996	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425957.996	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425957.996	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425957.996	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425957.996	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425957.996	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425958.196	IpFrontend@0611a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425958.196	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0611a8c0	[Info] packet from 0611a8c0@2
+1510425958.196	LspFrontend@0611a8c0	[Info] sequence
+1510425958.196	LspFrontend@0611a8c0	[Info] older sequence
+1510425958.196	IpFrontend@0611a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425958.196	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0611a8c0	[Info] packet from 0211a8c0@1
+1510425958.196	LspFrontend@0611a8c0	[Info] sequence
+1510425958.196	LspFrontend@0611a8c0	[Info] update sequence: 3
+1510425958.196	IpFrontend@0211a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425958.196	IpFrontend@0211a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0211a8c0	[Info] packet from 0211a8c0@0
+1510425958.196	LspFrontend@0211a8c0	[Info] sequence
+1510425958.196	LspFrontend@0211a8c0	[Info] older sequence
+1510425958.196	IpFrontend@0411a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425958.196	IpFrontend@0411a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0411a8c0	[Info] packet from 0411a8c0@1
+1510425958.196	LspFrontend@0411a8c0	[Info] sequence
+1510425958.196	LspFrontend@0411a8c0	[Info] older sequence
+1510425958.196	IpFrontend@0611a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425958.196	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0611a8c0	[Info] packet from 0611a8c0@0
+1510425958.196	LspFrontend@0611a8c0	[Info] sequence
+1510425958.196	LspFrontend@0611a8c0	[Info] older sequence
+1510425958.196	IpFrontend@0111a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425958.196	IpFrontend@0111a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0111a8c0	[Info] packet from 0511a8c0@0
+1510425958.196	LspFrontend@0111a8c0	[Info] sequence
+1510425958.196	LspFrontend@0111a8c0	[Info] update sequence: 3
+1510425958.196	IpFrontend@0511a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425958.196	IpFrontend@0511a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0511a8c0	[Info] packet from 0511a8c0@0
+1510425958.196	LspFrontend@0511a8c0	[Info] sequence
+1510425958.196	LspFrontend@0511a8c0	[Info] older sequence
+1510425958.196	IpFrontend@0511a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425958.196	IpFrontend@0511a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0511a8c0	[Info] packet from 0511a8c0@1
+1510425958.196	LspFrontend@0511a8c0	[Info] sequence
+1510425958.196	LspFrontend@0511a8c0	[Info] older sequence
+1510425958.196	IpFrontend@0411a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425958.196	IpFrontend@0411a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0411a8c0	[Info] packet from 0511a8c0@0
+1510425958.196	LspFrontend@0411a8c0	[Info] sequence
+1510425958.196	LspFrontend@0411a8c0	[Info] update sequence: 3
+1510425958.196	IpFrontend@0311a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425958.196	IpFrontend@0311a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0311a8c0	[Info] packet from 0611a8c0@0
+1510425958.196	LspFrontend@0311a8c0	[Info] sequence
+1510425958.196	LspFrontend@0311a8c0	[Info] update sequence: 3
+1510425958.196	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425958.196	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425958.196	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425958.196	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425958.196	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425958.196	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425958.196	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425958.196	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425958.196	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425958.196	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425958.196	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425958.196	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425958.196	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425958.196	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425958.196	LspBackend@0411a8c0	[Info] 0211a8c0 -> 1
+1510425958.196	LspBackend@0411a8c0	[Info] 0611a8c0 -> 0
+1510425958.196	LspBackend@0411a8c0	[Info] 0511a8c0 -> 0
+1510425958.196	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425958.196	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425958.196	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425958.196	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425958.196	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425958.196	IpFrontend@0611a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425958.196	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0611a8c0	[Info] packet from 0311a8c0@2
+1510425958.196	LspFrontend@0611a8c0	[Info] sequence
+1510425958.196	LspFrontend@0611a8c0	[Info] update sequence: 3
+1510425958.196	IpFrontend@0611a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425958.196	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0611a8c0	[Info] packet from 0611a8c0@1
+1510425958.196	LspFrontend@0611a8c0	[Info] sequence
+1510425958.196	LspFrontend@0611a8c0	[Info] older sequence
+1510425958.196	IpFrontend@0211a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425958.196	IpFrontend@0211a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0211a8c0	[Info] packet from 0611a8c0@0
+1510425958.196	LspFrontend@0211a8c0	[Info] sequence
+1510425958.196	LspFrontend@0211a8c0	[Info] update sequence: 3
+1510425958.196	IpFrontend@0111a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425958.196	IpFrontend@0111a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0111a8c0	[Info] packet from 0411a8c0@0
+1510425958.196	LspFrontend@0111a8c0	[Info] sequence
+1510425958.196	LspFrontend@0111a8c0	[Info] update sequence: 3
+1510425958.196	IpFrontend@0511a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425958.196	IpFrontend@0511a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0511a8c0	[Info] packet from 0411a8c0@0
+1510425958.196	LspFrontend@0511a8c0	[Info] sequence
+1510425958.196	LspFrontend@0511a8c0	[Info] update sequence: 3
+1510425958.196	IpFrontend@0411a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425958.196	IpFrontend@0411a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0411a8c0	[Info] packet from 0411a8c0@0
+1510425958.196	LspFrontend@0411a8c0	[Info] sequence
+1510425958.196	LspFrontend@0411a8c0	[Info] older sequence
+1510425958.196	IpFrontend@0311a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425958.196	IpFrontend@0311a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0311a8c0	[Info] packet from 0311a8c0@0
+1510425958.196	LspFrontend@0311a8c0	[Info] sequence
+1510425958.196	LspFrontend@0311a8c0	[Info] older sequence
+1510425958.196	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425958.196	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425958.196	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425958.196	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425958.196	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425958.196	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425958.196	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425958.196	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425958.196	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425958.196	LspBackend@0211a8c0	[Info] 0411a8c0 -> 0
+1510425958.196	LspBackend@0211a8c0	[Info] 0611a8c0 -> 0
+1510425958.196	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425958.196	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425958.196	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425958.196	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425958.196	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425958.196	LspBackend@0111a8c0	[Info] 0411a8c0 -> 0
+1510425958.196	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425958.196	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425958.196	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425958.196	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425958.196	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425958.196	LspBackend@0511a8c0	[Info] 0411a8c0 -> 0
+1510425958.196	IpFrontend@0111a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425958.196	IpFrontend@0111a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0111a8c0	[Info] packet from 0111a8c0@0
+1510425958.196	LspFrontend@0111a8c0	[Info] sequence
+1510425958.196	LspFrontend@0111a8c0	[Info] older sequence
+1510425958.196	IpFrontend@0511a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425958.196	IpFrontend@0511a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0511a8c0	[Info] packet from 0111a8c0@0
+1510425958.196	LspFrontend@0511a8c0	[Info] sequence
+1510425958.196	LspFrontend@0511a8c0	[Info] update sequence: 3
+1510425958.196	IpFrontend@0411a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425958.196	IpFrontend@0411a8c0	[Info] lsp packet
+1510425958.196	LspFrontend@0411a8c0	[Info] packet from 0111a8c0@0
+1510425958.196	LspFrontend@0411a8c0	[Info] sequence
+1510425958.196	LspFrontend@0411a8c0	[Info] update sequence: 3
+1510425958.196	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425958.196	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425958.196	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425958.196	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425958.196	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425958.196	LspBackend@0511a8c0	[Info] 0411a8c0 -> 0
+1510425958.196	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425958.196	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425958.196	LspBackend@0411a8c0	[Info] 0211a8c0 -> 1
+1510425958.196	LspBackend@0411a8c0	[Info] 0611a8c0 -> 0
+1510425958.196	LspBackend@0411a8c0	[Info] 0511a8c0 -> 0
+1510425958.196	LspBackend@0411a8c0	[Info] 0111a8c0 -> 0
+1510425958.396	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425958.396	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.396	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@1
+1510425958.396	LspFrontend@0611a8c0	[Info] sequence
+1510425958.396	LspFrontend@0611a8c0	[Info] older sequence
+1510425958.396	IpFrontend@0211a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425958.396	IpFrontend@0211a8c0	[Info] lsp packet
+1510425958.396	LspFrontend@0211a8c0	[Info] packet from 0511a8c0@0
+1510425958.396	LspFrontend@0211a8c0	[Info] sequence
+1510425958.396	LspFrontend@0211a8c0	[Info] update sequence: 3
+1510425958.396	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425958.396	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.396	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@0
+1510425958.396	LspFrontend@0611a8c0	[Info] sequence
+1510425958.396	LspFrontend@0611a8c0	[Info] older sequence
+1510425958.396	IpFrontend@0111a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425958.396	IpFrontend@0111a8c0	[Info] lsp packet
+1510425958.396	LspFrontend@0111a8c0	[Info] packet from 0211a8c0@0
+1510425958.396	LspFrontend@0111a8c0	[Info] sequence
+1510425958.396	LspFrontend@0111a8c0	[Info] update sequence: 3
+1510425958.396	IpFrontend@0511a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425958.396	IpFrontend@0511a8c0	[Info] lsp packet
+1510425958.396	LspFrontend@0511a8c0	[Info] packet from 0211a8c0@0
+1510425958.396	LspFrontend@0511a8c0	[Info] sequence
+1510425958.396	LspFrontend@0511a8c0	[Info] update sequence: 3
+1510425958.396	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425958.396	IpFrontend@0511a8c0	[Info] lsp packet
+1510425958.396	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@1
+1510425958.396	LspFrontend@0511a8c0	[Info] sequence
+1510425958.396	LspFrontend@0511a8c0	[Info] older sequence
+1510425958.396	IpFrontend@0411a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425958.396	IpFrontend@0411a8c0	[Info] lsp packet
+1510425958.396	LspFrontend@0411a8c0	[Info] packet from 0211a8c0@0
+1510425958.396	LspFrontend@0411a8c0	[Info] sequence
+1510425958.396	LspFrontend@0411a8c0	[Info] older sequence
+1510425958.396	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425958.396	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425958.396	LspBackend@0211a8c0	[Info] 0411a8c0 -> 0
+1510425958.396	LspBackend@0211a8c0	[Info] 0611a8c0 -> 0
+1510425958.396	LspBackend@0211a8c0	[Info] 0511a8c0 -> 0
+1510425958.396	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425958.396	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425958.396	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425958.396	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425958.396	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425958.396	LspBackend@0111a8c0	[Info] 0411a8c0 -> 0
+1510425958.396	LspBackend@0111a8c0	[Info] 0211a8c0 -> 0
+1510425958.396	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425958.396	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425958.396	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425958.396	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425958.396	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425958.396	LspBackend@0511a8c0	[Info] 0411a8c0 -> 0
+1510425958.396	LspBackend@0511a8c0	[Info] 0211a8c0 -> 0
+1510425958.397	IpFrontend@0611a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425958.397	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.397	LspFrontend@0611a8c0	[Info] packet from 0411a8c0@2
+1510425958.397	LspFrontend@0611a8c0	[Info] sequence
+1510425958.397	LspFrontend@0611a8c0	[Info] older sequence
+1510425958.397	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425958.397	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.397	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@1
+1510425958.397	LspFrontend@0611a8c0	[Info] sequence
+1510425958.397	LspFrontend@0611a8c0	[Info] older sequence
+1510425958.397	IpFrontend@0211a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425958.397	IpFrontend@0211a8c0	[Info] lsp packet
+1510425958.397	LspFrontend@0211a8c0	[Info] packet from 0111a8c0@0
+1510425958.397	LspFrontend@0211a8c0	[Info] sequence
+1510425958.397	LspFrontend@0211a8c0	[Info] update sequence: 3
+1510425958.397	IpFrontend@0411a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425958.397	IpFrontend@0411a8c0	[Info] lsp packet
+1510425958.397	LspFrontend@0411a8c0	[Info] packet from 0611a8c0@1
+1510425958.397	LspFrontend@0411a8c0	[Info] sequence
+1510425958.397	LspFrontend@0411a8c0	[Info] older sequence
+1510425958.397	IpFrontend@0611a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425958.397	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.397	LspFrontend@0611a8c0	[Info] packet from 0411a8c0@0
+1510425958.397	LspFrontend@0611a8c0	[Info] sequence
+1510425958.397	LspFrontend@0611a8c0	[Info] older sequence
+1510425958.397	IpFrontend@0111a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425958.397	IpFrontend@0111a8c0	[Info] lsp packet
+1510425958.397	LspFrontend@0111a8c0	[Info] packet from 0311a8c0@0
+1510425958.397	LspFrontend@0111a8c0	[Info] sequence
+1510425958.397	LspFrontend@0111a8c0	[Info] update sequence: 3
+1510425958.397	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425958.397	IpFrontend@0511a8c0	[Info] lsp packet
+1510425958.397	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@0
+1510425958.397	LspFrontend@0511a8c0	[Info] sequence
+1510425958.397	LspFrontend@0511a8c0	[Info] older sequence
+1510425958.397	IpFrontend@0411a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425958.397	IpFrontend@0411a8c0	[Info] lsp packet
+1510425958.397	LspFrontend@0411a8c0	[Info] packet from 0311a8c0@0
+1510425958.397	LspFrontend@0411a8c0	[Info] sequence
+1510425958.397	LspFrontend@0411a8c0	[Info] update sequence: 3
+1510425958.397	IpFrontend@0311a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425958.397	IpFrontend@0311a8c0	[Info] lsp packet
+1510425958.397	LspFrontend@0311a8c0	[Info] packet from 0411a8c0@0
+1510425958.397	LspFrontend@0311a8c0	[Info] sequence
+1510425958.397	LspFrontend@0311a8c0	[Info] update sequence: 3
+1510425958.397	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425958.397	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425958.397	LspBackend@0211a8c0	[Info] 0411a8c0 -> 0
+1510425958.397	LspBackend@0211a8c0	[Info] 0611a8c0 -> 0
+1510425958.397	LspBackend@0211a8c0	[Info] 0511a8c0 -> 0
+1510425958.397	LspBackend@0211a8c0	[Info] 0111a8c0 -> 0
+1510425958.397	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425958.397	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425958.397	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425958.397	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425958.397	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425958.397	LspBackend@0111a8c0	[Info] 0411a8c0 -> 0
+1510425958.397	LspBackend@0111a8c0	[Info] 0211a8c0 -> 0
+1510425958.397	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425958.397	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425958.397	LspBackend@0411a8c0	[Info] 0211a8c0 -> 1
+1510425958.397	LspBackend@0411a8c0	[Info] 0611a8c0 -> 0
+1510425958.397	LspBackend@0411a8c0	[Info] 0511a8c0 -> 0
+1510425958.397	LspBackend@0411a8c0	[Info] 0111a8c0 -> 0
+1510425958.397	LspBackend@0411a8c0	[Info] 0311a8c0 -> 0
+1510425958.397	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425958.397	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425958.397	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425958.397	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425958.397	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425958.397	LspBackend@0311a8c0	[Info] 0411a8c0 -> 0
+1510425958.397	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425958.397	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.397	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@2
+1510425958.397	LspFrontend@0611a8c0	[Info] sequence
+1510425958.397	LspFrontend@0611a8c0	[Info] older sequence
+1510425958.397	IpFrontend@0311a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425958.397	IpFrontend@0311a8c0	[Info] lsp packet
+1510425958.397	LspFrontend@0311a8c0	[Info] packet from 0111a8c0@0
+1510425958.397	LspFrontend@0311a8c0	[Info] sequence
+1510425958.397	LspFrontend@0311a8c0	[Info] update sequence: 3
+1510425958.397	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425958.397	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425958.397	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425958.397	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425958.397	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425958.397	LspBackend@0311a8c0	[Info] 0411a8c0 -> 0
+1510425958.596	IpFrontend@0611a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425958.596	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.596	LspFrontend@0611a8c0	[Info] packet from 0211a8c0@2
+1510425958.596	LspFrontend@0611a8c0	[Info] sequence
+1510425958.596	LspFrontend@0611a8c0	[Info] older sequence
+1510425958.596	IpFrontend@0411a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425958.596	IpFrontend@0411a8c0	[Info] lsp packet
+1510425958.596	LspFrontend@0411a8c0	[Info] packet from 0511a8c0@1
+1510425958.596	LspFrontend@0411a8c0	[Info] sequence
+1510425958.596	LspFrontend@0411a8c0	[Info] older sequence
+1510425958.596	IpFrontend@0611a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425958.596	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.596	LspFrontend@0611a8c0	[Info] packet from 0211a8c0@0
+1510425958.597	LspFrontend@0611a8c0	[Info] sequence
+1510425958.597	LspFrontend@0611a8c0	[Info] older sequence
+1510425958.597	IpFrontend@0311a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425958.597	IpFrontend@0311a8c0	[Info] lsp packet
+1510425958.597	LspFrontend@0311a8c0	[Info] packet from 0211a8c0@0
+1510425958.597	LspFrontend@0311a8c0	[Info] sequence
+1510425958.597	LspFrontend@0311a8c0	[Info] update sequence: 3
+1510425958.597	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425958.597	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425958.597	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425958.597	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425958.597	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425958.597	LspBackend@0311a8c0	[Info] 0411a8c0 -> 0
+1510425958.597	LspBackend@0311a8c0	[Info] 0211a8c0 -> 0
+1510425958.597	IpFrontend@0411a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425958.597	IpFrontend@0411a8c0	[Info] lsp packet
+1510425958.597	LspFrontend@0411a8c0	[Info] packet from 0111a8c0@1
+1510425958.597	LspFrontend@0411a8c0	[Info] sequence
+1510425958.597	LspFrontend@0411a8c0	[Info] older sequence
+1510425958.597	IpFrontend@0611a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425958.597	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.597	LspFrontend@0611a8c0	[Info] packet from 0311a8c0@0
+1510425958.597	LspFrontend@0611a8c0	[Info] sequence
+1510425958.597	LspFrontend@0611a8c0	[Info] older sequence
+1510425958.597	IpFrontend@0611a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425958.597	IpFrontend@0611a8c0	[Info] lsp packet
+1510425958.597	LspFrontend@0611a8c0	[Info] packet from 0311a8c0@1
+1510425958.597	LspFrontend@0611a8c0	[Info] sequence
+1510425958.597	LspFrontend@0611a8c0	[Info] older sequence
+1510425958.597	IpFrontend@0211a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425958.597	IpFrontend@0211a8c0	[Info] lsp packet
+1510425958.597	LspFrontend@0211a8c0	[Info] packet from 0311a8c0@0
+1510425958.597	LspFrontend@0211a8c0	[Info] sequence
+1510425958.597	LspFrontend@0211a8c0	[Info] update sequence: 3
+1510425958.597	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425958.597	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425958.597	LspBackend@0211a8c0	[Info] 0411a8c0 -> 0
+1510425958.597	LspBackend@0211a8c0	[Info] 0611a8c0 -> 0
+1510425958.597	LspBackend@0211a8c0	[Info] 0511a8c0 -> 0
+1510425958.597	LspBackend@0211a8c0	[Info] 0111a8c0 -> 0
+1510425958.597	LspBackend@0211a8c0	[Info] 0311a8c0 -> 0
+1510425958.597	IpFrontend@0511a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425958.597	IpFrontend@0511a8c0	[Info] lsp packet
+1510425958.597	LspFrontend@0511a8c0	[Info] packet from 0411a8c0@1
+1510425958.597	LspFrontend@0511a8c0	[Info] sequence
+1510425958.597	LspFrontend@0511a8c0	[Info] older sequence
+1510425958.597	IpFrontend@0511a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425958.597	IpFrontend@0511a8c0	[Info] lsp packet
+1510425958.597	LspFrontend@0511a8c0	[Info] packet from 0111a8c0@1
+1510425958.597	LspFrontend@0511a8c0	[Info] sequence
+1510425958.597	LspFrontend@0511a8c0	[Info] older sequence
+1510425958.797	IpFrontend@0511a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425958.797	IpFrontend@0511a8c0	[Info] lsp packet
+1510425958.797	LspFrontend@0511a8c0	[Info] packet from 0211a8c0@1
+1510425958.797	LspFrontend@0511a8c0	[Info] sequence
+1510425958.797	LspFrontend@0511a8c0	[Info] older sequence
+1510425958.797	IpFrontend@0411a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425958.797	IpFrontend@0411a8c0	[Info] lsp packet
+1510425958.797	LspFrontend@0411a8c0	[Info] packet from 0311a8c0@1
+1510425958.797	LspFrontend@0411a8c0	[Info] sequence
+1510425958.797	LspFrontend@0411a8c0	[Info] older sequence
+1510425967.805	LspFrontend@0111a8c0	[Info] discover neighbour
+1510425967.805	LspFrontend@0211a8c0	[Info] discover neighbour
+1510425967.805	LspFrontend@0311a8c0	[Info] discover neighbour
+1510425967.805	LspFrontend@0411a8c0	[Info] discover neighbour
+1510425967.805	LspFrontend@0511a8c0	[Info] discover neighbour
+1510425967.805	LspFrontend@0611a8c0	[Info] discover neighbour
+1510425968.005	IpFrontend@0411a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425968.006	IpFrontend@0411a8c0	[Info] lsp packet
+1510425968.006	LspFrontend@0411a8c0	[Info] packet from 0611a8c0@0
+1510425968.006	LspFrontend@0411a8c0	[Info] hello
+1510425968.006	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425968.006	IpFrontend@0511a8c0	[Info] lsp packet
+1510425968.006	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@0
+1510425968.006	LspFrontend@0511a8c0	[Info] hello
+1510425968.006	IpFrontend@0311a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425968.006	IpFrontend@0311a8c0	[Info] lsp packet
+1510425968.006	LspFrontend@0311a8c0	[Info] packet from 0511a8c0@0
+1510425968.006	LspFrontend@0311a8c0	[Info] hello
+1510425968.006	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425968.006	IpFrontend@0511a8c0	[Info] lsp packet
+1510425968.006	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@1
+1510425968.006	LspFrontend@0511a8c0	[Info] hello
+1510425968.006	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425968.006	IpFrontend@0611a8c0	[Info] lsp packet
+1510425968.006	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@2
+1510425968.006	LspFrontend@0611a8c0	[Info] hello
+1510425968.006	IpFrontend@0611a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425968.006	IpFrontend@0611a8c0	[Info] lsp packet
+1510425968.006	LspFrontend@0611a8c0	[Info] packet from 0411a8c0@1
+1510425968.006	LspFrontend@0611a8c0	[Info] hello
+1510425968.006	IpFrontend@0211a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425968.006	IpFrontend@0211a8c0	[Info] lsp packet
+1510425968.006	LspFrontend@0211a8c0	[Info] packet from 0411a8c0@0
+1510425968.006	LspFrontend@0211a8c0	[Info] hello
+1510425968.006	IpFrontend@0411a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425968.006	IpFrontend@0411a8c0	[Info] lsp packet
+1510425968.006	LspFrontend@0411a8c0	[Info] packet from 0211a8c0@1
+1510425968.006	LspFrontend@0411a8c0	[Info] hello
+1510425968.006	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425968.006	IpFrontend@0611a8c0	[Info] lsp packet
+1510425968.006	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@0
+1510425968.006	LspFrontend@0611a8c0	[Info] hello
+1510425968.006	IpFrontend@0111a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425968.006	IpFrontend@0111a8c0	[Info] lsp packet
+1510425968.006	LspFrontend@0111a8c0	[Info] packet from 0611a8c0@0
+1510425968.006	LspFrontend@0111a8c0	[Info] hello
+1510425968.206	IpFrontend@0611a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425968.206	IpFrontend@0611a8c0	[Info] lsp packet
+1510425968.206	LspFrontend@0611a8c0	[Info] packet from 0411a8c0@1
+1510425968.206	LspFrontend@0611a8c0	[Info] ack
+1510425968.206	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425968.206	IpFrontend@0611a8c0	[Info] lsp packet
+1510425968.206	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@2
+1510425968.206	LspFrontend@0611a8c0	[Info] ack
+1510425968.206	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425968.206	IpFrontend@0511a8c0	[Info] lsp packet
+1510425968.206	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@1
+1510425968.206	LspFrontend@0511a8c0	[Info] ack
+1510425968.206	IpFrontend@0311a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425968.206	IpFrontend@0311a8c0	[Info] lsp packet
+1510425968.206	LspFrontend@0311a8c0	[Info] packet from 0511a8c0@0
+1510425968.206	LspFrontend@0311a8c0	[Info] ack
+1510425968.206	IpFrontend@0211a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425968.206	IpFrontend@0211a8c0	[Info] lsp packet
+1510425968.206	LspFrontend@0211a8c0	[Info] packet from 0411a8c0@0
+1510425968.206	LspFrontend@0211a8c0	[Info] ack
+1510425968.206	IpFrontend@0411a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425968.206	IpFrontend@0411a8c0	[Info] lsp packet
+1510425968.206	LspFrontend@0411a8c0	[Info] packet from 0211a8c0@1
+1510425968.206	LspFrontend@0411a8c0	[Info] ack
+1510425968.206	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425968.206	IpFrontend@0611a8c0	[Info] lsp packet
+1510425968.206	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@0
+1510425968.206	LspFrontend@0611a8c0	[Info] ack
+1510425968.206	IpFrontend@0111a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425968.206	IpFrontend@0111a8c0	[Info] lsp packet
+1510425968.206	LspFrontend@0111a8c0	[Info] packet from 0611a8c0@0
+1510425968.206	LspFrontend@0111a8c0	[Info] ack
+1510425968.206	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425968.206	IpFrontend@0511a8c0	[Info] lsp packet
+1510425968.206	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@0
+1510425968.206	LspFrontend@0511a8c0	[Info] ack
+1510425968.206	IpFrontend@0411a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425968.206	IpFrontend@0411a8c0	[Info] lsp packet
+1510425968.206	LspFrontend@0411a8c0	[Info] packet from 0611a8c0@0
+1510425968.206	LspFrontend@0411a8c0	[Info] ack
+1510425968.805	LspFrontend@0111a8c0	[Info] broadcast sequence
+1510425968.805	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425968.805	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425968.805	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425968.805	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425968.805	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425968.805	LspBackend@0111a8c0	[Info] 0411a8c0 -> 0
+1510425968.805	LspBackend@0111a8c0	[Info] 0211a8c0 -> 0
+1510425968.805	LspFrontend@0211a8c0	[Info] broadcast sequence
+1510425968.805	LspFrontend@0311a8c0	[Info] broadcast sequence
+1510425968.805	LspFrontend@0411a8c0	[Info] broadcast sequence
+1510425968.805	LspFrontend@0511a8c0	[Info] broadcast sequence
+1510425968.805	LspFrontend@0611a8c0	[Info] broadcast sequence
+1510425968.805	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425968.805	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425968.805	LspBackend@0211a8c0	[Info] 0411a8c0 -> 0
+1510425968.805	LspBackend@0211a8c0	[Info] 0611a8c0 -> 0
+1510425968.805	LspBackend@0211a8c0	[Info] 0511a8c0 -> 0
+1510425968.805	LspBackend@0211a8c0	[Info] 0111a8c0 -> 0
+1510425968.805	LspBackend@0211a8c0	[Info] 0311a8c0 -> 0
+1510425968.805	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425968.805	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425968.805	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425968.805	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425968.805	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425968.805	LspBackend@0311a8c0	[Info] 0411a8c0 -> 0
+1510425968.805	LspBackend@0311a8c0	[Info] 0211a8c0 -> 0
+1510425968.805	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425968.805	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425968.805	LspBackend@0411a8c0	[Info] 0211a8c0 -> 1
+1510425968.805	LspBackend@0411a8c0	[Info] 0611a8c0 -> 0
+1510425968.805	LspBackend@0411a8c0	[Info] 0511a8c0 -> 0
+1510425968.805	LspBackend@0411a8c0	[Info] 0111a8c0 -> 0
+1510425968.805	LspBackend@0411a8c0	[Info] 0311a8c0 -> 0
+1510425968.805	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425968.805	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425968.805	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425968.805	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425968.805	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425968.805	LspBackend@0511a8c0	[Info] 0411a8c0 -> 0
+1510425968.805	LspBackend@0511a8c0	[Info] 0211a8c0 -> 0
+1510425968.805	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425968.805	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425968.805	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425968.805	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425968.805	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425968.805	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425968.805	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425969.005	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425969.005	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.005	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@0
+1510425969.005	LspFrontend@0611a8c0	[Info] sequence
+1510425969.005	LspFrontend@0611a8c0	[Info] update sequence: 4
+1510425969.005	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425969.005	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425969.005	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425969.005	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425969.005	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425969.005	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425969.005	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425969.005	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425969.005	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.005	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@2
+1510425969.005	LspFrontend@0611a8c0	[Info] sequence
+1510425969.005	LspFrontend@0611a8c0	[Info] update sequence: 4
+1510425969.005	IpFrontend@0611a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425969.005	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.005	LspFrontend@0611a8c0	[Info] packet from 0411a8c0@1
+1510425969.005	LspFrontend@0611a8c0	[Info] sequence
+1510425969.005	LspFrontend@0611a8c0	[Info] update sequence: 4
+1510425969.005	IpFrontend@0211a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425969.005	IpFrontend@0211a8c0	[Info] lsp packet
+1510425969.005	LspFrontend@0211a8c0	[Info] packet from 0411a8c0@0
+1510425969.005	LspFrontend@0211a8c0	[Info] sequence
+1510425969.005	LspFrontend@0211a8c0	[Info] update sequence: 4
+1510425969.005	IpFrontend@0411a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425969.005	IpFrontend@0411a8c0	[Info] lsp packet
+1510425969.005	LspFrontend@0411a8c0	[Info] packet from 0211a8c0@1
+1510425969.005	LspFrontend@0411a8c0	[Info] sequence
+1510425969.005	LspFrontend@0411a8c0	[Info] update sequence: 4
+1510425969.005	IpFrontend@0111a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425969.005	IpFrontend@0111a8c0	[Info] lsp packet
+1510425969.005	LspFrontend@0111a8c0	[Info] packet from 0611a8c0@0
+1510425969.005	LspFrontend@0111a8c0	[Info] sequence
+1510425969.005	LspFrontend@0111a8c0	[Info] update sequence: 4
+1510425969.005	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425969.005	IpFrontend@0511a8c0	[Info] lsp packet
+1510425969.005	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@0
+1510425969.005	LspFrontend@0511a8c0	[Info] sequence
+1510425969.005	LspFrontend@0511a8c0	[Info] update sequence: 4
+1510425969.005	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425969.005	IpFrontend@0511a8c0	[Info] lsp packet
+1510425969.005	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@1
+1510425969.005	LspFrontend@0511a8c0	[Info] sequence
+1510425969.005	LspFrontend@0511a8c0	[Info] update sequence: 4
+1510425969.005	IpFrontend@0411a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425969.005	IpFrontend@0411a8c0	[Info] lsp packet
+1510425969.005	LspFrontend@0411a8c0	[Info] packet from 0611a8c0@0
+1510425969.005	LspFrontend@0411a8c0	[Info] sequence
+1510425969.005	LspFrontend@0411a8c0	[Info] update sequence: 4
+1510425969.005	IpFrontend@0311a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425969.005	IpFrontend@0311a8c0	[Info] lsp packet
+1510425969.005	LspFrontend@0311a8c0	[Info] packet from 0511a8c0@0
+1510425969.005	LspFrontend@0311a8c0	[Info] sequence
+1510425969.005	LspFrontend@0311a8c0	[Info] update sequence: 4
+1510425969.005	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425969.005	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425969.005	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425969.005	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425969.005	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425969.005	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425969.005	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425969.005	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425969.005	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425969.005	LspBackend@0211a8c0	[Info] 0411a8c0 -> 0
+1510425969.005	LspBackend@0211a8c0	[Info] 0611a8c0 -> 0
+1510425969.005	LspBackend@0211a8c0	[Info] 0511a8c0 -> 0
+1510425969.005	LspBackend@0211a8c0	[Info] 0111a8c0 -> 0
+1510425969.005	LspBackend@0211a8c0	[Info] 0311a8c0 -> 0
+1510425969.005	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425969.005	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425969.005	LspBackend@0411a8c0	[Info] 0211a8c0 -> 1
+1510425969.005	LspBackend@0411a8c0	[Info] 0611a8c0 -> 0
+1510425969.005	LspBackend@0411a8c0	[Info] 0511a8c0 -> 0
+1510425969.005	LspBackend@0411a8c0	[Info] 0111a8c0 -> 0
+1510425969.005	LspBackend@0411a8c0	[Info] 0311a8c0 -> 0
+1510425969.005	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425969.005	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425969.005	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425969.005	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425969.005	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425969.005	LspBackend@0111a8c0	[Info] 0411a8c0 -> 0
+1510425969.005	LspBackend@0111a8c0	[Info] 0211a8c0 -> 0
+1510425969.005	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425969.005	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425969.005	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425969.005	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425969.005	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425969.005	LspBackend@0511a8c0	[Info] 0411a8c0 -> 0
+1510425969.005	LspBackend@0511a8c0	[Info] 0211a8c0 -> 0
+1510425969.005	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425969.005	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425969.005	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425969.005	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425969.005	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425969.005	LspBackend@0311a8c0	[Info] 0411a8c0 -> 0
+1510425969.005	LspBackend@0311a8c0	[Info] 0211a8c0 -> 0
+1510425969.005	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425969.005	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425969.005	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425969.005	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425969.005	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425969.005	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425969.005	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425969.005	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425969.005	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425969.006	LspBackend@0411a8c0	[Info] 0211a8c0 -> 1
+1510425969.006	LspBackend@0411a8c0	[Info] 0611a8c0 -> 0
+1510425969.006	LspBackend@0411a8c0	[Info] 0511a8c0 -> 0
+1510425969.006	LspBackend@0411a8c0	[Info] 0111a8c0 -> 0
+1510425969.006	LspBackend@0411a8c0	[Info] 0311a8c0 -> 0
+1510425969.006	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425969.006	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425969.006	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425969.006	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425969.006	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425969.006	LspBackend@0511a8c0	[Info] 0411a8c0 -> 0
+1510425969.006	LspBackend@0511a8c0	[Info] 0211a8c0 -> 0
+1510425969.205	IpFrontend@0111a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425969.205	IpFrontend@0111a8c0	[Info] lsp packet
+1510425969.205	LspFrontend@0111a8c0	[Info] packet from 0111a8c0@0
+1510425969.205	LspFrontend@0111a8c0	[Info] sequence
+1510425969.205	LspFrontend@0111a8c0	[Info] older sequence
+1510425969.205	IpFrontend@0511a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425969.205	IpFrontend@0511a8c0	[Info] lsp packet
+1510425969.205	LspFrontend@0511a8c0	[Info] packet from 0111a8c0@0
+1510425969.205	LspFrontend@0511a8c0	[Info] sequence
+1510425969.205	LspFrontend@0511a8c0	[Info] update sequence: 4
+1510425969.205	IpFrontend@0411a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425969.205	IpFrontend@0411a8c0	[Info] lsp packet
+1510425969.205	LspFrontend@0411a8c0	[Info] packet from 0111a8c0@0
+1510425969.205	LspFrontend@0411a8c0	[Info] sequence
+1510425969.205	LspFrontend@0411a8c0	[Info] update sequence: 4
+1510425969.205	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425969.205	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425969.205	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425969.205	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425969.205	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425969.205	LspBackend@0511a8c0	[Info] 0411a8c0 -> 0
+1510425969.205	LspBackend@0511a8c0	[Info] 0211a8c0 -> 0
+1510425969.205	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425969.205	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425969.205	LspBackend@0411a8c0	[Info] 0211a8c0 -> 1
+1510425969.205	LspBackend@0411a8c0	[Info] 0611a8c0 -> 0
+1510425969.205	LspBackend@0411a8c0	[Info] 0511a8c0 -> 0
+1510425969.205	LspBackend@0411a8c0	[Info] 0111a8c0 -> 0
+1510425969.205	LspBackend@0411a8c0	[Info] 0311a8c0 -> 0
+1510425969.206	IpFrontend@0611a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425969.206	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0611a8c0	[Info] packet from 0611a8c0@2
+1510425969.206	LspFrontend@0611a8c0	[Info] sequence
+1510425969.206	LspFrontend@0611a8c0	[Info] older sequence
+1510425969.206	IpFrontend@0611a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425969.206	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0611a8c0	[Info] packet from 0211a8c0@1
+1510425969.206	LspFrontend@0611a8c0	[Info] sequence
+1510425969.206	LspFrontend@0611a8c0	[Info] update sequence: 4
+1510425969.206	IpFrontend@0211a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425969.206	IpFrontend@0211a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0211a8c0	[Info] packet from 0211a8c0@0
+1510425969.206	LspFrontend@0211a8c0	[Info] sequence
+1510425969.206	LspFrontend@0211a8c0	[Info] older sequence
+1510425969.206	IpFrontend@0411a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425969.206	IpFrontend@0411a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0411a8c0	[Info] packet from 0411a8c0@1
+1510425969.206	LspFrontend@0411a8c0	[Info] sequence
+1510425969.206	LspFrontend@0411a8c0	[Info] older sequence
+1510425969.206	IpFrontend@0611a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425969.206	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0611a8c0	[Info] packet from 0611a8c0@0
+1510425969.206	LspFrontend@0611a8c0	[Info] sequence
+1510425969.206	LspFrontend@0611a8c0	[Info] older sequence
+1510425969.206	IpFrontend@0111a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425969.206	IpFrontend@0111a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0111a8c0	[Info] packet from 0511a8c0@0
+1510425969.206	LspFrontend@0111a8c0	[Info] sequence
+1510425969.206	LspFrontend@0111a8c0	[Info] update sequence: 4
+1510425969.206	IpFrontend@0511a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425969.206	IpFrontend@0511a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0511a8c0	[Info] packet from 0511a8c0@0
+1510425969.206	LspFrontend@0511a8c0	[Info] sequence
+1510425969.206	LspFrontend@0511a8c0	[Info] older sequence
+1510425969.206	IpFrontend@0511a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425969.206	IpFrontend@0511a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0511a8c0	[Info] packet from 0511a8c0@1
+1510425969.206	LspFrontend@0511a8c0	[Info] sequence
+1510425969.206	LspFrontend@0511a8c0	[Info] older sequence
+1510425969.206	IpFrontend@0411a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425969.206	IpFrontend@0411a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0411a8c0	[Info] packet from 0511a8c0@0
+1510425969.206	LspFrontend@0411a8c0	[Info] sequence
+1510425969.206	LspFrontend@0411a8c0	[Info] update sequence: 4
+1510425969.206	IpFrontend@0311a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425969.206	IpFrontend@0311a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0311a8c0	[Info] packet from 0611a8c0@0
+1510425969.206	LspFrontend@0311a8c0	[Info] sequence
+1510425969.206	LspFrontend@0311a8c0	[Info] update sequence: 4
+1510425969.206	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425969.206	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425969.206	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425969.206	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425969.206	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425969.206	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425969.206	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425969.206	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425969.206	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425969.206	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425969.206	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425969.206	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425969.206	LspBackend@0111a8c0	[Info] 0411a8c0 -> 0
+1510425969.206	LspBackend@0111a8c0	[Info] 0211a8c0 -> 0
+1510425969.206	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425969.206	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425969.206	LspBackend@0411a8c0	[Info] 0211a8c0 -> 1
+1510425969.206	LspBackend@0411a8c0	[Info] 0611a8c0 -> 0
+1510425969.206	LspBackend@0411a8c0	[Info] 0511a8c0 -> 0
+1510425969.206	LspBackend@0411a8c0	[Info] 0111a8c0 -> 0
+1510425969.206	LspBackend@0411a8c0	[Info] 0311a8c0 -> 0
+1510425969.206	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425969.206	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425969.206	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425969.206	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425969.206	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425969.206	LspBackend@0311a8c0	[Info] 0411a8c0 -> 0
+1510425969.206	LspBackend@0311a8c0	[Info] 0211a8c0 -> 0
+1510425969.206	IpFrontend@0611a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425969.206	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0611a8c0	[Info] packet from 0311a8c0@2
+1510425969.206	LspFrontend@0611a8c0	[Info] sequence
+1510425969.206	LspFrontend@0611a8c0	[Info] update sequence: 4
+1510425969.206	IpFrontend@0611a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425969.206	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0611a8c0	[Info] packet from 0611a8c0@1
+1510425969.206	LspFrontend@0611a8c0	[Info] sequence
+1510425969.206	LspFrontend@0611a8c0	[Info] older sequence
+1510425969.206	IpFrontend@0211a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425969.206	IpFrontend@0211a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0211a8c0	[Info] packet from 0611a8c0@0
+1510425969.206	LspFrontend@0211a8c0	[Info] sequence
+1510425969.206	LspFrontend@0211a8c0	[Info] update sequence: 4
+1510425969.206	IpFrontend@0111a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425969.206	IpFrontend@0111a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0111a8c0	[Info] packet from 0411a8c0@0
+1510425969.206	LspFrontend@0111a8c0	[Info] sequence
+1510425969.206	LspFrontend@0111a8c0	[Info] update sequence: 4
+1510425969.206	IpFrontend@0511a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425969.206	IpFrontend@0511a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0511a8c0	[Info] packet from 0411a8c0@0
+1510425969.206	LspFrontend@0511a8c0	[Info] sequence
+1510425969.206	LspFrontend@0511a8c0	[Info] update sequence: 4
+1510425969.206	IpFrontend@0411a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425969.206	IpFrontend@0411a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0411a8c0	[Info] packet from 0411a8c0@0
+1510425969.206	LspFrontend@0411a8c0	[Info] sequence
+1510425969.206	LspFrontend@0411a8c0	[Info] older sequence
+1510425969.206	IpFrontend@0311a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425969.206	IpFrontend@0311a8c0	[Info] lsp packet
+1510425969.206	LspFrontend@0311a8c0	[Info] packet from 0311a8c0@0
+1510425969.206	LspFrontend@0311a8c0	[Info] sequence
+1510425969.206	LspFrontend@0311a8c0	[Info] older sequence
+1510425969.206	LspBackend@0611a8c0	[Info] finish dijkstra
+1510425969.206	LspBackend@0611a8c0	[Info] 0611a8c0 -> -1
+1510425969.206	LspBackend@0611a8c0	[Info] 0511a8c0 -> 2
+1510425969.206	LspBackend@0611a8c0	[Info] 0111a8c0 -> 0
+1510425969.206	LspBackend@0611a8c0	[Info] 0311a8c0 -> 2
+1510425969.206	LspBackend@0611a8c0	[Info] 0411a8c0 -> 1
+1510425969.206	LspBackend@0611a8c0	[Info] 0211a8c0 -> 1
+1510425969.206	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425969.206	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425969.206	LspBackend@0211a8c0	[Info] 0411a8c0 -> 0
+1510425969.206	LspBackend@0211a8c0	[Info] 0611a8c0 -> 0
+1510425969.206	LspBackend@0211a8c0	[Info] 0511a8c0 -> 0
+1510425969.206	LspBackend@0211a8c0	[Info] 0111a8c0 -> 0
+1510425969.206	LspBackend@0211a8c0	[Info] 0311a8c0 -> 0
+1510425969.206	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425969.206	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425969.206	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425969.206	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425969.206	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425969.206	LspBackend@0111a8c0	[Info] 0411a8c0 -> 0
+1510425969.206	LspBackend@0111a8c0	[Info] 0211a8c0 -> 0
+1510425969.206	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425969.206	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425969.206	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425969.206	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425969.206	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425969.206	LspBackend@0511a8c0	[Info] 0411a8c0 -> 0
+1510425969.206	LspBackend@0511a8c0	[Info] 0211a8c0 -> 0
+1510425969.406	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425969.406	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@2
+1510425969.406	LspFrontend@0611a8c0	[Info] sequence
+1510425969.406	LspFrontend@0611a8c0	[Info] older sequence
+1510425969.406	IpFrontend@0611a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425969.406	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0611a8c0	[Info] packet from 0111a8c0@1
+1510425969.406	LspFrontend@0611a8c0	[Info] sequence
+1510425969.406	LspFrontend@0611a8c0	[Info] older sequence
+1510425969.406	IpFrontend@0211a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425969.406	IpFrontend@0211a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0211a8c0	[Info] packet from 0111a8c0@0
+1510425969.406	LspFrontend@0211a8c0	[Info] sequence
+1510425969.406	LspFrontend@0211a8c0	[Info] update sequence: 4
+1510425969.406	IpFrontend@0311a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425969.406	IpFrontend@0311a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0311a8c0	[Info] packet from 0111a8c0@0
+1510425969.406	LspFrontend@0311a8c0	[Info] sequence
+1510425969.406	LspFrontend@0311a8c0	[Info] update sequence: 4
+1510425969.406	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425969.406	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425969.406	LspBackend@0211a8c0	[Info] 0411a8c0 -> 0
+1510425969.406	LspBackend@0211a8c0	[Info] 0611a8c0 -> 0
+1510425969.406	LspBackend@0211a8c0	[Info] 0511a8c0 -> 0
+1510425969.406	LspBackend@0211a8c0	[Info] 0111a8c0 -> 0
+1510425969.406	LspBackend@0211a8c0	[Info] 0311a8c0 -> 0
+1510425969.406	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425969.406	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425969.406	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425969.406	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425969.406	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425969.406	LspBackend@0311a8c0	[Info] 0411a8c0 -> 0
+1510425969.406	LspBackend@0311a8c0	[Info] 0211a8c0 -> 0
+1510425969.406	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425969.406	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@0
+1510425969.406	LspFrontend@0611a8c0	[Info] sequence
+1510425969.406	LspFrontend@0611a8c0	[Info] older sequence
+1510425969.406	IpFrontend@0111a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425969.406	IpFrontend@0111a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0111a8c0	[Info] packet from 0211a8c0@0
+1510425969.406	LspFrontend@0111a8c0	[Info] sequence
+1510425969.406	LspFrontend@0111a8c0	[Info] update sequence: 4
+1510425969.406	IpFrontend@0511a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425969.406	IpFrontend@0511a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0511a8c0	[Info] packet from 0211a8c0@0
+1510425969.406	LspFrontend@0511a8c0	[Info] sequence
+1510425969.406	LspFrontend@0511a8c0	[Info] update sequence: 4
+1510425969.406	IpFrontend@0411a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425969.406	IpFrontend@0411a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0411a8c0	[Info] packet from 0211a8c0@0
+1510425969.406	LspFrontend@0411a8c0	[Info] sequence
+1510425969.406	LspFrontend@0411a8c0	[Info] older sequence
+1510425969.406	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425969.406	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425969.406	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425969.406	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425969.406	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425969.406	LspBackend@0111a8c0	[Info] 0411a8c0 -> 0
+1510425969.406	LspBackend@0111a8c0	[Info] 0211a8c0 -> 0
+1510425969.406	LspBackend@0511a8c0	[Info] finish dijkstra
+1510425969.406	LspBackend@0511a8c0	[Info] 0511a8c0 -> -1
+1510425969.406	LspBackend@0511a8c0	[Info] 0611a8c0 -> 0
+1510425969.406	LspBackend@0511a8c0	[Info] 0311a8c0 -> 1
+1510425969.406	LspBackend@0511a8c0	[Info] 0111a8c0 -> 0
+1510425969.406	LspBackend@0511a8c0	[Info] 0411a8c0 -> 0
+1510425969.406	LspBackend@0511a8c0	[Info] 0211a8c0 -> 0
+1510425969.406	IpFrontend@0611a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425969.406	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0611a8c0	[Info] packet from 0511a8c0@1
+1510425969.406	LspFrontend@0611a8c0	[Info] sequence
+1510425969.406	LspFrontend@0611a8c0	[Info] older sequence
+1510425969.406	IpFrontend@0211a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425969.406	IpFrontend@0211a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0211a8c0	[Info] packet from 0511a8c0@0
+1510425969.406	LspFrontend@0211a8c0	[Info] sequence
+1510425969.406	LspFrontend@0211a8c0	[Info] update sequence: 4
+1510425969.406	IpFrontend@0511a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425969.406	IpFrontend@0511a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0511a8c0	[Info] packet from 0611a8c0@1
+1510425969.406	LspFrontend@0511a8c0	[Info] sequence
+1510425969.406	LspFrontend@0511a8c0	[Info] older sequence
+1510425969.406	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425969.406	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425969.406	LspBackend@0211a8c0	[Info] 0411a8c0 -> 0
+1510425969.406	LspBackend@0211a8c0	[Info] 0611a8c0 -> 0
+1510425969.406	LspBackend@0211a8c0	[Info] 0511a8c0 -> 0
+1510425969.406	LspBackend@0211a8c0	[Info] 0111a8c0 -> 0
+1510425969.406	LspBackend@0211a8c0	[Info] 0311a8c0 -> 0
+1510425969.406	IpFrontend@0611a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425969.406	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0611a8c0	[Info] packet from 0411a8c0@2
+1510425969.406	LspFrontend@0611a8c0	[Info] sequence
+1510425969.406	LspFrontend@0611a8c0	[Info] older sequence
+1510425969.406	IpFrontend@0411a8c0	[Info] ip packet 0611a8c0 -> ffffffff
+1510425969.406	IpFrontend@0411a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0411a8c0	[Info] packet from 0611a8c0@1
+1510425969.406	LspFrontend@0411a8c0	[Info] sequence
+1510425969.406	LspFrontend@0411a8c0	[Info] older sequence
+1510425969.406	IpFrontend@0611a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425969.406	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0611a8c0	[Info] packet from 0411a8c0@0
+1510425969.406	LspFrontend@0611a8c0	[Info] sequence
+1510425969.406	LspFrontend@0611a8c0	[Info] older sequence
+1510425969.406	IpFrontend@0111a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425969.406	IpFrontend@0111a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0111a8c0	[Info] packet from 0311a8c0@0
+1510425969.406	LspFrontend@0111a8c0	[Info] sequence
+1510425969.406	LspFrontend@0111a8c0	[Info] update sequence: 4
+1510425969.406	IpFrontend@0511a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425969.406	IpFrontend@0511a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0511a8c0	[Info] packet from 0311a8c0@0
+1510425969.406	LspFrontend@0511a8c0	[Info] sequence
+1510425969.406	LspFrontend@0511a8c0	[Info] older sequence
+1510425969.406	IpFrontend@0411a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425969.406	IpFrontend@0411a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0411a8c0	[Info] packet from 0311a8c0@0
+1510425969.406	LspFrontend@0411a8c0	[Info] sequence
+1510425969.406	LspFrontend@0411a8c0	[Info] update sequence: 4
+1510425969.406	IpFrontend@0311a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425969.406	IpFrontend@0311a8c0	[Info] lsp packet
+1510425969.406	LspFrontend@0311a8c0	[Info] packet from 0411a8c0@0
+1510425969.406	LspFrontend@0311a8c0	[Info] sequence
+1510425969.406	LspFrontend@0311a8c0	[Info] update sequence: 4
+1510425969.406	LspBackend@0111a8c0	[Info] finish dijkstra
+1510425969.406	LspBackend@0111a8c0	[Info] 0111a8c0 -> -1
+1510425969.406	LspBackend@0111a8c0	[Info] 0611a8c0 -> 0
+1510425969.406	LspBackend@0111a8c0	[Info] 0511a8c0 -> 0
+1510425969.406	LspBackend@0111a8c0	[Info] 0311a8c0 -> 0
+1510425969.407	LspBackend@0111a8c0	[Info] 0411a8c0 -> 0
+1510425969.407	LspBackend@0111a8c0	[Info] 0211a8c0 -> 0
+1510425969.407	LspBackend@0411a8c0	[Info] finish dijkstra
+1510425969.407	LspBackend@0411a8c0	[Info] 0411a8c0 -> -1
+1510425969.407	LspBackend@0411a8c0	[Info] 0211a8c0 -> 1
+1510425969.407	LspBackend@0411a8c0	[Info] 0611a8c0 -> 0
+1510425969.407	LspBackend@0411a8c0	[Info] 0511a8c0 -> 0
+1510425969.407	LspBackend@0411a8c0	[Info] 0111a8c0 -> 0
+1510425969.407	LspBackend@0411a8c0	[Info] 0311a8c0 -> 0
+1510425969.407	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425969.407	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425969.407	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425969.407	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425969.407	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425969.407	LspBackend@0311a8c0	[Info] 0411a8c0 -> 0
+1510425969.407	LspBackend@0311a8c0	[Info] 0211a8c0 -> 0
+1510425969.606	IpFrontend@0411a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425969.606	IpFrontend@0411a8c0	[Info] lsp packet
+1510425969.606	LspFrontend@0411a8c0	[Info] packet from 0111a8c0@1
+1510425969.606	LspFrontend@0411a8c0	[Info] sequence
+1510425969.606	LspFrontend@0411a8c0	[Info] older sequence
+1510425969.606	IpFrontend@0511a8c0	[Info] ip packet 0111a8c0 -> ffffffff
+1510425969.606	IpFrontend@0511a8c0	[Info] lsp packet
+1510425969.606	LspFrontend@0511a8c0	[Info] packet from 0111a8c0@1
+1510425969.606	LspFrontend@0511a8c0	[Info] sequence
+1510425969.606	LspFrontend@0511a8c0	[Info] older sequence
+1510425969.606	IpFrontend@0611a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425969.606	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.606	LspFrontend@0611a8c0	[Info] packet from 0211a8c0@0
+1510425969.606	LspFrontend@0611a8c0	[Info] sequence
+1510425969.606	LspFrontend@0611a8c0	[Info] older sequence
+1510425969.606	IpFrontend@0611a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425969.606	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.606	LspFrontend@0611a8c0	[Info] packet from 0211a8c0@2
+1510425969.606	LspFrontend@0611a8c0	[Info] sequence
+1510425969.606	LspFrontend@0611a8c0	[Info] older sequence
+1510425969.606	IpFrontend@0311a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425969.606	IpFrontend@0311a8c0	[Info] lsp packet
+1510425969.606	LspFrontend@0311a8c0	[Info] packet from 0211a8c0@0
+1510425969.606	LspFrontend@0311a8c0	[Info] sequence
+1510425969.606	LspFrontend@0311a8c0	[Info] update sequence: 4
+1510425969.606	LspBackend@0311a8c0	[Info] finish dijkstra
+1510425969.606	LspBackend@0311a8c0	[Info] 0311a8c0 -> -1
+1510425969.606	LspBackend@0311a8c0	[Info] 0511a8c0 -> 0
+1510425969.606	LspBackend@0311a8c0	[Info] 0611a8c0 -> 0
+1510425969.606	LspBackend@0311a8c0	[Info] 0111a8c0 -> 0
+1510425969.606	LspBackend@0311a8c0	[Info] 0411a8c0 -> 0
+1510425969.606	LspBackend@0311a8c0	[Info] 0211a8c0 -> 0
+1510425969.606	IpFrontend@0411a8c0	[Info] ip packet 0511a8c0 -> ffffffff
+1510425969.606	IpFrontend@0411a8c0	[Info] lsp packet
+1510425969.606	LspFrontend@0411a8c0	[Info] packet from 0511a8c0@1
+1510425969.606	LspFrontend@0411a8c0	[Info] sequence
+1510425969.606	LspFrontend@0411a8c0	[Info] older sequence
+1510425969.607	IpFrontend@0611a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425969.607	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.607	LspFrontend@0611a8c0	[Info] packet from 0311a8c0@0
+1510425969.607	LspFrontend@0611a8c0	[Info] sequence
+1510425969.607	LspFrontend@0611a8c0	[Info] older sequence
+1510425969.607	IpFrontend@0611a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425969.607	IpFrontend@0611a8c0	[Info] lsp packet
+1510425969.607	LspFrontend@0611a8c0	[Info] packet from 0311a8c0@1
+1510425969.607	LspFrontend@0611a8c0	[Info] sequence
+1510425969.607	LspFrontend@0611a8c0	[Info] older sequence
+1510425969.607	IpFrontend@0211a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425969.607	IpFrontend@0211a8c0	[Info] lsp packet
+1510425969.607	LspFrontend@0211a8c0	[Info] packet from 0311a8c0@0
+1510425969.607	LspFrontend@0211a8c0	[Info] sequence
+1510425969.607	LspFrontend@0211a8c0	[Info] update sequence: 4
+1510425969.607	LspBackend@0211a8c0	[Info] finish dijkstra
+1510425969.607	LspBackend@0211a8c0	[Info] 0211a8c0 -> -1
+1510425969.607	LspBackend@0211a8c0	[Info] 0411a8c0 -> 0
+1510425969.607	LspBackend@0211a8c0	[Info] 0611a8c0 -> 0
+1510425969.607	LspBackend@0211a8c0	[Info] 0511a8c0 -> 0
+1510425969.607	LspBackend@0211a8c0	[Info] 0111a8c0 -> 0
+1510425969.607	LspBackend@0211a8c0	[Info] 0311a8c0 -> 0
+1510425969.607	IpFrontend@0511a8c0	[Info] ip packet 0411a8c0 -> ffffffff
+1510425969.607	IpFrontend@0511a8c0	[Info] lsp packet
+1510425969.607	LspFrontend@0511a8c0	[Info] packet from 0411a8c0@1
+1510425969.607	LspFrontend@0511a8c0	[Info] sequence
+1510425969.607	LspFrontend@0511a8c0	[Info] older sequence
+1510425969.806	IpFrontend@0511a8c0	[Info] ip packet 0211a8c0 -> ffffffff
+1510425969.806	IpFrontend@0511a8c0	[Info] lsp packet
+1510425969.806	LspFrontend@0511a8c0	[Info] packet from 0211a8c0@1
+1510425969.806	LspFrontend@0511a8c0	[Info] sequence
+1510425969.806	LspFrontend@0511a8c0	[Info] older sequence
+1510425969.807	IpFrontend@0411a8c0	[Info] ip packet 0311a8c0 -> ffffffff
+1510425969.807	IpFrontend@0411a8c0	[Info] lsp packet
+1510425969.807	LspFrontend@0411a8c0	[Info] packet from 0311a8c0@1
+1510425969.807	LspFrontend@0411a8c0	[Info] sequence
+1510425969.807	LspFrontend@0411a8c0	[Info] older sequence

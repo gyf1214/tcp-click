@@ -81,6 +81,7 @@ void SocketSender::run_timer(Timer *) {
         break;
     case Writing:
         if (offset >= limit) {
+            state = Closing;
             q = SocketPacket(Close, id, sequence);
             Log("%d -> close %d", sequence, id);
         } else {

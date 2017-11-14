@@ -80,8 +80,13 @@ void SocketSender::run_timer(Timer *) {
         // timer.reschedule_after(timeout);
         break;
     case Writing:
-        q = send_next();
-        Log("%d -> send %d", sequence, q->length());
+        if (offset >= limit) {
+            q = SocketPacket(Close, id, sequence);
+            Log("%d -> close %d", sequence, id);
+        } else {
+            q = send_next();
+            Log("%d -> send %d", sequence, q->length());
+        }
         break;
     case Closing:
         q = SocketPacket(Close, id, ++sequence);

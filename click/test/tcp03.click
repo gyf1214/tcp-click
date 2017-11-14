@@ -13,6 +13,7 @@ elementclass RouterCore { IP $ip |
     lspfront [1] -> lspback -> [1] ipfront
     ipfront [2] -> tcpfront -> [2] ipfront
     tcpfront [2] -> tcpback -> [2] ipfront
+    tcpback [2] -> [2] tcpfront
     tcpback [1] -> [1] output
 }
 

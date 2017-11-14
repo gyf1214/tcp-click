@@ -28,8 +28,7 @@ void TcpBackend::build_link(uint8_t i, uint32_t ip, uint16_t sport, uint16_t dpo
 
 void TcpBackend::clean_link(uint8_t i) {
     TcpSendWindow &swnd = tcb[i].swnd;
-    swnd.timer.assign();
-    swnd.timer.clear();
+    delete swnd.timer;
     swnd.wnd.clear();
     while (!swnd.wait.empty()) {
         Packet *p = swnd.wait.front();
@@ -177,7 +176,7 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
         swnd.rwnd = wnd;
         if (!swnd.rwnd) {
             Warn("zero window");
-            swnd.timer.schedule_after(timeout);
+            swnd.timer->schedule_after(timeout);
         }
 
         if (swnd.seq_front != ack) {
@@ -197,9 +196,9 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             while (try_grow_send(i));
             // update timer
             if (!swnd.wnd.empty()) {
-                swnd.timer.schedule_after(timeout);
+                swnd.timer->schedule_after(timeout);
             } else {
-                swnd.timer.unschedule();
+                swnd.timer->unschedule();
             }
 
             // if fin and no data to send
@@ -253,7 +252,7 @@ void TcpBackend::send_timeout(uint8_t i) {
     Packet *p = packet_from_wnd(i, swnd.seq_front, len);
     output(0).push(p);
 
-    swnd.timer.schedule_after(timeout);
+    swnd.timer->schedule_after(timeout);
 }
 
 void TcpBackend::send_probe(uint8_t i) {
@@ -264,7 +263,7 @@ void TcpBackend::send_probe(uint8_t i) {
     swnd.wnd.push_back(0);
     output(0).push(p);
 
-    swnd.timer.schedule_after(timeout);
+    swnd.timer->schedule_after(timeout);
 }
 
 void TcpBackend::sending_timer(Timer *t, void *data) {
@@ -312,8 +311,8 @@ void TcpBackend::push(int, Packet *p) {
         }
         while (try_grow_send(i));
         // if wnd not empty then issue timeout timer
-        if (!tcb[i].swnd.wnd.empty() && !tcb[i].swnd.timer.scheduled()) {
-            tcb[i].swnd.timer.schedule_after(timeout);
+        if (!tcb[i].swnd.wnd.empty() && !tcb[i].swnd.timer->scheduled()) {
+            tcb[i].swnd.timer->schedule_after(timeout);
         }
         break;
     case Recv:

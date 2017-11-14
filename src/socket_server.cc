@@ -47,7 +47,7 @@ void SocketServer::run_timer(Timer *) {
         break;
     case Closing:
         q = SocketPacket(Close, id1, ++sequence);
-        Log("%d -> close %d", id1);
+        Log("%d -> close %d", sequence, id1);
         break;
     case AcceptClose:
         q = SocketPacket(Free, id1, ++sequence);
@@ -96,7 +96,7 @@ void SocketServer::push(int, Packet *p) {
         timer.schedule_after(interval);
     } else if (state == Closing && method == Close) {
         state = AcceptClose;
-        Log("%d <- close");
+        Log("%d <- close", sequence);
         timer.schedule_now();
     } else if (state == AcceptClose && method == Free) {
         state = Listened;

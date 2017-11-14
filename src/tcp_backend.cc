@@ -194,7 +194,7 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             // TODO: Reno Fast Recovery
             Warn("dup ack");
             // fast retransmission
-            if (++swnd.fails >= 3) {
+            if (++swnd.fails >= 3 && swnd.cwnd > 1) {
                 Log("fast resend");
                 send_timeout(i);
             }

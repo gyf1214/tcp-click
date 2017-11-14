@@ -7,11 +7,11 @@
 CLICK_DECLS
 
 const size_t TcpBufferSize = 65536;
-const size_t TcpSegmentSize = 1024;
+const size_t TcpSegmentSize = 1420;
 const uint32_t TcpFixedCWnd = 10;
 
 // look ahead for disorder packet
-const size_t TcpRecvMaxAhead = 4096;
+const size_t TcpRecvMaxAhead = TcpSegmentSize * 10;
 
 struct TcpSendWindow {
     Deque<Packet *> wait;

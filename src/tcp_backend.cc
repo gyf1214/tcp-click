@@ -214,6 +214,8 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             // mark recved & move forward
             rwnd.mark_disorder(seq, tail);
             rwnd.forward();
+            // as buffer moves forward, try resolve waiting recv requests
+            try_resolve_recv(i);
             Log("update ack %u, wnd %u", rwnd.seq_back, rwnd.max_grow());
         }
         // send back ack

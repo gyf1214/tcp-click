@@ -1,4 +1,4 @@
-require(library ../network/delayed_net3.click)
+require(library ../network/net3.click)
 
 elementclass RouterCore { IP $ip |
     ipfront  :: IpFrontend(IP $ip)

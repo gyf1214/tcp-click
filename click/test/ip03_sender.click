@@ -1,7 +1,7 @@
 require(library ip03.click)
 
 sender1 :: {
-    RatedSource(DATA "hello1-->3", RATE 10) -> IpSender(6, 192.168.17.1) -> output
+    RatedSource(DATA "hello1-->3", RATE 10) -> IpSender(6, 192.168.17.3) -> output
 }
 
 // sender2 :: {

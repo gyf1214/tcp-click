@@ -159,22 +159,24 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
     if (tcp_p->flags & Ack) {
         // Ack
         TcpSendWindow &swnd = tcb[i].swnd;
-        Log("ack %d, wnd %d", tcp_p->acknowledge, tcp_p->window);
+        uint32_t ack = ntohl(tcp_p->acknowledge);
+        uint32_t wnd = ntohl(tcp_p->window);
+        Log("ack %d, wnd %d", ack, wnd);
 
-        swnd.rwnd = tcp_p->window;
+        swnd.rwnd = wnd;
         if (!swnd.rwnd) {
             Warn("zero window");
             // TODO: zero window probe
         }
 
         bool recved = false;
-        while (!swnd.wnd.empty() && tcp_p->acknowledge > swnd.seq_front) {
+        while (!swnd.wnd.empty() && ack > swnd.seq_front) {
             recved = true;
             swnd.seq_front += swnd.wnd.front();
             swnd.wnd.pop_front();
         }
 
-        if (swnd.seq_front != tcp_p->acknowledge) {
+        if (swnd.seq_front != ack) {
             Warn("error in sliding window");
             // TODO: anything to deal with this error?
         }
@@ -189,6 +191,7 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             try_resolve_send(i);
             // try send more packets
             while (try_grow_send(i));
+            // update timer
             if (!swnd.wnd.empty()) {
                 swnd.timer.schedule_after(timeout);
             } else {
@@ -199,10 +202,10 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
         // Syn Data Packet
         TcpRecvWindow &rwnd = tcb[i].rwnd;
         size_t len = p->length() - TcpSize;
-        uint32_t seq = tcp_p->sequence;
+        uint32_t seq = ntohl(tcp_p->sequence);
         uint32_t tail = seq + len;
-
         Log("syn %d, len %d", seq, len);
+
         if (tail > rwnd.max_tail()) {
             Warn("tail exceeds");
         } else if (seq < rwnd.seq_back || rwnd.check_disorder(seq, tail)) {

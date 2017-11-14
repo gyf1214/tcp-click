@@ -8,7 +8,7 @@ elementclass SSimple {IP $ip, PORT $port |
 }
 
 elementclass SServer { IP $ip, PORT $port |
-    sock :: SocketServer(IP $ip, PORT $port, WAIT 0, LAST 20)
+    sock :: SocketServer(IP $ip, PORT $port, INTERVAL 0.1, WAIT 0, BUFFER 4096)
     input -> sock -> output
 }
 

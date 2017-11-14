@@ -22,7 +22,7 @@ int LspFrontend::configure(Vector<String> &args, ErrorHandler *errh) {
 
 int LspFrontend::initialize(ErrorHandler *) {
     timer.initialize(this);
-    timer.reschedule_after(interval);
+    timer.schedule_after(interval);
     Log("initialized");
     return 0;
 }
@@ -37,7 +37,7 @@ void LspFrontend::run_timer(Timer *) {
         // broadcast hello
         output(0).push(build_packet(LspHello, IpAny, AnnoAnyPort));
 
-        timer.reschedule_after(timeout);
+        timer.schedule_after(timeout);
     } else {
         Log("broadcast sequence");
         state = Sleep;
@@ -49,7 +49,7 @@ void LspFrontend::run_timer(Timer *) {
         output(1).push(p);
         output(0).push(q);
 
-        timer.reschedule_after(interval);
+        timer.schedule_after(interval);
     }
 }
 

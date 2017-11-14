@@ -136,7 +136,7 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             // try send more packets
             while (try_grow_send(i));
             if (!swnd.wnd.empty()) {
-                swnd.timer.reschedule_after(timeout);
+                swnd.timer.schedule_after(timeout);
             } else {
                 swnd.timer.unschedule();
             }
@@ -154,11 +154,11 @@ void TcpBackend::send_timeout(uint8_t i) {
     TcpSendWindow &swnd = tcb[i].swnd;
 
     uint32_t len = swnd.wnd.front();
-    Log("resend");
+    Log("resend %d", i);
     Packet *p = packet_from_wnd(i, swnd.seq_front, len);
     output(0).push(p);
 
-    tcb[i].swnd.timer.reschedule_after(timeout);
+    tcb[i].swnd.timer.schedule_after(timeout);
 }
 
 void TcpBackend::sending_timer(Timer *t, void *data) {
@@ -190,8 +190,8 @@ void TcpBackend::push(int, Packet *p) {
             tcb[i].swnd.wait.push_back(p);
         }
         while (try_grow_send(i));
-        if (!tcb[i].swnd.timer.scheduled()) {
-            tcb[i].swnd.timer.reschedule_after(timeout);
+        if (!tcb[i].swnd.wnd.empty() && !tcb[i].swnd.timer.scheduled()) {
+            tcb[i].swnd.timer.schedule_after(timeout);
         }
         break;
     case Recv:

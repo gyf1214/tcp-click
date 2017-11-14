@@ -75,7 +75,7 @@ void SocketSender::push(int, Packet *p) {
         } else if (state == Start) {
             state = Start;
             Log("%d <- error (conn)", sequence);
-            timer.reschedule_after(interval);
+            timer.schedule_after(interval);
         } else {
             Warn("%d <- error", sequence);
             state = Err;
@@ -88,10 +88,10 @@ void SocketSender::push(int, Packet *p) {
     } else if (state == Start && method == Connect) {
         state = Writing;
         Log("%d <- connect", sequence);
-        timer.reschedule_after(interval);
+        timer.schedule_after(interval);
     } else if (state == Writing && method == Send) {
         Log("%d <- send", sequence);
-        timer.reschedule_after(interval);
+        timer.schedule_after(interval);
     } else if (state == Closing && method == Close) {
         state = Start;
         Log("%d <- close", sequence);

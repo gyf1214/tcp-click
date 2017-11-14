@@ -272,7 +272,7 @@ void TcpBackend::send_timeout(uint8_t i) {
     TcpSendWindow &swnd = tcb[i].swnd;
 
     // update cwnd
-    if (swnd.cwnd >= swnd.wnd.size()) {
+    if (swnd.cwnd >= swnd.wnd.size() && swnd.cwnd > 1) {
         swnd.c_threshold = swnd.cwnd / 2;
         swnd.cwnd = 1;
         Log("congestion threshold %u", swnd.c_threshold);

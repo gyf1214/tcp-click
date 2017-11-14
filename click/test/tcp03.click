@@ -1,5 +1,3 @@
-require(library ../network/delayed_net3.click)
-
 elementclass RouterCore { IP $ip |
     ipfront  :: IpFrontend(IP $ip)
     lspfront :: LspFrontend(IP $ip, INTERVAL 10, TIMEOUT 1)

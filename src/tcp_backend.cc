@@ -280,7 +280,6 @@ void TcpBackend::send_timeout(uint8_t i) {
         // clear sending window
         while (swnd.wnd.size() > 1) {
             swnd.wnd.pop_back();
-            swnd.seq_back = swnd.seq_front;
         }
     }
 
@@ -288,7 +287,7 @@ void TcpBackend::send_timeout(uint8_t i) {
     uint32_t len = swnd.wnd.front();
     Log("resend %d", i);
     Packet *p = packet_from_wnd(i, swnd.seq_front, len);
-    swnd.seq_back += len;
+    swnd.seq_back = swnd.seq_front + len;
     output(0).push(p);
 
     swnd.timer->schedule_after(timeout);

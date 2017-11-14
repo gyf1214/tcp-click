@@ -2,6 +2,7 @@
 // input(0) : connect to frontend
 // output(0) : sending backend
 // output(1) : socket client
+// output(2) : tcp frontend
 #ifndef __CLICK_TCP_BACKEND
 #define __CLICK_TCP_BACKEND
 #include <click/config.h>
@@ -16,7 +17,7 @@ class TcpBackend : public Element {
     Timestamp timeout;
 public:
     const char *class_name() const { return "TcpBackend"; }
-    const char *port_count() const { return "1/2"; }
+    const char *port_count() const { return "1/3"; }
     const char *processing() const { return PUSH; }
     int configure(Vector<String> &, ErrorHandler *);
     static void sending_timer(Timer *, void *);

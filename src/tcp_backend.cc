@@ -202,13 +202,8 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             if (swnd.fin && swnd.seq_front == swnd.buf_back) {
                 Log("reset tcb");
                 clean_link(i);
-                // send fin
-                WritablePacket *q = Packet::make(TcpSize);
-                TcpHeader *tcp_q = (TcpHeader *)q->data();
-                tcp_q->init(tcb[i].sport, tcb[i].dport, Fin);
-                q->set_anno_u8(SendProto, IpProtoTcp);
-                q->set_anno_u32(SendIp, tcb[i].ip);
-                output(0).push(q);
+                // inform frontend
+                output(2).push(SocketPacket(Close, i, 0));
             }
         }
     } else if (tcp_p->flags & Syn) {
@@ -278,8 +273,12 @@ void TcpBackend::push(int, Packet *p) {
         break;
     case Close:
         Log("tcb fin");
-        tcb[i].swnd.fin = true;
-        p->kill();
+        if (tcb[i].swnd.seq_front == tcb[i].swnd.buf_back) {
+            output(2).push(p);
+        } else {
+            tcb[i].swnd.fin = true;
+            p->kill();
+        }
         break;
     case Free:
         Log("reset tcb");

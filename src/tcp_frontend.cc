@@ -233,7 +233,7 @@ void TcpFrontend::push_socket(Packet *p) {
             send_return(p, false);
             break;
         case Established:
-            sockets[i].state = Fin_Wait1;
+            // sockets[i].state = Fin_Wait1;
             sockets[i].closeWait = p;
             Log("active close");
             back_close(i);
@@ -243,8 +243,8 @@ void TcpFrontend::push_socket(Packet *p) {
             sockets[i].state = Last_Ack;
             sockets[i].closeWait = p;
             Log("passive close");
-            back_close(i);
-            // send_short(i, Fin);
+            back_close(i, true);
+            send_short(i, Fin);
             break;
         case Closed:
             Warn("duplicate close");
@@ -432,15 +432,20 @@ void TcpFrontend::push_tcp(Packet *p) {
 }
 
 void TcpFrontend::push(int port, Packet *p) {
-    if (!port) {
+    if (port == 0) {
         if (p->anno_u8(RecvProto) != IpProtoTcp) {
             Warn("unknown packet");
             p->kill();
         } else {
             push_tcp(p);
         }
-    } else {
+    } else if (port == 1) {
         push_socket(p);
+    } else {
+        Log("backend complete close");
+        uint8_t i = p->anno_u8(SocketId);
+        sockets[i].state = Fin_Wait1;
+        send_short(i, Fin);
     }
     print_sockets();
 }

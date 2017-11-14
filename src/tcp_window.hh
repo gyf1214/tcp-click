@@ -32,7 +32,7 @@ struct TcpRecvWindow {
     // recving flag for disorder
     // TODO: lack of efficiency
     bool disorder[TcpRecvMaxAhead];
-    uint32_t seq_front, seq_back, buffer_back;
+    uint32_t seq_front, seq_back, buf_back;
     void init();
     uint32_t max_grow();
     uint32_t max_recv();
@@ -63,7 +63,7 @@ inline void TcpSendWindow::init(Element *e, TimerCallback f, uint8_t i) {
 
 inline void TcpRecvWindow::init() {
     wait.clear();
-    seq_front = seq_back = buffer_back = 0;
+    seq_front = seq_back = buf_back = 0;
     memset(disorder, 0, sizeof(disorder));
 }
 
@@ -109,6 +109,7 @@ inline uint32_t TcpRecvWindow::max_tail() {
 
 // mark a packet to be recved
 inline void TcpRecvWindow::mark_disorder(uint32_t l, uint32_t r) {
+    if (r > buf_back) buf_back = r;
     l = l % TcpRecvMaxAhead;
     r = r % TcpRecvMaxAhead;
     if (r == l) return;
@@ -136,7 +137,7 @@ inline bool TcpRecvWindow::check_disorder(uint32_t l, uint32_t r) {
 
 // try resolve disorder and move forward;
 inline void TcpRecvWindow::forward() {
-    while (seq_back < buffer_back && disorder[seq_back % TcpRecvMaxAhead]) {
+    while (seq_back < buf_back && disorder[seq_back % TcpRecvMaxAhead]) {
         disorder[seq_back % TcpRecvMaxAhead] = false;
         ++seq_back;
     }

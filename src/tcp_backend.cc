@@ -56,7 +56,7 @@ void TcpBackend::return_send(Packet *p, bool error) {
 WritablePacket *TcpBackend::packet_from_wnd(uint8_t i, uint32_t seq, uint32_t size) {
     TcpSendWindow &swnd = tcb[i].swnd;
 
-    Log("send seq %d len %d", seq, size);
+    Log("send seq %u len %u", seq, size);
     WritablePacket *q = Packet::make(TcpSize + size);
     TcpHeader *tcp_q = (TcpHeader *)q->data();
     // make packet
@@ -92,7 +92,7 @@ bool TcpBackend::try_buffer_send(uint8_t i, Packet *p) {
     if (cap < p->length()) {
         return false;
     }
-    Log("push %d data to buffer", p->length());
+    Log("push %u data to buffer", p->length());
     // buffer sending data
     tcp_to_wnd(swnd.buf, (const char *)p->data(), TcpBufferSize,
     swnd.buf_back, swnd.buf_back + p->length());
@@ -129,7 +129,7 @@ bool TcpBackend::try_buffer_recv(uint8_t i, Packet *p) {
     } else {
         len = l0;
     }
-    Log("pop %d data from buffer", len);
+    Log("pop %u data from buffer", len);
     // take data from buffer
     tcp_from_wnd((char *)q->data(), rwnd.buf, TcpBufferSize,
     rwnd.seq_front, rwnd.seq_front + len);
@@ -160,8 +160,8 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
         // Ack
         TcpSendWindow &swnd = tcb[i].swnd;
         uint32_t ack = ntohl(tcp_p->acknowledge);
-        uint32_t wnd = ntohl(tcp_p->window);
-        Log("ack %d, wnd %d", ack, wnd);
+        uint32_t wnd = ntohs(tcp_p->window);
+        Log("ack %u, wnd %u", ack, wnd);
 
         swnd.rwnd = wnd;
         if (!swnd.rwnd) {
@@ -204,7 +204,7 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
         size_t len = p->length() - TcpSize;
         uint32_t seq = ntohl(tcp_p->sequence);
         uint32_t tail = seq + len;
-        Log("syn %d, len %d", seq, len);
+        Log("syn %u, len %u", seq, len);
 
         if (tail > rwnd.max_tail()) {
             Warn("tail exceeds");
@@ -214,7 +214,7 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             // mark recved & move forward
             rwnd.mark_disorder(seq, tail);
             rwnd.forward();
-            Log("update ack %d, wnd %d", rwnd.seq_back, rwnd.max_grow());
+            Log("update ack %u, wnd %u", rwnd.seq_back, rwnd.max_grow());
         }
         // send back ack
         WritablePacket *q = Packet::make(TcpSize);

@@ -22,7 +22,7 @@ int LspFrontend::configure(Vector<String> &args, ErrorHandler *errh) {
 
 int LspFrontend::initialize(ErrorHandler *) {
     timer.initialize(this);
-    timer.schedule_after(interval);
+    timer.schedule_now();
     Log("initialized");
     return 0;
 }

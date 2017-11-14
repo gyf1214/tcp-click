@@ -140,7 +140,7 @@ void TcpFrontend::reset_socket(uint8_t i, bool rst) {
     if (sockets[i].state == Listening || sockets[i].state == Closed) return;
     sockets[i].state = Closed;
     free_wait(i);
-    back_close(i);
+    back_close(i, true);
 }
 
 void TcpFrontend::push_socket(Packet *p) {
@@ -235,16 +235,16 @@ void TcpFrontend::push_socket(Packet *p) {
         case Established:
             sockets[i].state = Fin_Wait1;
             sockets[i].closeWait = p;
-            Log("close fin");
+            Log("active close");
             back_close(i);
-            send_short(i, Fin);
+            // send_short(i, Fin);
             break;
         case Close_Wait:
             sockets[i].state = Last_Ack;
             sockets[i].closeWait = p;
-            Log("close wait");
+            Log("passive close");
             back_close(i);
-            send_short(i, Fin);
+            // send_short(i, Fin);
             break;
         case Closed:
             Warn("duplicate close");
@@ -311,7 +311,8 @@ void TcpFrontend::push_tcp(Packet *p) {
         p->kill();
     } else if ((flag & Syn) && (flag & Ack)) {
         // SYN ACK
-        if (sockets[i].state == Syn_Sent) {
+        switch (sockets[i].state) {
+        case Syn_Sent:
             sockets[i].state = Established;
             Log("establish");
             // inform backend
@@ -322,9 +323,10 @@ void TcpFrontend::push_tcp(Packet *p) {
             // send back ack
             send_short(i, Ack);
             p->kill();
-        } else {
+            break;
+        default:
             Warn("SYN ACK on invalid state");
-            reset_socket(i);
+            // reset_socket(i);
             p->kill();
         }
     } else if (flag & Syn) {
@@ -345,7 +347,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             break;
         default:
             Warn("SYN on invalid state");
-            reset_socket(i);
+            // reset_socket(i);
             p->kill();
         }
     } else if ((flag & Fin) && (flag & Ack)) {
@@ -357,7 +359,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             sockets[i].closeWait = NULL;
         } else {
             Warn("FIN ACK on invalid state");
-            reset_socket(i);
+            // reset_socket(i);
         }
         p->kill();
     } else if (flag & Fin) {
@@ -382,7 +384,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             break;
         default:
             Warn("FIN on invalid state");
-            reset_socket(i);
+            // reset_socket(i);
         }
         p->kill();
     } else if (flag & Ack) {
@@ -423,7 +425,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             break;
         default:
             Warn("Ack on invalid state");
-            reset_socket(i);
+            // reset_socket(i);
             p->kill();
         }
     }
@@ -451,8 +453,8 @@ void TcpFrontend::print_sockets() {
     }
 }
 
-void TcpFrontend::back_close(uint8_t i) {
-    output(2).push(SocketPacket(Close, i, 0));
+void TcpFrontend::back_close(uint8_t i, bool rst) {
+    output(2).push(SocketPacket(rst ? Free : Close, i, 0));
 }
 
 void TcpFrontend::back_establish(uint8_t i) {

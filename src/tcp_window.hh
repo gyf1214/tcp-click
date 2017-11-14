@@ -21,6 +21,7 @@ struct TcpSendWindow {
     uint16_t rwnd;
     uint8_t cwnd, fails;
     Timer timer;
+    bool fin;
     void init(Element *, TimerCallback, uint8_t);
     uint32_t max_grow();
     uint32_t max_buffer();
@@ -56,6 +57,7 @@ inline void TcpSendWindow::init(Element *e, TimerCallback f, uint8_t i) {
     seq_front = seq_back = buf_back = 0;
     cwnd = TcpFixedCWnd;
     rwnd = TcpFixedCWnd * TcpSegmentSize;
+    fin = false;
     intptr_t id = i;
     timer.assign(f, (void *)id);
     timer.initialize(e);

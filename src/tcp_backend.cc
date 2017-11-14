@@ -197,6 +197,19 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             } else {
                 swnd.timer.unschedule();
             }
+
+            // if fin and no data to send
+            if (swnd.fin && swnd.seq_front == swnd.buf_back) {
+                Log("reset tcb");
+                clean_link(i);
+                // send fin
+                WritablePacket *q = Packet::make(TcpSize);
+                TcpHeader *tcp_q = (TcpHeader *)q->data();
+                tcp_q->init(tcb[i].sport, tcb[i].dport, Fin);
+                q->set_anno_u8(SendProto, IpProtoTcp);
+                q->set_anno_u32(SendIp, tcb[i].ip);
+                output(0).push(q);
+            }
         }
     } else if (tcp_p->flags & Syn) {
         // Syn Data Packet
@@ -264,7 +277,12 @@ void TcpBackend::push(int, Packet *p) {
         p->kill();
         break;
     case Close:
-        Log("close tcb");
+        Log("tcb fin");
+        tcb[i].swnd.fin = true;
+        p->kill();
+        break;
+    case Free:
+        Log("reset tcb");
         clean_link(i);
         p->kill();
         break;

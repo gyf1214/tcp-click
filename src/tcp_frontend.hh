@@ -44,7 +44,7 @@ public:
     void push_tcp(Packet *);
     void push(int, Packet *);
     // inform back to close
-    void back_close(uint8_t);
+    void back_close(uint8_t, bool = false);
     // inform back to establish
     void back_establish(uint8_t);
     // reset socket

@@ -125,7 +125,7 @@ bool TcpBackend::try_buffer_recv(uint8_t i, Packet *p) {
     WritablePacket *q = p->uniqueify();
     uint32_t l0 = q->length();
     if (l0 > len) {
-        p->take(l0 - len);
+        q->take(l0 - len);
     } else {
         len = l0;
     }

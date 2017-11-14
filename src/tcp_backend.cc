@@ -195,7 +195,7 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             Warn("dup ack");
             // fast retransmission
             if (++swnd.fails >= 3) {
-                Log("fast resend")
+                Log("fast resend");
                 send_timeout(i);
             }
         } else {

@@ -193,6 +193,20 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             Warn("dup ack");
         } else {
             swnd.fails = 0;
+            // cwnd control
+            if (swnd.cwnd <= swnd.c_threshold) {
+                // slow start
+                ++swnd.cwnd;
+            } else {
+                // linear;
+                ++swnd.succs;
+                if (swnd.succs >= swnd.cwnd) {
+                    ++swnd.cwnd;
+                    swnd.succs = 0;
+                }
+            }
+            Log("update cwnd %u", swnd.cwnd);
+
             // as buffer moves forward, try resolve waiting send requests
             try_resolve_send(i);
             // try send more packets
@@ -250,6 +264,14 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
 void TcpBackend::send_timeout(uint8_t i) {
     TcpSendWindow &swnd = tcb[i].swnd;
 
+    // update cwnd
+    if (swnd.cwnd >= 1) {
+        swnd.c_threshold = swnd.cwnd / 2;
+        swnd.cwnd = 1;
+        Log("congestion, update c_threshold %u", swnd.c_threshold);
+    }
+
+    // resend
     uint32_t len = swnd.wnd.front();
     Log("resend %d", i);
     Packet *p = packet_from_wnd(i, swnd.seq_front, len);

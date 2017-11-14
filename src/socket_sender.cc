@@ -31,7 +31,7 @@ int SocketSender::initialize(ErrorHandler *) {
 }
 
 WritablePacket *SocketSender::send_next() {
-    uint32_t len = buffer;
+    int len = buffer;
     len = limit - offset > len ? len : limit - offset;
 
     WritablePacket *q = SocketPacket(Send, id, ++sequence, len);

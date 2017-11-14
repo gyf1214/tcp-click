@@ -12,7 +12,8 @@ int SocketServer::configure(Vector<String> &args, ErrorHandler *errh) {
     "IP", cpkM + cpkP, cpIPAddress, &self,
     "PORT", cpkM + cpkP, cpUnsignedShort, &port,
     "INTERVAL", cpkM + cpkP, cpTimestamp, &interval,
-    "WAIT", cpkM + cpkP, cpTimestamp, &wait, cpEnd) < 0) {
+    "WAIT", cpkM + cpkP, cpTimestamp, &wait,
+    "BUFFER", cpkM + cpkP, cpInteger, &buffer, cpEnd) < 0) {
         return -1;
     }
     return 0;
@@ -45,7 +46,7 @@ void SocketServer::run_timer(Timer *) {
         Log("%d -> recv %d", sequence, buffer);
         break;
     case Closing:
-        q = SocketPacket(Close, id1, ++sequence, buffer);
+        q = SocketPacket(Close, id1, ++sequence);
         Log("%d -> close %d", id1);
         break;
     case AcceptClose:

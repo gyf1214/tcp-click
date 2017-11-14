@@ -28,6 +28,8 @@ public:
     bool try_grow_send(uint8_t);
     bool try_buffer_send(uint8_t, Packet *);
     void try_resolve_send(uint8_t);
+    bool try_buffer_recv(uint8_t, Packet *);
+    void try_resolve_recv(uint8_t);
     void push_tcp(uint8_t, Packet *);
     void push(int, Packet *);
 };

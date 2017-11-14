@@ -23,6 +23,7 @@ void TcpBackend::build_link(uint8_t i, uint32_t ip, uint16_t sport, uint16_t dpo
     tcb[i].sport = sport;
     tcb[i].dport = dport;
     tcb[i].swnd.init(this, sending_timer, i);
+    tcb[i].rwnd.init();
 }
 
 void TcpBackend::clean_link(uint8_t i) {
@@ -34,6 +35,13 @@ void TcpBackend::clean_link(uint8_t i) {
         Packet *p = swnd.wait.front();
         return_send(p, true);
         swnd.wait.pop_front();
+    }
+
+    TcpRecvWindow &rwnd = tcb[i].rwnd;
+    while (!rwnd.wait.empty()) {
+        Packet *p = rwnd.wait.front();
+        return_send(p, true);
+        rwnd.wait.pop_front();
     }
 }
 
@@ -48,7 +56,7 @@ void TcpBackend::return_send(Packet *p, bool error) {
 WritablePacket *TcpBackend::packet_from_wnd(uint8_t i, uint32_t seq, uint32_t size) {
     TcpSendWindow &swnd = tcb[i].swnd;
 
-    Log("send sequence %d len %d", seq, size);
+    Log("send seq %d len %d", seq, size);
     WritablePacket *q = Packet::make(TcpSize + size);
     TcpHeader *tcp_q = (TcpHeader *)q->data();
     // make packet
@@ -107,28 +115,74 @@ void TcpBackend::try_resolve_send(uint8_t i) {
     }
 }
 
+bool TcpBackend::try_buffer_recv(uint8_t i, Packet *p) {
+    TcpRecvWindow &rwnd = tcb[i].rwnd;
+    uint32_t len = rwnd.max_recv();
+
+    if (!len) {
+        return false;
+    }
+    WritablePacket *q = p->uniqueify();
+    uint32_t l0 = q->length();
+    if (l0 > len) {
+        p->take(l0 - len);
+    } else {
+        len = l0;
+    }
+    Log("pop %d data from buffer", len);
+    // take data from buffer
+    tcp_from_wnd((char *)q->data(), rwnd.buf, TcpBufferSize,
+    rwnd.seq_front, rwnd.seq_front + len);
+    // update pointer
+    rwnd.seq_front += len;
+    output(1).push(q);
+
+    return true;
+}
+
+void TcpBackend::try_resolve_recv(uint8_t i) {
+    TcpRecvWindow &rwnd = tcb[i].rwnd;
+
+    while (!rwnd.wait.empty()) {
+        Packet *p = rwnd.wait.front();
+        if (try_buffer_recv(i, p)) {
+            rwnd.wait.pop_front();
+        } else {
+            break;
+        }
+    }
+}
+
 void TcpBackend::push_tcp(uint8_t i, Packet *p) {
     const TcpHeader *tcp_p = (const TcpHeader *)p->data();
 
     if (tcp_p->flags & Ack) {
         // Ack
         TcpSendWindow &swnd = tcb[i].swnd;
+        Log("ack %d, wnd %d", tcp_p->acknowledge, tcp_p->window);
+
         swnd.rwnd = tcp_p->window;
+        if (!swnd.rwnd) {
+            Warn("zero window");
+            // TODO: zero window probe
+        }
+
         bool recved = false;
-        Log("ack %d, rwnd %d", tcp_p->acknowledge, tcp_p->window);
         while (!swnd.wnd.empty() && tcp_p->acknowledge > swnd.seq_front) {
             recved = true;
             swnd.seq_front += swnd.wnd.front();
             swnd.wnd.pop_front();
         }
+
         if (swnd.seq_front != tcp_p->acknowledge) {
             Warn("error in sliding window");
             // TODO: anything to deal with this error?
         }
+
         if (!recved) {
             ++swnd.fails;
             // TODO: Reno Fast Retransmission & Fast Recovery
-            Log("dup ack");
+            Warn("dup ack");
         } else {
             swnd.fails = 0;
             // as buffer moves forward, try resolve waiting send requests
@@ -142,7 +196,31 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             }
         }
     } else if (tcp_p->flags & Syn) {
-        // TODO: recv control
+        // Syn Data Packet
+        TcpRecvWindow &rwnd = tcb[i].rwnd;
+        size_t len = p->length() - TcpSize;
+        uint32_t seq = tcp_p->sequence;
+        uint32_t tail = seq + len;
+
+        Log("syn %d, len %d", seq, len);
+        if (tail > rwnd.max_tail()) {
+            Warn("tail exceeds");
+        } else if (seq < rwnd.seq_back || rwnd.check_disorder(seq, tail)) {
+            Warn("dup sequence");
+        } else {
+            // mark recved & move forward
+            rwnd.mark_disorder(seq, tail);
+            rwnd.forward();
+            Log("update ack %d, wnd %d", rwnd.seq_back, rwnd.max_grow());
+        }
+        // send back ack
+        WritablePacket *q = Packet::make(TcpSize);
+        TcpHeader *tcp_q = (TcpHeader *)q->data();
+        q->set_anno_u8(SendProto, IpProtoTcp);
+        q->set_anno_u32(SendIp, tcb[i].ip);
+        tcp_q->ack(tcb[i].sport, tcb[i].dport, rwnd.seq_back, rwnd.max_grow());
+
+        output(0).push(q);
     } else {
         Warn("unknown tcp packet");
     }
@@ -190,13 +268,15 @@ void TcpBackend::push(int, Packet *p) {
             tcb[i].swnd.wait.push_back(p);
         }
         while (try_grow_send(i));
+        // if wnd not empty then issue timeout timer
         if (!tcb[i].swnd.wnd.empty() && !tcb[i].swnd.timer.scheduled()) {
             tcb[i].swnd.timer.schedule_after(timeout);
         }
         break;
     case Recv:
-        // TODO
-        p->kill();
+        if (!try_buffer_recv(i, p)) {
+            tcb[i].rwnd.wait.push_back(p);
+        }
         break;
     default:
         Warn("unknown request");

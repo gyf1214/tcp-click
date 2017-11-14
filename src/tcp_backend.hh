@@ -23,6 +23,7 @@ public:
     static void sending_timer(Timer *, void *);
     WritablePacket *packet_from_wnd(uint8_t, uint32_t, uint32_t);
     void send_timeout(uint8_t);
+    void send_probe(uint8_t);
     void build_link(uint8_t, uint32_t, uint16_t, uint16_t);
     void clean_link(uint8_t);
     void return_send(Packet *, bool = false);

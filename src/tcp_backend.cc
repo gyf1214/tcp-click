@@ -163,17 +163,21 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
         uint32_t wnd = ntohs(tcp_p->window);
         Log("ack %u, wnd %u", ack, wnd);
 
+        bool recved = false;
+        while (!swnd.wnd.empty()) {
+            if (!swnd.wnd.front() || ack > swnd.seq_front) {
+                recved = true;
+                swnd.seq_front += swnd.wnd.front();
+                swnd.wnd.pop_front();
+            } else {
+                break;
+            }
+        }
+
         swnd.rwnd = wnd;
         if (!swnd.rwnd) {
             Warn("zero window");
-            // TODO: zero window probe
-        }
-
-        bool recved = false;
-        while (!swnd.wnd.empty() && ack > swnd.seq_front) {
-            recved = true;
-            swnd.seq_front += swnd.wnd.front();
-            swnd.wnd.pop_front();
+            swnd.timer.schedule_after(timeout);
         }
 
         if (swnd.seq_front != ack) {
@@ -249,14 +253,30 @@ void TcpBackend::send_timeout(uint8_t i) {
     Packet *p = packet_from_wnd(i, swnd.seq_front, len);
     output(0).push(p);
 
-    tcb[i].swnd.timer.schedule_after(timeout);
+    swnd.timer.schedule_after(timeout);
+}
+
+void TcpBackend::send_probe(uint8_t i) {
+    TcpSendWindow &swnd = tcb[i].swnd;
+
+    Log("window probe %d", i);
+    Packet *p = packet_from_wnd(i, swnd.seq_front, 0);
+    swnd.wnd.push_back(0);
+    output(0).push(p);
+
+    swnd.timer.schedule_after(timeout);
 }
 
 void TcpBackend::sending_timer(Timer *t, void *data) {
-    click_chatter("timeout");
     uint8_t i = (intptr_t)data;
     TcpBackend *e = (TcpBackend *)t->element()->cast("TcpBackend");
-    e->send_timeout(i);
+
+    if (e->tcb[i].swnd.wnd.empty()) {
+        e->send_probe(i);
+    } else {
+        e->send_timeout(i);
+    }
+
 }
 
 void TcpBackend::push(int, Packet *p) {

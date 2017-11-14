@@ -64,7 +64,7 @@ WritablePacket *TcpBackend::packet_from_wnd(uint8_t i, uint32_t seq, uint32_t si
     // make packet
     q->set_anno_u8(SendProto, IpProtoTcp);
     q->set_anno_u32(SendIp, tcb[i].ip);
-    tcp_q->syn(tcb[i].sport, tcb[i].dport, swnd.seq_back);
+    tcp_q->syn(tcb[i].sport, tcb[i].dport, seq);
     tcp_from_wnd(tcp_q->data, swnd.buf, TcpBufferSize, seq, seq + size);
 
     return q;

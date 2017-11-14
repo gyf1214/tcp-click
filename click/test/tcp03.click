@@ -5,7 +5,7 @@ elementclass RouterCore { IP $ip |
     lspfront :: LspFrontend(IP $ip, INTERVAL 10, TIMEOUT 1)
     lspback  :: LspBackend(IP $ip)
     tcpfront :: TcpFrontend(IP $ip)
-    tcpback  :: TcpBackend(IP $ip, TIMEOUT 5)
+    tcpback  :: TcpBackend(IP $ip, TIMEOUT 2)
 
     input -> ipfront -> output
     input [1] -> [1] tcpfront [1] -> [1] output

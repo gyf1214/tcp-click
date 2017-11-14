@@ -182,9 +182,12 @@ void TcpBackend::push_tcp(uint8_t i, Packet *p) {
             swnd.timer->schedule_after(timeout);
         }
 
-        if (swnd.seq_front != ack) {
-            Warn("error in sliding window");
-            // TODO: anything to deal with this error?
+        if (ack > swnd.seq_front) {
+            recved = true;
+            swnd.seq_front = ack;
+            if (swnd.seq_back < swnd.seq_front) {
+                swnd.seq_back = swnd.seq_front;
+            }
         }
 
         if (!recved) {
@@ -268,13 +271,20 @@ void TcpBackend::send_timeout(uint8_t i) {
     if (swnd.cwnd >= swnd.wnd.size()) {
         swnd.c_threshold = swnd.cwnd / 2;
         swnd.cwnd = 1;
-        Log("congestion, update c_threshold %u", swnd.c_threshold);
+        Log("congestion threshold %u", swnd.c_threshold);
+
+        // clear sending window
+        while (swnd.wnd.size() > 1) {
+            swnd.wnd.pop_back();
+            swnd.seq_back = swnd.seq_front;
+        }
     }
 
     // resend
     uint32_t len = swnd.wnd.front();
     Log("resend %d", i);
     Packet *p = packet_from_wnd(i, swnd.seq_front, len);
+    swnd.seq_back += len;
     output(0).push(p);
 
     swnd.timer->schedule_after(timeout);

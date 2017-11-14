@@ -47,7 +47,7 @@ void TcpBackend::clean_link(uint8_t i) {
 void TcpBackend::return_send(Packet *p, bool error) {
     uint8_t method = error ? Error : p->anno_u8(SocketMethod);
     Packet *q = SocketPacket(method, p->anno_u8(SocketId),
-    p->anno_u8(SocketSequence));
+    p->anno_u32(SocketSequence));
     p->kill();
     output(1).push(q);
 }

@@ -64,7 +64,7 @@ void SocketServer::run_timer(Timer *) {
 void SocketServer::push(int, Packet *p) {
     uint8_t method = p->anno_u8(SocketMethod);
 
-    if (p->anno_u8(SocketSequence) != sequence) {
+    if (p->anno_u32(SocketSequence) != sequence) {
         Warn("old response");
     } else if (method == Error) {
         if (state == Reading || state == Closing) {

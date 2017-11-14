@@ -121,11 +121,12 @@ void SocketSender::push(int, Packet *p) {
         Log("%d <- connect", sequence);
         timer.schedule_now();
     } else if (state == Writing && method == Send) {
-        Log("%d <- send", sequence);
         offset += buffer;
         if (offset > limit) {
             state = Closing;
+            offset = limit;
         }
+        Log("%d <- send, total %d", sequence, offset);
         timer.schedule_after(interval);
     } else if (state == Closing && method == Close) {
         state = Start;

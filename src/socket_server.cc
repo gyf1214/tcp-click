@@ -86,11 +86,13 @@ void SocketServer::push(int, Packet *p) {
         timer.schedule_now();
     } else if (state == Listened && method == Accept) {
         state = Reading;
+        total = 0;
         id1 = p->anno_u8(SocketId);
         Log("%d <- accept %d", sequence, id1);
         timer.schedule_now();
     } else if (state == Reading && method == Recv) {
-        Log("%d <- read %d", sequence, p->length());
+        total += p->length();
+        Log("%d <- recv %d, total %d", sequence, p->length(), total);
         timer.schedule_after(interval);
     } else if (state == Closing && method == Close) {
         state = AcceptClose;

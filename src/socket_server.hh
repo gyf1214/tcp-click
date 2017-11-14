@@ -15,7 +15,7 @@ class SocketServer : public Element {
     } state;
     uint32_t sequence;
     uint8_t id, id1;
-    int buffer;
+    int buffer, total;
 public:
     SocketServer();
     const char *class_name() const { return "SocketServer"; }

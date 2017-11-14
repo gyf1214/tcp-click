@@ -14,7 +14,8 @@ elementclass SServer { IP $ip, PORT $port |
 
 elementclass SClient { IP $ip, PORT $port, DST $dst, DPORT $dport |
     sock :: SocketSender(IP $ip, SPORT $port,
-        DST $dst, DPORT $dport, INTERVAL 0.1, WAIT 5)
+        DST $dst, DPORT $dport, DATA hello,
+        INTERVAL 0.1, WAIT 5, LIMIT 100, BUFFER 4096)
     input -> sock -> output
 }
 

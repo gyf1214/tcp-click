@@ -268,6 +268,7 @@ void TcpBackend::send_probe(uint8_t i) {
 }
 
 void TcpBackend::sending_timer(Timer *t, void *data) {
+    click_chatter("timeout");
     uint8_t i = (intptr_t)data;
     TcpBackend *e = (TcpBackend *)t->element()->cast("TcpBackend");
 

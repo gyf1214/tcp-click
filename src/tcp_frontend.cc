@@ -369,6 +369,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             sockets[i].state = Close_Wait;
             Log("fin close");
             send_short(i, Ack);
+            back_close(i, true);
             break;
         case Fin_Wait1:
             sockets[i].state = Closing;

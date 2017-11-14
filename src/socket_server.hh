@@ -8,13 +8,14 @@ CLICK_DECLS
 class SocketServer : public Element {
     uint32_t self;
     uint16_t port;
-    Timestamp last_time, wait_time;
+    Timestamp interval, wait;
     Timer timer;
     enum {
-        Nothing, Start, Listened, Accepted, AcceptClose, Err
+        Nothing, Start, Listened, Reading, Closing, AcceptClose, Err
     } state;
     uint32_t sequence;
     uint8_t id, id1;
+    int buffer;
 public:
     SocketServer();
     const char *class_name() const { return "SocketServer"; }

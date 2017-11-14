@@ -83,10 +83,6 @@ void SocketSender::run_timer(Timer *) {
         q = send_next();
         Log("%d -> send %d", sequence, q->length());
         break;
-    case Reading:
-        q = SocketPacket(Recv, id, ++sequence, buffer);
-        Log("%d -> recv");
-        break;
     case Closing:
         q = SocketPacket(Close, id, ++sequence);
         Log("%d -> close %d", sequence, id);
@@ -106,14 +102,10 @@ void SocketSender::push(int, Packet *p) {
     if (p->anno_u32(SocketSequence) != sequence) {
         Warn("old response");
     } else if (method == Error) {
-        if (state == Writing || state == Reading) {
-            state = Closing;
+        if (state == Writing || state == Closing || state == Start) {
+            state = state == Closing ? Start : Closing;
             Log("%d <- error (connection close)", sequence);
             timer.schedule_now();
-        } else if (state == Closing || state == Start) {
-            state = Start;
-            Log("%d <- error (connection reset)", sequence);
-            timer.schedule_after(interval);
         } else {
             Warn("%d <- error (unknown)", sequence);
             state = Err;
@@ -132,11 +124,8 @@ void SocketSender::push(int, Packet *p) {
         Log("%d <- send", sequence);
         offset += buffer;
         if (offset > limit) {
-            state = Reading;
+            state = Closing;
         }
-        timer.schedule_after(interval);
-    } else if (state == Reading && method == Recv) {
-        Log("%d <- recv %u", sequence, p->length());
         timer.schedule_after(interval);
     } else if (state == Closing && method == Close) {
         state = Start;

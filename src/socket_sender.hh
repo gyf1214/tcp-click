@@ -11,7 +11,7 @@ class SocketSender : public Element {
     Timestamp interval, wait;
     Timer timer;
     enum {
-        Nothing, Start, Writing, Reading, Closing, Err
+        Nothing, Start, Writing, Closing, Err
     } state;
     uint32_t sequence;
     int limit, offset, buffer;

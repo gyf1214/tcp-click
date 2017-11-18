@@ -1,11 +1,9 @@
-require(library ../network/net3.click)
-
 elementclass RouterCore { IP $ip |
     ipfront  :: IpFrontend(IP $ip)
     lspfront :: LspFrontend(IP $ip, INTERVAL 10, TIMEOUT 1)
     lspback  :: LspBackend(IP $ip)
     tcpfront :: TcpFrontend(IP $ip)
-    tcpback  :: TcpBackend(IP $ip)
+    tcpback  :: TcpBackend(IP $ip, TIMEOUT 2)
 
     input -> ipfront -> output
     input [1] -> [1] tcpfront [1] -> [1] output
@@ -13,6 +11,7 @@ elementclass RouterCore { IP $ip |
     lspfront [1] -> lspback -> [1] ipfront
     ipfront [2] -> tcpfront -> [2] ipfront
     tcpfront [2] -> tcpback -> [2] ipfront
+    tcpback [2] -> [2] tcpfront
     tcpback [1] -> [1] output
 }
 

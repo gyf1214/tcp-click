@@ -13,10 +13,14 @@ int SocketSender::configure(Vector<String> &args, ErrorHandler *errh) {
     "DST", cpkM + cpkP, cpIPAddress, &ip,
     "SPORT", cpkM + cpkP, cpUnsignedShort, &sport,
     "DPORT", cpkM + cpkP, cpUnsignedShort, &dport,
+    "DATA", cpkM + cpkP, cpString, &data,
     "INTERVAL", cpkM + cpkP, cpTimestamp, &interval,
-    "WAIT", cpkM + cpkP, cpTimestamp, &wait, cpEnd) < 0) {
+    "WAIT", cpkM + cpkP, cpTimestamp, &wait,
+    "LIMIT", cpkM + cpkP, cpInteger, &limit,
+    "BUFFER", cpkM + cpkP, cpInteger, &buffer, cpEnd) < 0) {
         return -1;
     }
+    limit *= data.length();
     return 0;
 }
 
@@ -26,10 +30,41 @@ int SocketSender::initialize(ErrorHandler *) {
     return 0;
 }
 
+WritablePacket *SocketSender::send_next() {
+    int len = buffer;
+    len = limit - offset > len ? len : limit - offset;
+
+    WritablePacket *q = SocketPacket(Send, id, ++sequence, len);
+    int n = data.length();
+
+    int i = offset % n;
+    if (i > len) {
+        memcpy(q->data(), data.c_str() + n - i, len);
+        len = 0;
+        i = len;
+    }
+
+    if (i) {
+        memcpy(q->data(), data.c_str() + n - i, i);
+        len -= i;
+    }
+
+    for (; len >= n; len -= n) {
+        memcpy(q->data() + i, data.c_str(), n);
+        i += n;
+    }
+
+    if (len) {
+        memcpy(q->data() + i, data.c_str(), len);
+        i += len;
+    }
+    offset += i;
+
+    return q;
+}
+
 void SocketSender::run_timer(Timer *) {
     WritablePacket *q = NULL;
-    const char *msg = "hello world";
-    int len = strlen(msg);
 
     switch (state) {
     case Nothing:
@@ -45,9 +80,14 @@ void SocketSender::run_timer(Timer *) {
         // timer.reschedule_after(timeout);
         break;
     case Writing:
-        q = SocketPacket(Send, id, ++sequence, len);
-        memcpy(q->data(), msg, len);
-        Log("%d -> send %s", sequence, msg);
+        if (offset >= limit) {
+            state = Closing;
+            q = SocketPacket(Close, id, sequence);
+            Log("%d -> close %d", sequence, id);
+        } else {
+            q = send_next();
+            Log("%d -> send %d", sequence, q->length());
+        }
         break;
     case Closing:
         q = SocketPacket(Close, id, ++sequence);
@@ -68,16 +108,12 @@ void SocketSender::push(int, Packet *p) {
     if (p->anno_u32(SocketSequence) != sequence) {
         Warn("old response");
     } else if (method == Error) {
-        if (state == Writing) {
-            state = Closing;
-            Log("%d <- error (send)", sequence);
+        if (state == Writing || state == Closing || state == Start) {
+            state = state == Closing ? Start : Closing;
+            Log("%d <- error (connection close)", sequence);
             timer.schedule_now();
-        } else if (state == Start) {
-            state = Start;
-            Log("%d <- error (conn)", sequence);
-            timer.reschedule_after(interval);
         } else {
-            Warn("%d <- error", sequence);
+            Warn("%d <- error (unknown)", sequence);
             state = Err;
         }
     } else if (state == Nothing && method == New) {
@@ -87,15 +123,15 @@ void SocketSender::push(int, Packet *p) {
         timer.schedule_now();
     } else if (state == Start && method == Connect) {
         state = Writing;
+        offset = 0;
         Log("%d <- connect", sequence);
-        timer.reschedule_after(interval);
+        timer.schedule_now();
     } else if (state == Writing && method == Send) {
-        Log("%d <- send", sequence);
-        timer.reschedule_after(interval);
+        Log("%d <- send, total %d", sequence, offset);
+        timer.schedule_after(interval);
     } else if (state == Closing && method == Close) {
         state = Start;
         Log("%d <- close", sequence);
-        // timer.reschedule_after(interval);
     } else {
         Warn("unknown response");
     }

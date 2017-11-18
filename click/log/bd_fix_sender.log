@@ -1,0 +1,61 @@
+1510418931.961	SocketSender@0311a8c0	[Info] 1 -> new :8899
+1510418931.961	SocketSender@0311a8c0	[Info] 1 <- new 0
+1510418931.961	SocketSender@0311a8c0	[Info] 2 -> connect 0111a8c0:5678
+1510418933.172	SocketSender@0311a8c0	[Info] 2 <- connect
+1510418933.172	SocketSender@0311a8c0	[Info] 3 -> send 4096
+1510418933.173	SocketSender@0311a8c0	[Info] 3 <- send, total 4096
+1510418933.183	SocketSender@0311a8c0	[Info] 4 -> send 4096
+1510418933.183	SocketSender@0311a8c0	[Info] 4 <- send, total 8192
+1510418933.193	SocketSender@0311a8c0	[Info] 5 -> send 4096
+1510418933.193	SocketSender@0311a8c0	[Info] 5 <- send, total 12288
+1510418933.203	SocketSender@0311a8c0	[Info] 6 -> send 4096
+1510418933.203	SocketSender@0311a8c0	[Info] 6 <- send, total 16384
+1510418933.213	SocketSender@0311a8c0	[Info] 7 -> send 4096
+1510418933.213	SocketSender@0311a8c0	[Info] 7 <- send, total 20480
+1510418933.223	SocketSender@0311a8c0	[Info] 8 -> send 4096
+1510418933.223	SocketSender@0311a8c0	[Info] 8 <- send, total 24576
+1510418933.233	SocketSender@0311a8c0	[Info] 9 -> send 4096
+1510418933.233	SocketSender@0311a8c0	[Info] 9 <- send, total 28672
+1510418933.243	SocketSender@0311a8c0	[Info] 10 -> send 4096
+1510418933.243	SocketSender@0311a8c0	[Info] 10 <- send, total 32768
+1510418933.253	SocketSender@0311a8c0	[Info] 11 -> send 4096
+1510418933.253	SocketSender@0311a8c0	[Info] 11 <- send, total 36864
+1510418933.263	SocketSender@0311a8c0	[Info] 12 -> send 4096
+1510418933.263	SocketSender@0311a8c0	[Info] 12 <- send, total 40960
+1510418933.273	SocketSender@0311a8c0	[Info] 13 -> send 4096
+1510418933.273	SocketSender@0311a8c0	[Info] 13 <- send, total 45056
+1510418933.284	SocketSender@0311a8c0	[Info] 14 -> send 4096
+1510418933.284	SocketSender@0311a8c0	[Info] 14 <- send, total 49152
+1510418933.294	SocketSender@0311a8c0	[Info] 15 -> send 4096
+1510418933.294	SocketSender@0311a8c0	[Info] 15 <- send, total 53248
+1510418933.304	SocketSender@0311a8c0	[Info] 16 -> send 4096
+1510418933.304	SocketSender@0311a8c0	[Info] 16 <- send, total 57344
+1510418933.314	SocketSender@0311a8c0	[Info] 17 -> send 4096
+1510418933.314	SocketSender@0311a8c0	[Info] 17 <- send, total 61440
+1510418933.324	SocketSender@0311a8c0	[Info] 18 -> send 4096
+1510418934.521	SocketSender@0311a8c0	[Info] 18 <- send, total 65536
+1510418934.531	SocketSender@0311a8c0	[Info] 19 -> send 4096
+1510418934.861	SocketSender@0311a8c0	[Info] 19 <- send, total 69632
+1510418934.871	SocketSender@0311a8c0	[Info] 20 -> send 4096
+1510418938.430	SocketSender@0311a8c0	[Info] 20 <- send, total 73728
+1510418938.440	SocketSender@0311a8c0	[Info] 21 -> send 4096
+1510418948.459	SocketSender@0311a8c0	[Info] 21 <- send, total 77824
+1510418948.469	SocketSender@0311a8c0	[Info] 22 -> send 4096
+1510418948.469	SocketSender@0311a8c0	[Info] 22 <- send, total 81920
+1510418948.479	SocketSender@0311a8c0	[Info] 23 -> send 4096
+1510418948.479	SocketSender@0311a8c0	[Info] 23 <- send, total 86016
+1510418948.489	SocketSender@0311a8c0	[Info] 24 -> send 4096
+1510418948.489	SocketSender@0311a8c0	[Info] 24 <- send, total 90112
+1510418948.500	SocketSender@0311a8c0	[Info] 25 -> send 4096
+1510418951.807	SocketSender@0311a8c0	[Info] 25 <- send, total 94208
+1510418951.817	SocketSender@0311a8c0	[Info] 26 -> send 4096
+1510418951.817	SocketSender@0311a8c0	[Info] 26 <- send, total 98304
+1510418951.827	SocketSender@0311a8c0	[Info] 27 -> send 4096
+1510418961.850	SocketSender@0311a8c0	[Info] 27 <- send, total 102400
+1510418961.860	SocketSender@0311a8c0	[Info] 28 -> send 4096
+1510418965.197	SocketSender@0311a8c0	[Info] 28 <- send, total 106496
+1510418965.207	SocketSender@0311a8c0	[Info] 29 -> send 4096
+1510418965.207	SocketSender@0311a8c0	[Info] 29 <- send, total 110592
+1510418965.217	SocketSender@0311a8c0	[Info] 30 -> send 4096
+1510418971.893	SocketSender@0311a8c0	[Info] 30 <- send, total 114688
+1510418971.903	SocketSender@0311a8c0	[Info] 31 -> send 4096

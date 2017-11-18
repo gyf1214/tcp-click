@@ -14,6 +14,8 @@ class SocketSender : public Element {
         Nothing, Start, Writing, Closing, Err
     } state;
     uint32_t sequence;
+    int limit, offset, buffer;
+    String data;
     uint8_t id;
 public:
     SocketSender();
@@ -24,6 +26,7 @@ public:
     int configure(Vector<String> &, ErrorHandler *);
     int initialize(ErrorHandler *);
     void push(int, Packet *);
+    WritablePacket *send_next();
 };
 
 CLICK_ENDDECLS

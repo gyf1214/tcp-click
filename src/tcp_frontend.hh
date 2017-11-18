@@ -1,6 +1,7 @@
 // Tcp State Machine Frontend
 // input(0) : incoming packets
 // input(1) : incoming socket requests
+// input(2) : tcp backend
 // output(0) : sending backend
 // output(1) : socket response;
 // output(2) : tcp backend
@@ -17,7 +18,7 @@ class TcpFrontend : public Element {
     uint32_t self;
 public:
     const char *class_name() const { return "TcpFrontend"; }
-    const char *port_count() const { return "2/3"; }
+    const char *port_count() const { return "3/3"; }
     const char *processing() const { return PUSH; }
     int configure(Vector<String> &, ErrorHandler *);
     // find socket based on dst_ip, src_port, dst_port
@@ -44,7 +45,7 @@ public:
     void push_tcp(Packet *);
     void push(int, Packet *);
     // inform back to close
-    void back_close(uint8_t);
+    void back_close(uint8_t, bool = false);
     // inform back to establish
     void back_establish(uint8_t);
     // reset socket

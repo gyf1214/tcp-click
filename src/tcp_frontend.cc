@@ -140,7 +140,7 @@ void TcpFrontend::reset_socket(uint8_t i, bool rst) {
     if (sockets[i].state == Listening || sockets[i].state == Closed) return;
     sockets[i].state = Closed;
     free_wait(i);
-    back_close(i);
+    back_close(i, true);
 }
 
 void TcpFrontend::push_socket(Packet *p) {
@@ -148,14 +148,14 @@ void TcpFrontend::push_socket(Packet *p) {
     if (method == New) {
         uint16_t port = p->anno_u16(SrcPort);
         if (find_bind_socket(port, false) >= 0) {
-            Warn(":%d in use", port);
+            Warn(":%u in use", port);
             send_return(p, true);
         } else {
             int i = find_empty_socket();
             sockets[i].state = Closed;
             sockets[i].src_port = port;
             p->set_anno_u8(SocketId, i);
-            Log("new socket %d:%d", i, port);
+            Log("new socket %d:%u", i, port);
             send_return(p, false);
         }
         return;
@@ -210,7 +210,7 @@ void TcpFrontend::push_socket(Packet *p) {
             Warn("send called on non-open socket");
             send_return(p, true);
         } else {
-            Log("send %d", p->length());
+            Log("send %u", p->length());
             output(2).push(p);
         }
         break;
@@ -219,7 +219,7 @@ void TcpFrontend::push_socket(Packet *p) {
             Warn("recv called on non-open socket");
             send_return(p, true);
         } else {
-            Log("recv %d", p->length());
+            Log("recv %u", p->length());
             output(2).push(p);
         }
         break;
@@ -233,17 +233,17 @@ void TcpFrontend::push_socket(Packet *p) {
             send_return(p, false);
             break;
         case Established:
-            sockets[i].state = Fin_Wait1;
+            // sockets[i].state = Fin_Wait1;
             sockets[i].closeWait = p;
-            Log("close fin");
+            Log("active close");
             back_close(i);
-            send_short(i, Fin);
+            // send_short(i, Fin);
             break;
         case Close_Wait:
             sockets[i].state = Last_Ack;
             sockets[i].closeWait = p;
-            Log("close wait");
-            back_close(i);
+            Log("passive close");
+            back_close(i, true);
             send_short(i, Fin);
             break;
         case Closed:
@@ -286,7 +286,7 @@ void TcpFrontend::push_tcp(Packet *p) {
     uint16_t sport = ntohs(tcp_p->dst_port);
     uint16_t dport = ntohs(tcp_p->src_port);
     uint16_t flag = tcp_p->flags;
-    Log("tcp %08x:%d -> :%d, flag %04x", ip, dport, sport, flag);
+    Log("tcp %08x:%u -> :%u, flag %04x", ip, dport, sport, flag);
 
     int i = find_socket(ip, sport, dport);
     if (i < 0) {
@@ -311,7 +311,8 @@ void TcpFrontend::push_tcp(Packet *p) {
         p->kill();
     } else if ((flag & Syn) && (flag & Ack)) {
         // SYN ACK
-        if (sockets[i].state == Syn_Sent) {
+        switch (sockets[i].state) {
+        case Syn_Sent:
             sockets[i].state = Established;
             Log("establish");
             // inform backend
@@ -322,9 +323,10 @@ void TcpFrontend::push_tcp(Packet *p) {
             // send back ack
             send_short(i, Ack);
             p->kill();
-        } else {
+            break;
+        default:
             Warn("SYN ACK on invalid state");
-            reset_socket(i);
+            // reset_socket(i);
             p->kill();
         }
     } else if (flag & Syn) {
@@ -345,7 +347,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             break;
         default:
             Warn("SYN on invalid state");
-            reset_socket(i);
+            // reset_socket(i);
             p->kill();
         }
     } else if ((flag & Fin) && (flag & Ack)) {
@@ -357,7 +359,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             sockets[i].closeWait = NULL;
         } else {
             Warn("FIN ACK on invalid state");
-            reset_socket(i);
+            // reset_socket(i);
         }
         p->kill();
     } else if (flag & Fin) {
@@ -367,6 +369,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             sockets[i].state = Close_Wait;
             Log("fin close");
             send_short(i, Ack);
+            back_close(i, true);
             break;
         case Fin_Wait1:
             sockets[i].state = Closing;
@@ -382,7 +385,7 @@ void TcpFrontend::push_tcp(Packet *p) {
             break;
         default:
             Warn("FIN on invalid state");
-            reset_socket(i);
+            // reset_socket(i);
         }
         p->kill();
     } else if (flag & Ack) {
@@ -423,22 +426,27 @@ void TcpFrontend::push_tcp(Packet *p) {
             break;
         default:
             Warn("Ack on invalid state");
-            reset_socket(i);
+            // reset_socket(i);
             p->kill();
         }
     }
 }
 
 void TcpFrontend::push(int port, Packet *p) {
-    if (!port) {
+    if (port == 0) {
         if (p->anno_u8(RecvProto) != IpProtoTcp) {
             Warn("unknown packet");
             p->kill();
         } else {
             push_tcp(p);
         }
-    } else {
+    } else if (port == 1) {
         push_socket(p);
+    } else {
+        Log("backend complete close");
+        uint8_t i = p->anno_u8(SocketId);
+        sockets[i].state = Fin_Wait1;
+        send_short(i, Fin);
     }
     print_sockets();
 }
@@ -446,13 +454,13 @@ void TcpFrontend::push(int port, Packet *p) {
 void TcpFrontend::print_sockets() {
     int n = sockets.size();
     for (int i = 0; i < n; ++i) {
-        Log("socket %d | %08x:%d -> :%d | %d", i, sockets[i].dst_ip,
+        Log("socket %d | %08x:%u -> :%u | %d", i, sockets[i].dst_ip,
         sockets[i].dst_port, sockets[i].src_port, sockets[i].state);
     }
 }
 
-void TcpFrontend::back_close(uint8_t i) {
-    output(2).push(SocketPacket(Close, i, 0));
+void TcpFrontend::back_close(uint8_t i, bool rst) {
+    output(2).push(SocketPacket(rst ? Free : Close, i, 0));
 }
 
 void TcpFrontend::back_establish(uint8_t i) {

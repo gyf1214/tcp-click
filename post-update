@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+
+HOME=/home/comnetsii
+GIT_DIR=$HOME/tcp-click
+CLICK_DIR=$HOME/click
+GIT_WORK_TREE=$HOME/deploy
+
+cd $GIT_WORK_TREE
+branch=$(git --git-dir=$GIT_DIR rev-parse --symbolic --abbrev-ref $1)
+echo update pushed to $branch
+git --git-dir=$GIT_DIR --work-tree=$GIT_WORK_TREE checkout -f $branch
+
+cd $CLICK_DIR
+echo make elemlist
+make elemlist > /dev/null
+echo make
+make > /dev/null
+echo build finished

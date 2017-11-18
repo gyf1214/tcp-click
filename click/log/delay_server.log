@@ -1,0 +1,541 @@
+1510426559.490	SocketServer@0111a8c0	[Info] 1 -> new :5678
+1510426559.491	SocketServer@0111a8c0	[Info] 1 <- new 0
+1510426559.491	SocketServer@0111a8c0	[Info] 2 -> listen
+1510426559.491	SocketServer@0111a8c0	[Info] 2 <- listen
+1510426559.491	SocketServer@0111a8c0	[Info] 3 -> accept 0
+1510426566.295	SocketServer@0111a8c0	[Info] 3 <- accept 1
+1510426566.295	SocketServer@0111a8c0	[Info] 4 -> recv 4096
+1510426566.295	SocketServer@0111a8c0	[Info] 4 <- recv 1420, total 1420
+1510426566.305	SocketServer@0111a8c0	[Info] 5 -> recv 4096
+1510426567.495	SocketServer@0111a8c0	[Info] 5 <- recv 1420, total 2840
+1510426567.505	SocketServer@0111a8c0	[Info] 6 -> recv 4096
+1510426567.506	SocketServer@0111a8c0	[Info] 6 <- recv 1420, total 4260
+1510426567.516	SocketServer@0111a8c0	[Info] 7 -> recv 4096
+1510426568.696	SocketServer@0111a8c0	[Info] 7 <- recv 1420, total 5680
+1510426568.707	SocketServer@0111a8c0	[Info] 8 -> recv 4096
+1510426568.707	SocketServer@0111a8c0	[Info] 8 <- recv 4096, total 9776
+1510426568.717	SocketServer@0111a8c0	[Info] 9 -> recv 4096
+1510426568.717	SocketServer@0111a8c0	[Info] 9 <- recv 164, total 9940
+1510426568.727	SocketServer@0111a8c0	[Info] 10 -> recv 4096
+1510426569.898	SocketServer@0111a8c0	[Info] 10 <- recv 1420, total 11360
+1510426569.908	SocketServer@0111a8c0	[Info] 11 -> recv 4096
+1510426569.908	SocketServer@0111a8c0	[Info] 11 <- recv 4096, total 15456
+1510426569.919	SocketServer@0111a8c0	[Info] 12 -> recv 4096
+1510426569.919	SocketServer@0111a8c0	[Info] 12 <- recv 4096, total 19552
+1510426569.929	SocketServer@0111a8c0	[Info] 13 -> recv 4096
+1510426569.929	SocketServer@0111a8c0	[Info] 13 <- recv 1748, total 21300
+1510426569.939	SocketServer@0111a8c0	[Info] 14 -> recv 4096
+1510426571.099	SocketServer@0111a8c0	[Info] 14 <- recv 1420, total 22720
+1510426571.109	SocketServer@0111a8c0	[Info] 15 -> recv 4096
+1510426571.109	SocketServer@0111a8c0	[Info] 15 <- recv 4096, total 26816
+1510426571.120	SocketServer@0111a8c0	[Info] 16 -> recv 4096
+1510426571.120	SocketServer@0111a8c0	[Info] 16 <- recv 4096, total 30912
+1510426571.130	SocketServer@0111a8c0	[Info] 17 -> recv 4096
+1510426571.130	SocketServer@0111a8c0	[Info] 17 <- recv 4096, total 35008
+1510426571.140	SocketServer@0111a8c0	[Info] 18 -> recv 4096
+1510426571.140	SocketServer@0111a8c0	[Info] 18 <- recv 4096, total 39104
+1510426571.150	SocketServer@0111a8c0	[Info] 19 -> recv 4096
+1510426571.150	SocketServer@0111a8c0	[Info] 19 <- recv 4096, total 43200
+1510426571.160	SocketServer@0111a8c0	[Info] 20 -> recv 4096
+1510426571.160	SocketServer@0111a8c0	[Info] 20 <- recv 820, total 44020
+1510426571.171	SocketServer@0111a8c0	[Info] 21 -> recv 4096
+1510426572.300	SocketServer@0111a8c0	[Info] 21 <- recv 1420, total 45440
+1510426572.310	SocketServer@0111a8c0	[Info] 22 -> recv 4096
+1510426572.310	SocketServer@0111a8c0	[Info] 22 <- recv 4096, total 49536
+1510426572.320	SocketServer@0111a8c0	[Info] 23 -> recv 4096
+1510426572.320	SocketServer@0111a8c0	[Info] 23 <- recv 4096, total 53632
+1510426572.330	SocketServer@0111a8c0	[Info] 24 -> recv 4096
+1510426572.330	SocketServer@0111a8c0	[Info] 24 <- recv 4096, total 57728
+1510426572.340	SocketServer@0111a8c0	[Info] 25 -> recv 4096
+1510426572.340	SocketServer@0111a8c0	[Info] 25 <- recv 4096, total 61824
+1510426572.350	SocketServer@0111a8c0	[Info] 26 -> recv 4096
+1510426572.351	SocketServer@0111a8c0	[Info] 26 <- recv 4096, total 65920
+1510426572.361	SocketServer@0111a8c0	[Info] 27 -> recv 4096
+1510426572.361	SocketServer@0111a8c0	[Info] 27 <- recv 4096, total 70016
+1510426572.371	SocketServer@0111a8c0	[Info] 28 -> recv 4096
+1510426572.371	SocketServer@0111a8c0	[Info] 28 <- recv 4096, total 74112
+1510426572.381	SocketServer@0111a8c0	[Info] 29 -> recv 4096
+1510426572.381	SocketServer@0111a8c0	[Info] 29 <- recv 4096, total 78208
+1510426572.391	SocketServer@0111a8c0	[Info] 30 -> recv 4096
+1510426572.391	SocketServer@0111a8c0	[Info] 30 <- recv 4096, total 82304
+1510426572.401	SocketServer@0111a8c0	[Info] 31 -> recv 4096
+1510426572.401	SocketServer@0111a8c0	[Info] 31 <- recv 4096, total 86400
+1510426572.411	SocketServer@0111a8c0	[Info] 32 -> recv 4096
+1510426572.411	SocketServer@0111a8c0	[Info] 32 <- recv 1855, total 88255
+1510426572.421	SocketServer@0111a8c0	[Info] 33 -> recv 4096
+1510426573.501	SocketServer@0111a8c0	[Info] 33 <- recv 1420, total 89675
+1510426573.511	SocketServer@0111a8c0	[Info] 34 -> recv 4096
+1510426573.511	SocketServer@0111a8c0	[Info] 34 <- recv 4096, total 93771
+1510426573.521	SocketServer@0111a8c0	[Info] 35 -> recv 4096
+1510426573.521	SocketServer@0111a8c0	[Info] 35 <- recv 4096, total 97867
+1510426573.531	SocketServer@0111a8c0	[Info] 36 -> recv 4096
+1510426573.532	SocketServer@0111a8c0	[Info] 36 <- recv 4096, total 101963
+1510426573.542	SocketServer@0111a8c0	[Info] 37 -> recv 4096
+1510426573.542	SocketServer@0111a8c0	[Info] 37 <- recv 4096, total 106059
+1510426573.552	SocketServer@0111a8c0	[Info] 38 -> recv 4096
+1510426573.552	SocketServer@0111a8c0	[Info] 38 <- recv 4096, total 110155
+1510426573.562	SocketServer@0111a8c0	[Info] 39 -> recv 4096
+1510426573.562	SocketServer@0111a8c0	[Info] 39 <- recv 820, total 110975
+1510426573.572	SocketServer@0111a8c0	[Info] 40 -> recv 4096
+1510426574.703	SocketServer@0111a8c0	[Info] 40 <- recv 1420, total 112395
+1510426574.713	SocketServer@0111a8c0	[Info] 41 -> recv 4096
+1510426574.713	SocketServer@0111a8c0	[Info] 41 <- recv 4096, total 116491
+1510426574.723	SocketServer@0111a8c0	[Info] 42 -> recv 4096
+1510426574.723	SocketServer@0111a8c0	[Info] 42 <- recv 1584, total 118075
+1510426574.733	SocketServer@0111a8c0	[Info] 43 -> recv 4096
+1510426575.904	SocketServer@0111a8c0	[Info] 43 <- recv 1420, total 119495
+1510426575.914	SocketServer@0111a8c0	[Info] 44 -> recv 4096
+1510426577.105	SocketServer@0111a8c0	[Info] 44 <- recv 1420, total 120915
+1510426577.115	SocketServer@0111a8c0	[Info] 45 -> recv 4096
+1510426577.115	SocketServer@0111a8c0	[Info] 45 <- recv 1420, total 122335
+1510426577.125	SocketServer@0111a8c0	[Info] 46 -> recv 4096
+1510426578.306	SocketServer@0111a8c0	[Info] 46 <- recv 1420, total 123755
+1510426578.317	SocketServer@0111a8c0	[Info] 47 -> recv 4096
+1510426578.317	SocketServer@0111a8c0	[Info] 47 <- recv 4096, total 127851
+1510426578.327	SocketServer@0111a8c0	[Info] 48 -> recv 4096
+1510426578.327	SocketServer@0111a8c0	[Info] 48 <- recv 164, total 128015
+1510426578.337	SocketServer@0111a8c0	[Info] 49 -> recv 4096
+1510426579.508	SocketServer@0111a8c0	[Info] 49 <- recv 1420, total 129435
+1510426579.518	SocketServer@0111a8c0	[Info] 50 -> recv 4096
+1510426579.518	SocketServer@0111a8c0	[Info] 50 <- recv 4096, total 133531
+1510426579.528	SocketServer@0111a8c0	[Info] 51 -> recv 4096
+1510426579.528	SocketServer@0111a8c0	[Info] 51 <- recv 4096, total 137627
+1510426579.538	SocketServer@0111a8c0	[Info] 52 -> recv 4096
+1510426579.538	SocketServer@0111a8c0	[Info] 52 <- recv 1748, total 139375
+1510426579.548	SocketServer@0111a8c0	[Info] 53 -> recv 4096
+1510426580.709	SocketServer@0111a8c0	[Info] 53 <- recv 1420, total 140795
+1510426580.719	SocketServer@0111a8c0	[Info] 54 -> recv 4096
+1510426580.719	SocketServer@0111a8c0	[Info] 54 <- recv 4096, total 144891
+1510426580.729	SocketServer@0111a8c0	[Info] 55 -> recv 4096
+1510426580.729	SocketServer@0111a8c0	[Info] 55 <- recv 4096, total 148987
+1510426580.740	SocketServer@0111a8c0	[Info] 56 -> recv 4096
+1510426580.740	SocketServer@0111a8c0	[Info] 56 <- recv 4096, total 153083
+1510426580.750	SocketServer@0111a8c0	[Info] 57 -> recv 4096
+1510426580.750	SocketServer@0111a8c0	[Info] 57 <- recv 4096, total 157179
+1510426580.760	SocketServer@0111a8c0	[Info] 58 -> recv 4096
+1510426580.760	SocketServer@0111a8c0	[Info] 58 <- recv 4096, total 161275
+1510426580.770	SocketServer@0111a8c0	[Info] 59 -> recv 4096
+1510426580.770	SocketServer@0111a8c0	[Info] 59 <- recv 820, total 162095
+1510426580.780	SocketServer@0111a8c0	[Info] 60 -> recv 4096
+1510426581.911	SocketServer@0111a8c0	[Info] 60 <- recv 1420, total 163515
+1510426581.921	SocketServer@0111a8c0	[Info] 61 -> recv 4096
+1510426581.921	SocketServer@0111a8c0	[Info] 61 <- recv 4096, total 167611
+1510426581.931	SocketServer@0111a8c0	[Info] 62 -> recv 4096
+1510426581.931	SocketServer@0111a8c0	[Info] 62 <- recv 4096, total 171707
+1510426581.941	SocketServer@0111a8c0	[Info] 63 -> recv 4096
+1510426581.942	SocketServer@0111a8c0	[Info] 63 <- recv 4096, total 175803
+1510426581.952	SocketServer@0111a8c0	[Info] 64 -> recv 4096
+1510426581.952	SocketServer@0111a8c0	[Info] 64 <- recv 4096, total 179899
+1510426581.962	SocketServer@0111a8c0	[Info] 65 -> recv 4096
+1510426581.962	SocketServer@0111a8c0	[Info] 65 <- recv 4096, total 183995
+1510426581.972	SocketServer@0111a8c0	[Info] 66 -> recv 4096
+1510426581.972	SocketServer@0111a8c0	[Info] 66 <- recv 4096, total 188091
+1510426581.982	SocketServer@0111a8c0	[Info] 67 -> recv 4096
+1510426581.982	SocketServer@0111a8c0	[Info] 67 <- recv 4096, total 192187
+1510426581.992	SocketServer@0111a8c0	[Info] 68 -> recv 4096
+1510426581.992	SocketServer@0111a8c0	[Info] 68 <- recv 4096, total 196283
+1510426582.002	SocketServer@0111a8c0	[Info] 69 -> recv 4096
+1510426582.003	SocketServer@0111a8c0	[Info] 69 <- recv 4096, total 200379
+1510426582.013	SocketServer@0111a8c0	[Info] 70 -> recv 4096
+1510426582.013	SocketServer@0111a8c0	[Info] 70 <- recv 4096, total 204475
+1510426582.023	SocketServer@0111a8c0	[Info] 71 -> recv 4096
+1510426582.023	SocketServer@0111a8c0	[Info] 71 <- recv 1855, total 206330
+1510426582.033	SocketServer@0111a8c0	[Info] 72 -> recv 4096
+1510426583.112	SocketServer@0111a8c0	[Info] 72 <- recv 1420, total 207750
+1510426583.122	SocketServer@0111a8c0	[Info] 73 -> recv 4096
+1510426583.122	SocketServer@0111a8c0	[Info] 73 <- recv 4096, total 211846
+1510426583.132	SocketServer@0111a8c0	[Info] 74 -> recv 4096
+1510426583.132	SocketServer@0111a8c0	[Info] 74 <- recv 4096, total 215942
+1510426583.142	SocketServer@0111a8c0	[Info] 75 -> recv 4096
+1510426583.142	SocketServer@0111a8c0	[Info] 75 <- recv 4096, total 220038
+1510426583.152	SocketServer@0111a8c0	[Info] 76 -> recv 4096
+1510426583.152	SocketServer@0111a8c0	[Info] 76 <- recv 4096, total 224134
+1510426583.162	SocketServer@0111a8c0	[Info] 77 -> recv 4096
+1510426583.162	SocketServer@0111a8c0	[Info] 77 <- recv 4096, total 228230
+1510426583.173	SocketServer@0111a8c0	[Info] 78 -> recv 4096
+1510426583.173	SocketServer@0111a8c0	[Info] 78 <- recv 820, total 229050
+1510426583.183	SocketServer@0111a8c0	[Info] 79 -> recv 4096
+1510426584.313	SocketServer@0111a8c0	[Info] 79 <- recv 1420, total 230470
+1510426584.323	SocketServer@0111a8c0	[Info] 80 -> recv 4096
+1510426584.323	SocketServer@0111a8c0	[Info] 80 <- recv 4096, total 234566
+1510426584.334	SocketServer@0111a8c0	[Info] 81 -> recv 4096
+1510426584.334	SocketServer@0111a8c0	[Info] 81 <- recv 1584, total 236150
+1510426584.344	SocketServer@0111a8c0	[Info] 82 -> recv 4096
+1510426585.514	SocketServer@0111a8c0	[Info] 82 <- recv 1420, total 237570
+1510426585.524	SocketServer@0111a8c0	[Info] 83 -> recv 4096
+1510426586.715	SocketServer@0111a8c0	[Info] 83 <- recv 1420, total 238990
+1510426586.725	SocketServer@0111a8c0	[Info] 84 -> recv 4096
+1510426586.725	SocketServer@0111a8c0	[Info] 84 <- recv 1420, total 240410
+1510426586.735	SocketServer@0111a8c0	[Info] 85 -> recv 4096
+1510426587.915	SocketServer@0111a8c0	[Info] 85 <- recv 1420, total 241830
+1510426587.925	SocketServer@0111a8c0	[Info] 86 -> recv 4096
+1510426587.926	SocketServer@0111a8c0	[Info] 86 <- recv 4096, total 245926
+1510426587.936	SocketServer@0111a8c0	[Info] 87 -> recv 4096
+1510426587.936	SocketServer@0111a8c0	[Info] 87 <- recv 164, total 246090
+1510426587.946	SocketServer@0111a8c0	[Info] 88 -> recv 4096
+1510426589.117	SocketServer@0111a8c0	[Info] 88 <- recv 1420, total 247510
+1510426589.127	SocketServer@0111a8c0	[Info] 89 -> recv 4096
+1510426589.127	SocketServer@0111a8c0	[Info] 89 <- recv 4096, total 251606
+1510426589.137	SocketServer@0111a8c0	[Info] 90 -> recv 4096
+1510426589.137	SocketServer@0111a8c0	[Info] 90 <- recv 4096, total 255702
+1510426589.147	SocketServer@0111a8c0	[Info] 91 -> recv 4096
+1510426589.147	SocketServer@0111a8c0	[Info] 91 <- recv 1748, total 257450
+1510426589.157	SocketServer@0111a8c0	[Info] 92 -> recv 4096
+1510426590.318	SocketServer@0111a8c0	[Info] 92 <- recv 1420, total 258870
+1510426590.329	SocketServer@0111a8c0	[Info] 93 -> recv 4096
+1510426590.329	SocketServer@0111a8c0	[Info] 93 <- recv 4096, total 262966
+1510426590.339	SocketServer@0111a8c0	[Info] 94 -> recv 4096
+1510426590.339	SocketServer@0111a8c0	[Info] 94 <- recv 4096, total 267062
+1510426590.349	SocketServer@0111a8c0	[Info] 95 -> recv 4096
+1510426590.349	SocketServer@0111a8c0	[Info] 95 <- recv 4096, total 271158
+1510426590.359	SocketServer@0111a8c0	[Info] 96 -> recv 4096
+1510426590.359	SocketServer@0111a8c0	[Info] 96 <- recv 4096, total 275254
+1510426590.369	SocketServer@0111a8c0	[Info] 97 -> recv 4096
+1510426590.370	SocketServer@0111a8c0	[Info] 97 <- recv 4096, total 279350
+1510426590.380	SocketServer@0111a8c0	[Info] 98 -> recv 4096
+1510426590.380	SocketServer@0111a8c0	[Info] 98 <- recv 820, total 280170
+1510426590.390	SocketServer@0111a8c0	[Info] 99 -> recv 4096
+1510426591.519	SocketServer@0111a8c0	[Info] 99 <- recv 1420, total 281590
+1510426591.529	SocketServer@0111a8c0	[Info] 100 -> recv 4096
+1510426591.529	SocketServer@0111a8c0	[Info] 100 <- recv 4096, total 285686
+1510426591.539	SocketServer@0111a8c0	[Info] 101 -> recv 4096
+1510426591.539	SocketServer@0111a8c0	[Info] 101 <- recv 4096, total 289782
+1510426591.549	SocketServer@0111a8c0	[Info] 102 -> recv 4096
+1510426591.549	SocketServer@0111a8c0	[Info] 102 <- recv 4096, total 293878
+1510426591.560	SocketServer@0111a8c0	[Info] 103 -> recv 4096
+1510426591.560	SocketServer@0111a8c0	[Info] 103 <- recv 4096, total 297974
+1510426591.570	SocketServer@0111a8c0	[Info] 104 -> recv 4096
+1510426591.570	SocketServer@0111a8c0	[Info] 104 <- recv 4096, total 302070
+1510426591.580	SocketServer@0111a8c0	[Info] 105 -> recv 4096
+1510426591.580	SocketServer@0111a8c0	[Info] 105 <- recv 4096, total 306166
+1510426591.590	SocketServer@0111a8c0	[Info] 106 -> recv 4096
+1510426591.590	SocketServer@0111a8c0	[Info] 106 <- recv 4096, total 310262
+1510426591.600	SocketServer@0111a8c0	[Info] 107 -> recv 4096
+1510426591.600	SocketServer@0111a8c0	[Info] 107 <- recv 3988, total 314250
+1510426591.610	SocketServer@0111a8c0	[Info] 108 -> recv 4096
+1510426592.720	SocketServer@0111a8c0	[Info] 108 <- recv 1420, total 315670
+1510426592.730	SocketServer@0111a8c0	[Info] 109 -> recv 4096
+1510426592.731	SocketServer@0111a8c0	[Info] 109 <- recv 4096, total 319766
+1510426592.741	SocketServer@0111a8c0	[Info] 110 -> recv 4096
+1510426592.741	SocketServer@0111a8c0	[Info] 110 <- recv 4096, total 323862
+1510426592.751	SocketServer@0111a8c0	[Info] 111 -> recv 4096
+1510426592.751	SocketServer@0111a8c0	[Info] 111 <- recv 4096, total 327958
+1510426592.761	SocketServer@0111a8c0	[Info] 112 -> recv 4096
+1510426592.761	SocketServer@0111a8c0	[Info] 112 <- recv 4096, total 332054
+1510426592.771	SocketServer@0111a8c0	[Info] 113 -> recv 4096
+1510426592.771	SocketServer@0111a8c0	[Info] 113 <- recv 4096, total 336150
+1510426592.782	SocketServer@0111a8c0	[Info] 114 -> recv 4096
+1510426592.782	SocketServer@0111a8c0	[Info] 114 <- recv 4096, total 340246
+1510426592.792	SocketServer@0111a8c0	[Info] 115 -> recv 4096
+1510426592.792	SocketServer@0111a8c0	[Info] 115 <- recv 4096, total 344342
+1510426592.802	SocketServer@0111a8c0	[Info] 116 -> recv 4096
+1510426592.802	SocketServer@0111a8c0	[Info] 116 <- recv 2783, total 347125
+1510426592.812	SocketServer@0111a8c0	[Info] 117 -> recv 4096
+1510426593.921	SocketServer@0111a8c0	[Info] 117 <- recv 1420, total 348545
+1510426593.931	SocketServer@0111a8c0	[Info] 118 -> recv 4096
+1510426593.931	SocketServer@0111a8c0	[Info] 118 <- recv 4096, total 352641
+1510426593.941	SocketServer@0111a8c0	[Info] 119 -> recv 4096
+1510426593.941	SocketServer@0111a8c0	[Info] 119 <- recv 4096, total 356737
+1510426593.951	SocketServer@0111a8c0	[Info] 120 -> recv 4096
+1510426593.952	SocketServer@0111a8c0	[Info] 120 <- recv 4096, total 360833
+1510426593.962	SocketServer@0111a8c0	[Info] 121 -> recv 4096
+1510426593.962	SocketServer@0111a8c0	[Info] 121 <- recv 4096, total 364929
+1510426593.972	SocketServer@0111a8c0	[Info] 122 -> recv 4096
+1510426593.972	SocketServer@0111a8c0	[Info] 122 <- recv 4096, total 369025
+1510426593.982	SocketServer@0111a8c0	[Info] 123 -> recv 4096
+1510426593.982	SocketServer@0111a8c0	[Info] 123 <- recv 4096, total 373121
+1510426593.992	SocketServer@0111a8c0	[Info] 124 -> recv 4096
+1510426593.992	SocketServer@0111a8c0	[Info] 124 <- recv 4096, total 377217
+1510426594.002	SocketServer@0111a8c0	[Info] 125 -> recv 4096
+1510426594.002	SocketServer@0111a8c0	[Info] 125 <- recv 3988, total 381205
+1510426594.012	SocketServer@0111a8c0	[Info] 126 -> recv 4096
+1510426595.122	SocketServer@0111a8c0	[Info] 126 <- recv 1420, total 382625
+1510426595.132	SocketServer@0111a8c0	[Info] 127 -> recv 4096
+1510426595.132	SocketServer@0111a8c0	[Info] 127 <- recv 4096, total 386721
+1510426595.143	SocketServer@0111a8c0	[Info] 128 -> recv 4096
+1510426595.143	SocketServer@0111a8c0	[Info] 128 <- recv 4096, total 390817
+1510426595.153	SocketServer@0111a8c0	[Info] 129 -> recv 4096
+1510426595.153	SocketServer@0111a8c0	[Info] 129 <- recv 4096, total 394913
+1510426595.163	SocketServer@0111a8c0	[Info] 130 -> recv 4096
+1510426595.163	SocketServer@0111a8c0	[Info] 130 <- recv 4096, total 399009
+1510426595.173	SocketServer@0111a8c0	[Info] 131 -> recv 4096
+1510426595.173	SocketServer@0111a8c0	[Info] 131 <- recv 4096, total 403105
+1510426595.184	SocketServer@0111a8c0	[Info] 132 -> recv 4096
+1510426595.184	SocketServer@0111a8c0	[Info] 132 <- recv 4096, total 407201
+1510426595.194	SocketServer@0111a8c0	[Info] 133 -> recv 4096
+1510426595.194	SocketServer@0111a8c0	[Info] 133 <- recv 4096, total 411297
+1510426595.204	SocketServer@0111a8c0	[Info] 134 -> recv 4096
+1510426595.204	SocketServer@0111a8c0	[Info] 134 <- recv 4096, total 415393
+1510426595.214	SocketServer@0111a8c0	[Info] 135 -> recv 4096
+1510426595.214	SocketServer@0111a8c0	[Info] 135 <- recv 2399, total 417792
+1510426595.225	SocketServer@0111a8c0	[Info] 136 -> recv 4096
+1510426596.324	SocketServer@0111a8c0	[Info] 136 <- recv 1420, total 419212
+1510426596.334	SocketServer@0111a8c0	[Info] 137 -> recv 4096
+1510426596.334	SocketServer@0111a8c0	[Info] 137 <- recv 4096, total 423308
+1510426596.344	SocketServer@0111a8c0	[Info] 138 -> recv 4096
+1510426596.344	SocketServer@0111a8c0	[Info] 138 <- recv 4096, total 427404
+1510426596.354	SocketServer@0111a8c0	[Info] 139 -> recv 4096
+1510426596.355	SocketServer@0111a8c0	[Info] 139 <- recv 4096, total 431500
+1510426596.365	SocketServer@0111a8c0	[Info] 140 -> recv 4096
+1510426596.365	SocketServer@0111a8c0	[Info] 140 <- recv 4096, total 435596
+1510426596.375	SocketServer@0111a8c0	[Info] 141 -> recv 4096
+1510426596.375	SocketServer@0111a8c0	[Info] 141 <- recv 4096, total 439692
+1510426596.385	SocketServer@0111a8c0	[Info] 142 -> recv 4096
+1510426596.385	SocketServer@0111a8c0	[Info] 142 <- recv 4096, total 443788
+1510426596.395	SocketServer@0111a8c0	[Info] 143 -> recv 4096
+1510426596.395	SocketServer@0111a8c0	[Info] 143 <- recv 4096, total 447884
+1510426596.405	SocketServer@0111a8c0	[Info] 144 -> recv 4096
+1510426596.405	SocketServer@0111a8c0	[Info] 144 <- recv 4096, total 451980
+1510426596.415	SocketServer@0111a8c0	[Info] 145 -> recv 4096
+1510426596.415	SocketServer@0111a8c0	[Info] 145 <- recv 276, total 452256
+1510426596.425	SocketServer@0111a8c0	[Info] 146 -> recv 4096
+1510426597.526	SocketServer@0111a8c0	[Info] 146 <- recv 1420, total 453676
+1510426597.536	SocketServer@0111a8c0	[Info] 147 -> recv 4096
+1510426597.536	SocketServer@0111a8c0	[Info] 147 <- recv 4096, total 457772
+1510426597.546	SocketServer@0111a8c0	[Info] 148 -> recv 4096
+1510426597.546	SocketServer@0111a8c0	[Info] 148 <- recv 4096, total 461868
+1510426597.556	SocketServer@0111a8c0	[Info] 149 -> recv 4096
+1510426597.556	SocketServer@0111a8c0	[Info] 149 <- recv 4096, total 465964
+1510426597.566	SocketServer@0111a8c0	[Info] 150 -> recv 4096
+1510426597.566	SocketServer@0111a8c0	[Info] 150 <- recv 4096, total 470060
+1510426597.576	SocketServer@0111a8c0	[Info] 151 -> recv 4096
+1510426597.576	SocketServer@0111a8c0	[Info] 151 <- recv 4096, total 474156
+1510426597.587	SocketServer@0111a8c0	[Info] 152 -> recv 4096
+1510426597.587	SocketServer@0111a8c0	[Info] 152 <- recv 4096, total 478252
+1510426597.597	SocketServer@0111a8c0	[Info] 153 -> recv 4096
+1510426597.597	SocketServer@0111a8c0	[Info] 153 <- recv 4096, total 482348
+1510426597.607	SocketServer@0111a8c0	[Info] 154 -> recv 4096
+1510426597.607	SocketServer@0111a8c0	[Info] 154 <- recv 2399, total 484747
+1510426597.617	SocketServer@0111a8c0	[Info] 155 -> recv 4096
+1510426598.727	SocketServer@0111a8c0	[Info] 155 <- recv 1420, total 486167
+1510426598.737	SocketServer@0111a8c0	[Info] 156 -> recv 4096
+1510426598.737	SocketServer@0111a8c0	[Info] 156 <- recv 4096, total 490263
+1510426598.747	SocketServer@0111a8c0	[Info] 157 -> recv 4096
+1510426598.747	SocketServer@0111a8c0	[Info] 157 <- recv 1584, total 491847
+1510426598.757	SocketServer@0111a8c0	[Info] 158 -> recv 4096
+1510426599.928	SocketServer@0111a8c0	[Info] 158 <- recv 1420, total 493267
+1510426599.938	SocketServer@0111a8c0	[Info] 159 -> recv 4096
+1510426601.129	SocketServer@0111a8c0	[Info] 159 <- recv 4096, total 497363
+1510426601.139	SocketServer@0111a8c0	[Info] 160 -> recv 4096
+1510426601.139	SocketServer@0111a8c0	[Info] 160 <- recv 4096, total 501459
+1510426601.149	SocketServer@0111a8c0	[Info] 161 -> recv 4096
+1510426601.150	SocketServer@0111a8c0	[Info] 161 <- recv 3168, total 504627
+1510426601.160	SocketServer@0111a8c0	[Info] 162 -> recv 4096
+1510426602.330	SocketServer@0111a8c0	[Info] 162 <- recv 1420, total 506047
+1510426602.340	SocketServer@0111a8c0	[Info] 163 -> recv 4096
+1510426602.340	SocketServer@0111a8c0	[Info] 163 <- recv 2840, total 508887
+1510426602.350	SocketServer@0111a8c0	[Info] 164 -> recv 4096
+1510426603.531	SocketServer@0111a8c0	[Info] 164 <- recv 1420, total 510307
+1510426603.541	SocketServer@0111a8c0	[Info] 165 -> recv 4096
+1510426603.541	SocketServer@0111a8c0	[Info] 165 <- recv 4096, total 514403
+1510426603.551	SocketServer@0111a8c0	[Info] 166 -> recv 4096
+1510426603.551	SocketServer@0111a8c0	[Info] 166 <- recv 3004, total 517407
+1510426603.561	SocketServer@0111a8c0	[Info] 167 -> recv 4096
+1510426604.732	SocketServer@0111a8c0	[Info] 167 <- recv 1420, total 518827
+1510426604.742	SocketServer@0111a8c0	[Info] 168 -> recv 4096
+1510426604.742	SocketServer@0111a8c0	[Info] 168 <- recv 4096, total 522923
+1510426604.752	SocketServer@0111a8c0	[Info] 169 -> recv 4096
+1510426604.752	SocketServer@0111a8c0	[Info] 169 <- recv 4096, total 527019
+1510426604.762	SocketServer@0111a8c0	[Info] 170 -> recv 4096
+1510426604.762	SocketServer@0111a8c0	[Info] 170 <- recv 4096, total 531115
+1510426604.772	SocketServer@0111a8c0	[Info] 171 -> recv 4096
+1510426604.772	SocketServer@0111a8c0	[Info] 171 <- recv 3332, total 534447
+1510426604.782	SocketServer@0111a8c0	[Info] 172 -> recv 4096
+1510426605.933	SocketServer@0111a8c0	[Info] 172 <- recv 1420, total 535867
+1510426605.943	SocketServer@0111a8c0	[Info] 173 -> recv 4096
+1510426605.944	SocketServer@0111a8c0	[Info] 173 <- recv 4096, total 539963
+1510426605.954	SocketServer@0111a8c0	[Info] 174 -> recv 4096
+1510426605.954	SocketServer@0111a8c0	[Info] 174 <- recv 4096, total 544059
+1510426605.964	SocketServer@0111a8c0	[Info] 175 -> recv 4096
+1510426605.964	SocketServer@0111a8c0	[Info] 175 <- recv 4096, total 548155
+1510426605.974	SocketServer@0111a8c0	[Info] 176 -> recv 4096
+1510426605.974	SocketServer@0111a8c0	[Info] 176 <- recv 4096, total 552251
+1510426605.984	SocketServer@0111a8c0	[Info] 177 -> recv 4096
+1510426605.984	SocketServer@0111a8c0	[Info] 177 <- recv 4096, total 556347
+1510426605.994	SocketServer@0111a8c0	[Info] 178 -> recv 4096
+1510426605.994	SocketServer@0111a8c0	[Info] 178 <- recv 820, total 557167
+1510426606.004	SocketServer@0111a8c0	[Info] 179 -> recv 4096
+1510426607.134	SocketServer@0111a8c0	[Info] 179 <- recv 1420, total 558587
+1510426607.144	SocketServer@0111a8c0	[Info] 180 -> recv 4096
+1510426607.144	SocketServer@0111a8c0	[Info] 180 <- recv 4096, total 562683
+1510426607.154	SocketServer@0111a8c0	[Info] 181 -> recv 4096
+1510426607.154	SocketServer@0111a8c0	[Info] 181 <- recv 4096, total 566779
+1510426607.164	SocketServer@0111a8c0	[Info] 182 -> recv 4096
+1510426607.164	SocketServer@0111a8c0	[Info] 182 <- recv 4096, total 570875
+1510426607.174	SocketServer@0111a8c0	[Info] 183 -> recv 4096
+1510426607.174	SocketServer@0111a8c0	[Info] 183 <- recv 4096, total 574971
+1510426607.185	SocketServer@0111a8c0	[Info] 184 -> recv 4096
+1510426607.185	SocketServer@0111a8c0	[Info] 184 <- recv 4096, total 579067
+1510426607.195	SocketServer@0111a8c0	[Info] 185 -> recv 4096
+1510426607.195	SocketServer@0111a8c0	[Info] 185 <- recv 2240, total 581307
+1510426607.205	SocketServer@0111a8c0	[Info] 186 -> recv 4096
+1510426608.335	SocketServer@0111a8c0	[Info] 186 <- recv 1420, total 582727
+1510426608.345	SocketServer@0111a8c0	[Info] 187 -> recv 4096
+1510426608.345	SocketServer@0111a8c0	[Info] 187 <- recv 4096, total 586823
+1510426608.355	SocketServer@0111a8c0	[Info] 188 -> recv 4096
+1510426608.355	SocketServer@0111a8c0	[Info] 188 <- recv 4096, total 590919
+1510426608.365	SocketServer@0111a8c0	[Info] 189 -> recv 4096
+1510426608.365	SocketServer@0111a8c0	[Info] 189 <- recv 4096, total 595015
+1510426608.376	SocketServer@0111a8c0	[Info] 190 -> recv 4096
+1510426608.376	SocketServer@0111a8c0	[Info] 190 <- recv 4096, total 599111
+1510426608.386	SocketServer@0111a8c0	[Info] 191 -> recv 4096
+1510426608.386	SocketServer@0111a8c0	[Info] 191 <- recv 4096, total 603207
+1510426608.396	SocketServer@0111a8c0	[Info] 192 -> recv 4096
+1510426608.396	SocketServer@0111a8c0	[Info] 192 <- recv 3660, total 606867
+1510426608.406	SocketServer@0111a8c0	[Info] 193 -> recv 4096
+1510426609.536	SocketServer@0111a8c0	[Info] 193 <- recv 1420, total 608287
+1510426609.546	SocketServer@0111a8c0	[Info] 194 -> recv 4096
+1510426609.546	SocketServer@0111a8c0	[Info] 194 <- recv 4096, total 612383
+1510426609.556	SocketServer@0111a8c0	[Info] 195 -> recv 4096
+1510426609.556	SocketServer@0111a8c0	[Info] 195 <- recv 4096, total 616479
+1510426609.566	SocketServer@0111a8c0	[Info] 196 -> recv 4096
+1510426609.566	SocketServer@0111a8c0	[Info] 196 <- recv 4096, total 620575
+1510426609.577	SocketServer@0111a8c0	[Info] 197 -> recv 4096
+1510426609.577	SocketServer@0111a8c0	[Info] 197 <- recv 4096, total 624671
+1510426609.587	SocketServer@0111a8c0	[Info] 198 -> recv 4096
+1510426609.587	SocketServer@0111a8c0	[Info] 198 <- recv 4096, total 628767
+1510426609.597	SocketServer@0111a8c0	[Info] 199 -> recv 4096
+1510426609.597	SocketServer@0111a8c0	[Info] 199 <- recv 4096, total 632863
+1510426609.608	SocketServer@0111a8c0	[Info] 200 -> recv 4096
+1510426609.608	SocketServer@0111a8c0	[Info] 200 <- recv 984, total 633847
+1510426609.619	SocketServer@0111a8c0	[Info] 201 -> recv 4096
+1510426610.737	SocketServer@0111a8c0	[Info] 201 <- recv 1420, total 635267
+1510426610.747	SocketServer@0111a8c0	[Info] 202 -> recv 4096
+1510426610.747	SocketServer@0111a8c0	[Info] 202 <- recv 4096, total 639363
+1510426610.757	SocketServer@0111a8c0	[Info] 203 -> recv 4096
+1510426610.757	SocketServer@0111a8c0	[Info] 203 <- recv 4096, total 643459
+1510426610.767	SocketServer@0111a8c0	[Info] 204 -> recv 4096
+1510426610.768	SocketServer@0111a8c0	[Info] 204 <- recv 4096, total 647555
+1510426610.778	SocketServer@0111a8c0	[Info] 205 -> recv 4096
+1510426610.778	SocketServer@0111a8c0	[Info] 205 <- recv 4096, total 651651
+1510426610.788	SocketServer@0111a8c0	[Info] 206 -> recv 4096
+1510426610.788	SocketServer@0111a8c0	[Info] 206 <- recv 4096, total 655747
+1510426610.798	SocketServer@0111a8c0	[Info] 207 -> recv 4096
+1510426610.798	SocketServer@0111a8c0	[Info] 207 <- recv 4096, total 659843
+1510426610.808	SocketServer@0111a8c0	[Info] 208 -> recv 4096
+1510426610.808	SocketServer@0111a8c0	[Info] 208 <- recv 2404, total 662247
+1510426610.818	SocketServer@0111a8c0	[Info] 209 -> recv 4096
+1510426611.938	SocketServer@0111a8c0	[Info] 209 <- recv 1420, total 663667
+1510426611.948	SocketServer@0111a8c0	[Info] 210 -> recv 4096
+1510426611.948	SocketServer@0111a8c0	[Info] 210 <- recv 4096, total 667763
+1510426611.959	SocketServer@0111a8c0	[Info] 211 -> recv 4096
+1510426611.959	SocketServer@0111a8c0	[Info] 211 <- recv 4096, total 671859
+1510426611.969	SocketServer@0111a8c0	[Info] 212 -> recv 4096
+1510426611.969	SocketServer@0111a8c0	[Info] 212 <- recv 4096, total 675955
+1510426611.979	SocketServer@0111a8c0	[Info] 213 -> recv 4096
+1510426611.979	SocketServer@0111a8c0	[Info] 213 <- recv 4096, total 680051
+1510426611.989	SocketServer@0111a8c0	[Info] 214 -> recv 4096
+1510426611.989	SocketServer@0111a8c0	[Info] 214 <- recv 4096, total 684147
+1510426611.999	SocketServer@0111a8c0	[Info] 215 -> recv 4096
+1510426611.999	SocketServer@0111a8c0	[Info] 215 <- recv 4096, total 688243
+1510426612.009	SocketServer@0111a8c0	[Info] 216 -> recv 4096
+1510426612.009	SocketServer@0111a8c0	[Info] 216 <- recv 3824, total 692067
+1510426612.019	SocketServer@0111a8c0	[Info] 217 -> recv 4096
+1510426613.139	SocketServer@0111a8c0	[Info] 217 <- recv 1420, total 693487
+1510426613.149	SocketServer@0111a8c0	[Info] 218 -> recv 4096
+1510426613.149	SocketServer@0111a8c0	[Info] 218 <- recv 4096, total 697583
+1510426613.159	SocketServer@0111a8c0	[Info] 219 -> recv 4096
+1510426613.159	SocketServer@0111a8c0	[Info] 219 <- recv 4096, total 701679
+1510426613.169	SocketServer@0111a8c0	[Info] 220 -> recv 4096
+1510426613.169	SocketServer@0111a8c0	[Info] 220 <- recv 4096, total 705775
+1510426613.179	SocketServer@0111a8c0	[Info] 221 -> recv 4096
+1510426613.179	SocketServer@0111a8c0	[Info] 221 <- recv 4096, total 709871
+1510426613.189	SocketServer@0111a8c0	[Info] 222 -> recv 4096
+1510426613.190	SocketServer@0111a8c0	[Info] 222 <- recv 4096, total 713967
+1510426613.200	SocketServer@0111a8c0	[Info] 223 -> recv 4096
+1510426613.200	SocketServer@0111a8c0	[Info] 223 <- recv 4096, total 718063
+1510426613.210	SocketServer@0111a8c0	[Info] 224 -> recv 4096
+1510426613.210	SocketServer@0111a8c0	[Info] 224 <- recv 4096, total 722159
+1510426613.220	SocketServer@0111a8c0	[Info] 225 -> recv 4096
+1510426613.220	SocketServer@0111a8c0	[Info] 225 <- recv 1148, total 723307
+1510426613.230	SocketServer@0111a8c0	[Info] 226 -> recv 4096
+1510426614.339	SocketServer@0111a8c0	[Info] 226 <- recv 1420, total 724727
+1510426614.349	SocketServer@0111a8c0	[Info] 227 -> recv 4096
+1510426614.349	SocketServer@0111a8c0	[Info] 227 <- recv 4096, total 728823
+1510426614.359	SocketServer@0111a8c0	[Info] 228 -> recv 4096
+1510426614.360	SocketServer@0111a8c0	[Info] 228 <- recv 4096, total 732919
+1510426614.370	SocketServer@0111a8c0	[Info] 229 -> recv 4096
+1510426614.370	SocketServer@0111a8c0	[Info] 229 <- recv 4096, total 737015
+1510426614.380	SocketServer@0111a8c0	[Info] 230 -> recv 4096
+1510426614.380	SocketServer@0111a8c0	[Info] 230 <- recv 4096, total 741111
+1510426614.390	SocketServer@0111a8c0	[Info] 231 -> recv 4096
+1510426614.390	SocketServer@0111a8c0	[Info] 231 <- recv 4096, total 745207
+1510426614.400	SocketServer@0111a8c0	[Info] 232 -> recv 4096
+1510426614.400	SocketServer@0111a8c0	[Info] 232 <- recv 4096, total 749303
+1510426614.411	SocketServer@0111a8c0	[Info] 233 -> recv 4096
+1510426614.411	SocketServer@0111a8c0	[Info] 233 <- recv 4096, total 753399
+1510426614.421	SocketServer@0111a8c0	[Info] 234 -> recv 4096
+1510426614.421	SocketServer@0111a8c0	[Info] 234 <- recv 2568, total 755967
+1510426614.431	SocketServer@0111a8c0	[Info] 235 -> recv 4096
+1510426615.541	SocketServer@0111a8c0	[Info] 235 <- recv 1420, total 757387
+1510426615.551	SocketServer@0111a8c0	[Info] 236 -> recv 4096
+1510426615.551	SocketServer@0111a8c0	[Info] 236 <- recv 4096, total 761483
+1510426615.561	SocketServer@0111a8c0	[Info] 237 -> recv 4096
+1510426615.561	SocketServer@0111a8c0	[Info] 237 <- recv 4096, total 765579
+1510426615.571	SocketServer@0111a8c0	[Info] 238 -> recv 4096
+1510426615.571	SocketServer@0111a8c0	[Info] 238 <- recv 4096, total 769675
+1510426615.581	SocketServer@0111a8c0	[Info] 239 -> recv 4096
+1510426615.581	SocketServer@0111a8c0	[Info] 239 <- recv 4096, total 773771
+1510426615.591	SocketServer@0111a8c0	[Info] 240 -> recv 4096
+1510426615.591	SocketServer@0111a8c0	[Info] 240 <- recv 4096, total 777867
+1510426615.602	SocketServer@0111a8c0	[Info] 241 -> recv 4096
+1510426615.602	SocketServer@0111a8c0	[Info] 241 <- recv 4096, total 781963
+1510426615.612	SocketServer@0111a8c0	[Info] 242 -> recv 4096
+1510426615.612	SocketServer@0111a8c0	[Info] 242 <- recv 4096, total 786059
+1510426615.622	SocketServer@0111a8c0	[Info] 243 -> recv 4096
+1510426615.622	SocketServer@0111a8c0	[Info] 243 <- recv 3988, total 790047
+1510426615.632	SocketServer@0111a8c0	[Info] 244 -> recv 4096
+1510426616.742	SocketServer@0111a8c0	[Info] 244 <- recv 1420, total 791467
+1510426616.752	SocketServer@0111a8c0	[Info] 245 -> recv 4096
+1510426616.752	SocketServer@0111a8c0	[Info] 245 <- recv 4096, total 795563
+1510426616.762	SocketServer@0111a8c0	[Info] 246 -> recv 4096
+1510426616.762	SocketServer@0111a8c0	[Info] 246 <- recv 4096, total 799659
+1510426616.772	SocketServer@0111a8c0	[Info] 247 -> recv 4096
+1510426616.772	SocketServer@0111a8c0	[Info] 247 <- recv 4096, total 803755
+1510426616.782	SocketServer@0111a8c0	[Info] 248 -> recv 4096
+1510426616.782	SocketServer@0111a8c0	[Info] 248 <- recv 4096, total 807851
+1510426616.792	SocketServer@0111a8c0	[Info] 249 -> recv 4096
+1510426616.792	SocketServer@0111a8c0	[Info] 249 <- recv 4096, total 811947
+1510426616.802	SocketServer@0111a8c0	[Info] 250 -> recv 4096
+1510426616.802	SocketServer@0111a8c0	[Info] 250 <- recv 4096, total 816043
+1510426616.812	SocketServer@0111a8c0	[Info] 251 -> recv 4096
+1510426616.812	SocketServer@0111a8c0	[Info] 251 <- recv 4096, total 820139
+1510426616.823	SocketServer@0111a8c0	[Info] 252 -> recv 4096
+1510426616.823	SocketServer@0111a8c0	[Info] 252 <- recv 2783, total 822922
+1510426616.833	SocketServer@0111a8c0	[Info] 253 -> recv 4096
+1510426617.943	SocketServer@0111a8c0	[Info] 253 <- recv 1420, total 824342
+1510426617.953	SocketServer@0111a8c0	[Info] 254 -> recv 4096
+1510426617.953	SocketServer@0111a8c0	[Info] 254 <- recv 4096, total 828438
+1510426617.963	SocketServer@0111a8c0	[Info] 255 -> recv 4096
+1510426617.963	SocketServer@0111a8c0	[Info] 255 <- recv 4096, total 832534
+1510426617.973	SocketServer@0111a8c0	[Info] 256 -> recv 4096
+1510426617.973	SocketServer@0111a8c0	[Info] 256 <- recv 4096, total 836630
+1510426617.984	SocketServer@0111a8c0	[Info] 257 -> recv 4096
+1510426617.984	SocketServer@0111a8c0	[Info] 257 <- recv 4096, total 840726
+1510426617.994	SocketServer@0111a8c0	[Info] 258 -> recv 4096
+1510426617.994	SocketServer@0111a8c0	[Info] 258 <- recv 4096, total 844822
+1510426618.004	SocketServer@0111a8c0	[Info] 259 -> recv 4096
+1510426618.004	SocketServer@0111a8c0	[Info] 259 <- recv 4096, total 848918
+1510426618.015	SocketServer@0111a8c0	[Info] 260 -> recv 4096
+1510426618.015	SocketServer@0111a8c0	[Info] 260 <- recv 4096, total 853014
+1510426618.025	SocketServer@0111a8c0	[Info] 261 -> recv 4096
+1510426618.025	SocketServer@0111a8c0	[Info] 261 <- recv 3988, total 857002
+1510426618.035	SocketServer@0111a8c0	[Info] 262 -> recv 4096
+1510426619.145	SocketServer@0111a8c0	[Info] 262 <- recv 1420, total 858422
+1510426619.155	SocketServer@0111a8c0	[Info] 263 -> recv 4096
+1510426619.155	SocketServer@0111a8c0	[Info] 263 <- recv 4096, total 862518
+1510426619.165	SocketServer@0111a8c0	[Info] 264 -> recv 4096
+1510426619.165	SocketServer@0111a8c0	[Info] 264 <- recv 4096, total 866614
+1510426619.175	SocketServer@0111a8c0	[Info] 265 -> recv 4096
+1510426619.175	SocketServer@0111a8c0	[Info] 265 <- recv 4096, total 870710
+1510426619.185	SocketServer@0111a8c0	[Info] 266 -> recv 4096
+1510426619.185	SocketServer@0111a8c0	[Info] 266 <- recv 4096, total 874806
+1510426619.195	SocketServer@0111a8c0	[Info] 267 -> recv 4096
+1510426619.195	SocketServer@0111a8c0	[Info] 267 <- recv 4096, total 878902
+1510426619.206	SocketServer@0111a8c0	[Info] 268 -> recv 4096
+1510426619.206	SocketServer@0111a8c0	[Info] 268 <- recv 4096, total 882998
+1510426619.216	SocketServer@0111a8c0	[Info] 269 -> recv 4096
+1510426619.216	SocketServer@0111a8c0	[Info] 269 <- recv 4096, total 887094
+1510426619.226	SocketServer@0111a8c0	[Info] 270 -> recv 4096
+1510426619.226	SocketServer@0111a8c0	[Info] 270 <- recv 2783, total 889877
+1510426619.236	SocketServer@0111a8c0	[Info] 271 -> recv 4096
